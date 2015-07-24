@@ -17,4 +17,5 @@ func process(delta):
         return
 
     for object in self.objects:
-        object.process(delta)
+        if object.is_processing:
+            object.process(delta)

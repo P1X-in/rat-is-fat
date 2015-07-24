@@ -7,6 +7,7 @@ var players = []
 func _init_bag(bag):
     self.bag = bag
     self.bind_players()
+    self.bind_processing()
 
 func bind_players():
     self.players = [
@@ -20,3 +21,7 @@ func bind_players():
     self.players[1].bind_gamepad(1)
     self.players[2].bind_gamepad(2)
     self.players[3].bind_gamepad(3)
+
+func bind_processing():
+    for player in self.players:
+        self.bag.processing.register(player)

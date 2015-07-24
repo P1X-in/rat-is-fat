@@ -10,6 +10,5 @@ func _init(bag, player):
     self.button_index = JOY_BUTTON_9
 
 func handle(event):
-    print(event)
     if event.is_pressed() && self.bag.game_state.game_in_progress && not self.player.is_playing:
         self.player.enter_game()
