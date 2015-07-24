@@ -4,6 +4,7 @@ var is_playing = false
 var is_alive = true
 
 var target_cone
+var target_cone_vector = [0, 0]
 
 func _init(bag).(bag):
     self.bag = bag
@@ -13,13 +14,15 @@ func _init(bag).(bag):
     self.body_part_head = self.avatar.get_node('head')
     self.body_part_body = self.avatar.get_node('body')
     self.body_part_footer = self.avatar.get_node('footer')
-    self.target_cone = self.avatar.get_node('target_cone')
+    self.target_cone = self.avatar.get_node('attack_cone')
 
 func bind_gamepad(id):
     var gamepad = self.bag.input.devices['pad' + str(id)]
     gamepad.register_handler(preload("res://scripts/input/handlers/player_enter_game_gamepad.gd").new(self.bag, self))
     gamepad.register_handler(preload("res://scripts/input/handlers/player_move_axis.gd").new(self.bag, self, 0))
     gamepad.register_handler(preload("res://scripts/input/handlers/player_move_axis.gd").new(self.bag, self, 1))
+    gamepad.register_handler(preload("res://scripts/input/handlers/player_cone_gamepad.gd").new(self.bag, self, 2))
+    gamepad.register_handler(preload("res://scripts/input/handlers/player_cone_gamepad.gd").new(self.bag, self, 3))
 
 func bind_keyboard_and_mouse():
     var keyboard = self.bag.input.devices['keyboard']
@@ -44,3 +47,26 @@ func die():
     self.is_alive = false
     self.is_processing = false
     self.despawn()
+
+func process(delta):
+    self.adjust_attack_cone()
+    self.modify_position()
+
+func adjust_attack_cone():
+    var tangent
+    var angle = 0
+
+    if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:
+        return
+
+    if self.target_cone_vector[0] == 0:
+        if self.target_cone_vector[1] < 0:
+            angle = 0
+        else:
+            angle = 180
+    else:
+        tangent = atan2(self.target_cone_vector[1], self.target_cone_vector[0])
+        #angle = 180 + (tangent * 180) / PI
+        angle = -tangent - PI/2
+        print(angle)
+    self.target_cone.set_rot(angle)
