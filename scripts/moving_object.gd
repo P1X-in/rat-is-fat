@@ -53,3 +53,13 @@ func calculate_position(axis_value, old_position, screen_limit):
 
 func get_pos():
     return self.avatar.get_pos()
+
+func calculate_distance_to_object(moving_object):
+    return self.calculate_distance(moving_object.get_pos())
+
+func calculate_distance(their_position):
+    var my_position = self.get_pos()
+    var delta_x = abs(my_position.x) - abs(their_position.x)
+    var delta_y = abs(my_position.y) - abs(their_position.y)
+
+    return sqrt(delta_x * delta_x + delta_y * delta_y)
