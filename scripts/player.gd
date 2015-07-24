@@ -3,6 +3,8 @@ extends "res://scripts/moving_object.gd"
 var is_playing = false
 var is_alive = true
 
+var target_cone
+
 func _init(bag).(bag):
     self.bag = bag
     self.velocity = 4
@@ -11,6 +13,7 @@ func _init(bag).(bag):
     self.body_part_head = self.avatar.get_node('head')
     self.body_part_body = self.avatar.get_node('body')
     self.body_part_footer = self.avatar.get_node('footer')
+    self.target_cone = self.avatar.get_node('target_cone')
 
 func bind_gamepad(id):
     var gamepad = self.bag.input.devices['pad' + str(id)]
