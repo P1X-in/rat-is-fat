@@ -9,7 +9,8 @@ func _init_bag(bag):
 func start_game():
     self.bag.game_state.game_in_progress = true
     self.bag.root.add_child(self.game_board)
-    self.bag.enemies.spawn('shia')
+    var shia = self.bag.enemies.spawn('shia')
+
 
 func end_game():
     self.bag.game_state.game_in_progress = false

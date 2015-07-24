@@ -53,9 +53,9 @@ func calculate_position(axis_value, old_position, screen_limit):
     return new_position
 
 func flip(direction):
-    print('FLIP!!')
     if direction == 0:
         return
+
     var flip_sprite = false
     if direction > 0:
         flip_sprite = true
@@ -63,16 +63,6 @@ func flip(direction):
     self.body_part_head.set_flip_h(flip_sprite)
     self.body_part_body.set_flip_h(flip_sprite)
     self.body_part_footer.set_flip_h(flip_sprite)
-
-func calculate_distance_to_object(moving_object):
-    return self.calculate_distance(moving_object.get_pos())
-
-func calculate_distance(their_position):
-    var my_position = self.get_pos()
-    var delta_x = abs(my_position.x) - abs(their_position.x)
-    var delta_y = abs(my_position.y) - abs(their_position.y)
-
-    return sqrt(delta_x * delta_x + delta_y * delta_y)
 
 func reset_movement():
     self.movement_vector = [0, 0]

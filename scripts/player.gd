@@ -70,3 +70,8 @@ func adjust_attack_cone():
         angle = -tangent - PI/2
         print(angle)
     self.target_cone.set_rot(angle)
+    self.despawn()
+
+func attack():
+    self.bag.enemies.get_enemies_nearby_object(self)
+    print('attack!!!!')

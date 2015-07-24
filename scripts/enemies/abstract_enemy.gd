@@ -4,6 +4,7 @@ var destination = [0, 0]
 var target = null
 var aggro_range = 200
 var attack_range = 50
+var id = 0
 
 func _init(bag).(bag):
     self.initial_position = Vector2(200, 200)
@@ -52,3 +53,12 @@ func process(delta):
     self.reset_movement()
     self.process_ai()
     self.modify_position()
+
+func attack():
+    print('ENEMY IS ATTACKING!!')
+
+func die():
+    self.is_processing = false
+    self.bag.enemies.del_enemy(self)
+    self.despawn()
+
