@@ -1,2 +1,5 @@
 
 *.sublime-*
+.fscache
+.idea
+*.keystore
