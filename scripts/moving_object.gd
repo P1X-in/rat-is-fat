@@ -37,6 +37,7 @@ func modify_position():
     new_position.x = self.calculate_position(self.movement_vector[0], position.x, self.screen.x)
     new_position.y = self.calculate_position(self.movement_vector[1], position.y, self.screen.y)
     self.avatar.set_pos(new_position)
+    self.flip(self.movement_vector[0])
 
 func calculate_position(axis_value, old_position, screen_limit):
     if abs(axis_value) < self.AXIS_THRESHOLD:
@@ -53,3 +54,14 @@ func calculate_position(axis_value, old_position, screen_limit):
 
 func get_pos():
     return self.avatar.get_pos()
+
+func flip(direction):
+    if direction == 0:
+        return
+    var flip_sprite = false
+    if direction > 0:
+        flip_sprite = true
+
+    self.body_part_head.set_flip_h(flip_sprite)
+    self.body_part_body.set_flip_h(flip_sprite)
+    self.body_part_footer.set_flip_h(flip_sprite)
