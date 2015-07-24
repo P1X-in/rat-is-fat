@@ -19,6 +19,7 @@ func spawn():
     self.is_processing = true
     self.bag.action_controller.game_board.add_child(self.avatar)
     self.avatar.set_pos(self.initial_position)
+    self.bag.processing.register(self)
 
 func despawn():
     self.bag.action_controller.game_board.remove_child(self.avatar)
@@ -77,3 +78,5 @@ func calculate_distance(their_position):
 
     return sqrt(delta_x * delta_x + delta_y * delta_y)
 
+func reset_movement():
+    self.movement_vector = [0, 0]

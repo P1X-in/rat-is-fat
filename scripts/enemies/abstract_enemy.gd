@@ -1,14 +1,13 @@
 extends "res://scripts/moving_object.gd"
 
 var destination = [0, 0]
-var target
+var target = null
 var aggro_range = 200
 var attack_range = 50
 
 func _init(bag).(bag):
     self.initial_position = Vector2(200, 200)
     self.velocity = 5
-    self.movement_vector = [0.3, 0.3]
 
 func go_to(x, y):
     self.destination[0] = x
@@ -17,15 +16,16 @@ func go_to(x, y):
 func process_ai():
     var distance
     var direction
-    if target != null:
+    if self.target == null:
         for player in self.bag.players.players:
-            distance = self.calculate_distance_to_object(player)
-            if distance < self.aggro_range:
-                if self.target != null:
-                    if self.calculate_distance_to_object(self.target) > distance:
-                        self.target = target
-                else:
-                    self.target = target
+            if player.is_playing:
+                distance = self.calculate_distance_to_object(player)
+                if distance < self.aggro_range:
+                    if self.target != null:
+                        if self.calculate_distance_to_object(self.target) > distance:
+                            self.target = player
+                    else:
+                        self.target = player
     else:
         distance = self.calculate_distance_to_object(self.target)
         if distance > self.attack_range:
@@ -43,5 +43,6 @@ func cast_movement_vector(destination_point):
     return Vector2(delta_x, delta_y)
 
 func process(delta):
+    self.reset_movement()
     self.process_ai()
     self.modify_position()
