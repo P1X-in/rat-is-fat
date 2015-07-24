@@ -1,6 +1,4 @@
-
-var bag
-var is_processing = false
+extends "res://scripts/object.gd"
 
 var velocity
 var movement_vector = [0, 0]
@@ -9,13 +7,11 @@ var AXIS_THRESHOLD = 0.15
 
 var screen = OS.get_video_mode_size()
 
-var avatar
 var body_part_head
 var body_part_body
 var body_part_footer
-var initial_position = Vector2(0, 0)
 
-func _init(bag):
+func _init(bag).(bag):
     self.bag = bag
 
 func spawn():
@@ -56,11 +52,8 @@ func calculate_position(axis_value, old_position, screen_limit):
 
     return new_position
 
-func get_pos():
-    return self.avatar.get_pos()
-
-
 func flip(direction):
+    print('FLIP!!')
     if direction == 0:
         return
     var flip_sprite = false
