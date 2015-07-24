@@ -1,4 +1,6 @@
 
+var bag
+
 var devices = {
     "keyboard" : preload("res://scripts/input/keyboard.gd").new(),
     "mouse" : preload("res://scripts/input/mouse.gd").new(),
@@ -9,6 +11,7 @@ var devices = {
 }
 
 func _init_bag(bag):
+    self.bag = bag
     self.load_basic_input()
 
 func handle_event(event):
@@ -18,3 +21,4 @@ func handle_event(event):
 
 func load_basic_input():
     self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/quit_game.gd").new())
+    self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/start_game.gd").new(self.bag))
