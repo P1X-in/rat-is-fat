@@ -4,7 +4,7 @@ var bag
 
 func _init(bag):
     self.bag = bag
-    self.scancode = KEY_ENTER
+    self.scancode = KEY_RETURN
 
 func handle(event):
     if event.is_pressed() && not self.bag.game_state.game_in_progress:
