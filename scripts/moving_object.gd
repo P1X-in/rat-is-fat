@@ -10,6 +10,9 @@ var AXIS_THRESHOLD = 0.15
 var screen = OS.get_video_mode_size()
 
 var avatar
+var body_part_head
+var body_part_body
+var body_part_footer
 var initial_position = Vector2(0, 0)
 
 func _init(bag):

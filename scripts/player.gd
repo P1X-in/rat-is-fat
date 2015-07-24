@@ -2,13 +2,10 @@ extends "res://scripts/moving_object.gd"
 
 var is_playing = false
 var is_alive = true
-var body_part_head
-var body_part_body
-var body_part_footer
 
 func _init(bag).(bag):
     self.bag = bag
-    self.velocity = 10
+    self.velocity = 4
     self.avatar = preload("res://scenes/player/player.xscn").instance()
     self.initial_position = Vector2(100, 100)
     self.body_part_head = self.avatar.get_node('head')
@@ -28,7 +25,6 @@ func bind_keyboard_and_mouse():
     keyboard.register_handler(preload("res://scripts/input/handlers/player_move_key.gd").new(self.bag, self, 1, KEY_S, 1))
     keyboard.register_handler(preload("res://scripts/input/handlers/player_move_key.gd").new(self.bag, self, 0, KEY_A, -1))
     keyboard.register_handler(preload("res://scripts/input/handlers/player_move_key.gd").new(self.bag, self, 0, KEY_D, 1))
-    self.velocity = 2
 
 func enter_game():
     self.is_playing = true
@@ -39,6 +35,7 @@ func spawn():
     self.is_processing = true
     self.bag.action_controller.game_board.add_child(self.avatar)
     self.avatar.set_pos(self.initial_position)
+    self.bag.processing.register(self)
 
 func die():
     self.is_alive = false

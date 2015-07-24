@@ -7,7 +7,7 @@ var attack_range = 50
 
 func _init(bag).(bag):
     self.initial_position = Vector2(200, 200)
-    self.velocity = 5
+    self.velocity = 2
 
 func go_to(x, y):
     self.destination[0] = x
