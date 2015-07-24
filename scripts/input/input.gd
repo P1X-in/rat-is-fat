@@ -8,5 +8,13 @@ var devices = {
     "pad3" : preload("res://scripts/input/gamepad.gd").new(3),
 }
 
-var handle_event(event):
-    return
+func _init_bag(bag):
+    self.load_basic_input()
+
+func handle_event(event):
+    for device in self.devices:
+        if self.devices[device].can_handle(event):
+            self.devices[device].handle_event(event)
+
+func load_basic_input():
+    self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/quit_game.gd").new())

@@ -1,4 +1,3 @@
-
 extends "res://scripts/input/abstract_device.gd"
 
 func _init(device_id):

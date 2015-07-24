@@ -2,6 +2,8 @@
 var handled_input_types = []
 var device_id = null
 
+var event_handlers = []
+
 func can_handle(event):
     for type in self.handled_input_types:
         if event.type == type:
@@ -12,3 +14,9 @@ func can_handle(event):
                 return true
     return false
 
+func register_handler(handler):
+    self.event_handlers.append(handler)
+
+func handle_event(event):
+    for handler in self.event_handlers:
+        handler.handle(event)
