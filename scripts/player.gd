@@ -14,6 +14,10 @@ func bind_gamepad(id):
     gamepad.register_handler(preload("res://scripts/input/handlers/player_move_axis.gd").new(self.bag, self, 0))
     gamepad.register_handler(preload("res://scripts/input/handlers/player_move_axis.gd").new(self.bag, self, 1))
 
+func bind_keyboard_and_mouse():
+    var keyboard = self.bag.input.devices['keyboard']
+    keyboard.register_handler(preload("res://scripts/input/handlers/player_enter_game_keyboard.gd").new(self.bag, self))
+
 func enter_game():
     self.is_playing = true
     self.spawn()
