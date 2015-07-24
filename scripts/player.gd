@@ -7,6 +7,7 @@ func _init(bag).(bag):
     self.bag = bag
     self.velocity = 10
     self.avatar = preload("res://scenes/player/player.xscn").instance()
+    self.initial_position = Vector2(100, 100)
 
 func bind_gamepad(id):
     var gamepad = self.bag.input.devices['pad' + str(id)]
@@ -25,15 +26,12 @@ func bind_keyboard_and_mouse():
 func enter_game():
     self.is_playing = true
     self.spawn()
-    self.avatar.set_pos(Vector2(100, 100))
 
 func spawn():
     self.is_alive = true
     self.is_processing = true
     self.bag.action_controller.game_board.add_child(self.avatar)
-
-func despawn():
-    self.bag.action_controller.game_board.remove_child(self.avatar)
+    self.avatar.set_pos(self.initial_position)
 
 func die():
     self.is_alive = false

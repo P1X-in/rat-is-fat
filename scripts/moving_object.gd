@@ -10,9 +10,22 @@ var AXIS_THRESHOLD = 0.15
 var screen = OS.get_video_mode_size()
 
 var avatar
+var initial_position = Vector2(0, 0)
 
 func _init(bag):
     self.bag = bag
+
+func spawn():
+    self.is_processing = true
+    self.bag.action_controller.game_board.add_child(self.avatar)
+    self.avatar.set_pos(self.initial_position)
+
+func despawn():
+    self.bag.action_controller.game_board.remove_child(self.avatar)
+
+func die():
+    self.is_processing = false
+    self.despawn()
 
 func process(delta):
     self.modify_position()
@@ -38,3 +51,5 @@ func calculate_position(axis_value, old_position, screen_limit):
 
     return new_position
 
+func get_pos():
+    return self.avatar.get_pos()
