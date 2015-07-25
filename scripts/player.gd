@@ -5,6 +5,7 @@ var is_alive = true
 var attack_range = 100
 var attack_width = PI * 0.33
 var attack_strength = 1
+var blast
 
 var target_cone
 var target_cone_vector = [0, 0]
@@ -21,6 +22,7 @@ func _init(bag, player_id).(bag):
     self.body_part_footer = self.avatar.get_node('footer')
     self.target_cone = self.avatar.get_node('attack_cone')
     self.animations = self.avatar.get_node('body_animations')
+    self.blast = self.avatar.get_node('blast_animations')
 
     self.bind_gamepad(player_id)
     self.panel = self.bag.hud.bind_player_panel(player_id)
@@ -81,11 +83,13 @@ func attack():
 
     if not self.animations.get_current_animation() == 'attack1' and not self.animations.get_current_animation() == 'attack2' :
         self.animations.play(random_attack);
+        self.blast.play('blast')
     elif not self.animations.is_playing():
         if self.animations.get_current_animation() == 'attack1':
             self.animations.play('attack2')
         else:
             self.animations.play('attack1')
+        self.blast.play('blast')
 
     enemies = self.bag.enemies.get_enemies_near_object(self, self.attack_range, self.target_cone_vector, self.attack_width)
     for enemy in enemies:

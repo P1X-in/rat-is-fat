@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="11" version="1.1" version_name="Godot Engine v1.1.stable.d3b42e41b0">
+<resource_file type="PackedScene" subresource_count="13" version="1.1" version_name="Godot Engine v1.1.stable.d3b42e41b0">
 	<ext_resource path="res://scenes/player/assets/shadow.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/body.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/head.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/footer.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/attack.png" type="Texture"></ext_resource>
+	<ext_resource path="res://scenes/player/assets/attack_blast.png" type="Texture"></ext_resource>
 	<resource type="CircleShape2D" path="local://0">
 		<real name="custom_solver_bias"> 0 </real>
 		<real name="radius"> 10 </real>
 
 	</resource>
 	<resource type="Animation" path="local://1">
-		<string name="resource/name"> "attack2" </string>
 		<real name="length"> 0.4 </real>
 		<bool name="loop"> False </bool>
 		<real name="step"> 0.2 </real>
@@ -127,7 +127,6 @@
 
 	</resource>
 	<resource type="Animation" path="local://3">
-		<string name="resource/name"> "attack1" </string>
 		<real name="length"> 0.4 </real>
 		<bool name="loop"> False </bool>
 		<real name="step"> 0.2 </real>
@@ -168,6 +167,47 @@
 
 	</resource>
 	<resource type="Animation" path="local://4">
+		<string name="resource/name"> "blast" </string>
+		<real name="length"> 0.5 </real>
+		<bool name="loop"> False </bool>
+		<real name="step"> 0.1 </real>
+		<string name="tracks/0/type"> "value" </string>
+		<node_path name="tracks/0/path"> "attack_cone/attack_blast:visibility/visible" </node_path>
+		<int name="tracks/0/interp"> 1 </int>
+		<dictionary name="tracks/0/keys" shared="false">
+			<string> "cont" </string>
+			<bool> False </bool>
+			<string> "times" </string>
+			<real_array  len="2"> 				0, 0.4 </real_array>
+			<string> "transitions" </string>
+			<real_array  len="2"> 				1, 1 </real_array>
+			<string> "values" </string>
+			<array  len="2" shared="false">
+				<bool> True </bool>
+				<bool> False </bool>
+			</array>
+		</dictionary>
+		<string name="tracks/1/type"> "value" </string>
+		<node_path name="tracks/1/path"> "attack_cone/attack_blast:frame" </node_path>
+		<int name="tracks/1/interp"> 1 </int>
+		<dictionary name="tracks/1/keys" shared="false">
+			<string> "cont" </string>
+			<bool> False </bool>
+			<string> "times" </string>
+			<real_array  len="4"> 				0, 0.1, 0.2, 0.3 </real_array>
+			<string> "transitions" </string>
+			<real_array  len="4"> 				1, 1, 1, 1 </real_array>
+			<string> "values" </string>
+			<array  len="4" shared="false">
+				<int> 0 </int>
+				<int> 1 </int>
+				<int> 2 </int>
+				<int> 3 </int>
+			</array>
+		</dictionary>
+
+	</resource>
+	<resource type="Animation" path="local://5">
 		<real name="length"> 1.2 </real>
 		<bool name="loop"> True </bool>
 		<real name="step"> 0.2 </real>
@@ -200,7 +240,7 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="58">
+			<string_array  len="61">
 				<string> "player" </string>
 				<string> "KinematicBody2D" </string>
 				<string> "_import_path" </string>
@@ -245,6 +285,7 @@
 				<string> "attack_cone" </string>
 				<string> "Node2D" </string>
 				<string> "attack_front" </string>
+				<string> "attack_blast" </string>
 				<string> "body_animations" </string>
 				<string> "AnimationPlayer" </string>
 				<string> "playback/process_mode" </string>
@@ -257,15 +298,17 @@
 				<string> "playback/speed" </string>
 				<string> "blend_times" </string>
 				<string> "autoplay" </string>
+				<string> "blast_animations" </string>
+				<string> "anims/blast" </string>
 				<string> "cone_animations" </string>
 				<string> "anims/attack" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 10 </int>
+			<int> 12 </int>
 			<string> "nodes" </string>
-			<int_array  len="404"> 				-1, -1, 1, 0, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 3, 14, 9, 15, 10, 16, 8, 17, 3, 18, 3, 19, 11, 20, 12, 0, 0, 0, 22, 21, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 13, 8, 5, 9, 6, 10, 7, 11, 1, 23, 14, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 34, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 17, 8, 5, 9, 6, 10, 7, 11, 1, 23, 18, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 19, 30, 3, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 35, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 20, 8, 5, 9, 6, 10, 7, 11, 1, 23, 21, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 22, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 36, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 23, 8, 5, 9, 6, 10, 7, 11, 1, 23, 24, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 25, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 38, 37, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 26, 8, 5, 9, 6, 10, 7, 11, 1, 39, 9, 40, 8, 0, 0, 0, 42, 41, -1, 11, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 27, 8, 5, 9, 6, 10, 7, 11, 1, 20, 28, 0, 6, 0, 22, 43, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 29, 8, 5, 9, 6, 10, 7, 11, 1, 23, 30, 24, 1, 25, 4, 26, 8, 27, 8, 28, 31, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 45, 44, -1, 11, 2, 0, 46, 3, 47, 5, 48, 32, 49, 33, 50, 34, 51, 35, 52, 1, 53, 2, 54, 36, 55, 37, 0, 0, 0, 45, 56, -1, 9, 2, 0, 46, 3, 47, 5, 48, 32, 57, 38, 52, 1, 53, 2, 54, 36, 55, 39, 0 </int_array>
+			<int_array  len="478"> 				-1, -1, 1, 0, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 3, 14, 9, 15, 10, 16, 8, 17, 3, 18, 3, 19, 11, 20, 12, 0, 0, 0, 22, 21, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 13, 8, 5, 9, 6, 10, 7, 11, 1, 23, 14, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 34, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 17, 8, 5, 9, 6, 10, 7, 11, 1, 23, 18, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 19, 30, 3, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 35, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 20, 8, 5, 9, 6, 10, 7, 11, 1, 23, 21, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 22, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 36, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 23, 8, 5, 9, 6, 10, 7, 11, 1, 23, 24, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 25, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 38, 37, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 26, 8, 5, 9, 6, 10, 7, 11, 1, 39, 9, 40, 8, 0, 0, 0, 42, 41, -1, 11, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 27, 8, 5, 9, 6, 10, 7, 11, 1, 20, 28, 0, 6, 0, 22, 43, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 29, 8, 5, 9, 6, 10, 7, 11, 1, 23, 30, 24, 1, 25, 4, 26, 8, 27, 8, 28, 31, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 6, 0, 22, 44, -1, 21, 2, 0, 3, 8, 4, 2, 5, 2, 6, 3, 7, 32, 8, 5, 9, 6, 10, 7, 11, 1, 23, 33, 24, 1, 25, 4, 26, 8, 27, 8, 28, 22, 29, 22, 30, 25, 31, 15, 32, 8, 33, 16, 0, 0, 0, 46, 45, -1, 11, 2, 0, 47, 3, 48, 5, 49, 34, 50, 35, 51, 36, 52, 37, 53, 1, 54, 2, 55, 38, 56, 39, 0, 0, 0, 46, 57, -1, 9, 2, 0, 47, 3, 48, 5, 49, 34, 58, 40, 53, 1, 54, 41, 55, 38, 56, 42, 0, 0, 0, 46, 59, -1, 9, 2, 0, 47, 3, 48, 5, 49, 34, 60, 43, 53, 1, 54, 2, 55, 38, 56, 44, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="40" shared="false">
+			<array  len="45" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -286,7 +329,7 @@
 						<string> "2D" </string>
 						<dictionary  shared="false">
 							<string> "ofs" </string>
-							<vector2> -109.754, -42.2962 </vector2>
+							<vector2> -301.23, -150.608 </vector2>
 							<string> "snap_grid" </string>
 							<bool> False </bool>
 							<string> "snap_offset" </string>
@@ -306,7 +349,7 @@
 							<string> "snap_step" </string>
 							<vector2> 10, 10 </vector2>
 							<string> "zoom" </string>
-							<real> 4.658991 </real>
+							<real> 2.050546 </real>
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
@@ -427,12 +470,12 @@
 				<dictionary  shared="false">
 					<string> "_edit_lock_" </string>
 					<bool> True </bool>
-					<string> "_editor_collapsed" </string>
-					<bool> True </bool>
 				</dictionary>
 				<vector2> 0, -26 </vector2>
 				<resource  resource_type="Texture" path="res://scenes/player/assets/attack.png">  </resource>
 				<int> 6 </int>
+				<vector2> 0, -36 </vector2>
+				<resource  resource_type="Texture" path="res://scenes/player/assets/attack_blast.png">  </resource>
 				<node_path> ".." </node_path>
 				<resource  resource_type="Animation" path="local://1">  </resource>
 				<resource  resource_type="Animation" path="local://2">  </resource>
@@ -441,6 +484,9 @@
 				</array>
 				<string> "run" </string>
 				<resource  resource_type="Animation" path="local://4">  </resource>
+				<real> 2 </real>
+				<string> "" </string>
+				<resource  resource_type="Animation" path="local://5">  </resource>
 				<string> "attack" </string>
 			</array>
 			<string> "version" </string>
