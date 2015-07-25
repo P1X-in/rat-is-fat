@@ -55,3 +55,6 @@ func calculate_distance(their_position):
     var delta_y = abs(my_position.y) - abs(their_position.y)
 
     return sqrt(delta_x * delta_x + delta_y * delta_y)
+
+func recieve_damage(damage):
+    self.set_hp(self.hp - damage)

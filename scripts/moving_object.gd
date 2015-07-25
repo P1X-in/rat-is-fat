@@ -21,7 +21,9 @@ func spawn():
     self.bag.processing.register(self)
 
 func despawn():
+    self.bag.processing.remove(self)
     self.bag.action_controller.game_board.remove_child(self.avatar)
+    self.avatar.queue_free()
 
 func die():
     self.is_processing = false

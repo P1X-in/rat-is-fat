@@ -4,6 +4,7 @@ var destination = [0, 0]
 var target = null
 var aggro_range = 200
 var attack_range = 50
+var attack_strength = 1
 var id = 0
 
 func _init(bag).(bag):

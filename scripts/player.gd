@@ -2,8 +2,9 @@ extends "res://scripts/moving_object.gd"
 
 var is_playing = false
 var is_alive = true
-var attack_range = 50
+var attack_range = 100
 var attack_width = PI * 0.33
+var attack_strength = 1
 
 var target_cone
 var target_cone_vector = [0, 0]
@@ -68,4 +69,5 @@ func adjust_attack_cone():
 func attack():
     var enemies
     enemies = self.bag.enemies.get_enemies_near_object(self, self.attack_range, self.target_cone_vector, self.attack_width)
-    print('attack!!!!')
+    for enemy in enemies:
+        enemy.recieve_damage(self.attack_strength)
