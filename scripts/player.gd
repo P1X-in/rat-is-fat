@@ -73,3 +73,17 @@ func attack():
     for enemy in enemies:
         enemy.recieve_damage(self.attack_strength)
         enemy.push_back(self)
+
+func get_power(amount):
+    self.attack_strength += amount
+    if self.attack_range >= 16:
+        self.die();
+        
+    self.hp -= amount
+    self.max_hp -= amount
+
+func get_fat(amount):
+    self.hp += amount
+    self.max_hp += amount
+
+
