@@ -28,6 +28,10 @@ func modify_position(delta):
     var y = self.apply_axis_threshold(self.movement_vector[1])
     var motion = Vector2(x, y) * self.velocity * delta
     self.avatar.move(motion)
+    if (self.avatar.is_colliding()):
+        var n = self.avatar.get_collision_normal()
+        motion = n.slide(motion)
+        self.avatar.move(motion)
     self.flip(self.movement_vector[0])
 
 func apply_axis_threshold(axis_value):
