@@ -13,6 +13,8 @@ var target_cone_angle = 0.0
 
 var panel
 
+var EXIT_THRESHOLD = 10
+
 func _init(bag, player_id).(bag):
     self.bag = bag
     self.velocity = 200
@@ -64,8 +66,8 @@ func die():
 
 func process(delta):
     self.adjust_attack_cone()
-
     .process(delta)
+    self.check_doors()
 
 func modify_position(delta):
     .modify_position(delta)
@@ -129,4 +131,43 @@ func check_colisions():
     return
     #print ('fff', self.avatar)
 
+func check_doors():
+    if not self.bag.game_state.doors_open:
+        return;
+
+    var door_coords
+    var cell = self.bag.game_state.current_cell
+    if cell.north != null:
+        door_coords = self.bag.room_loader.door_definitions['north'][1]
+        if self.check_exit(door_coords, cell.north):
+            self.move_to_entry_position('south')
+            return
+    if cell.south != null:
+        door_coords = self.bag.room_loader.door_definitions['south'][1]
+        if self.check_exit(door_coords, cell.south):
+            self.move_to_entry_position('north')
+            return
+    if cell.east != null:
+        door_coords = self.bag.room_loader.door_definitions['east'][1]
+        if self.check_exit(door_coords, cell.east):
+            self.move_to_entry_position('west')
+            return
+    if cell.west != null:
+        door_coords = self.bag.room_loader.door_definitions['west'][1]
+        if self.check_exit(door_coords, cell.west):
+            self.move_to_entry_position('east')
+            return
+
+func check_exit(door_coords, cell):
+    var exit_area = self.bag.room_loader.translate_position(Vector2(door_coords[0] + self.bag.room_loader.side_offset, door_coords[1]))
+    var distance = self.calculate_distance(exit_area)
+    if distance < self.EXIT_THRESHOLD:
+        self.bag.map.switch_to_cell(cell)
+        return true
+    return false
+
+func move_to_entry_position(name):
+    var entry_position
+    entry_position = self.bag.room_loader.get_spawn_position(name)
+    self.avatar.set_pos(self.initial_position)
 

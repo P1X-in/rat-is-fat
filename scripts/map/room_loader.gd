@@ -82,9 +82,11 @@ func open_passage(data, passage):
     return data
 
 func close_doors():
+    self.bag.game_state.doors_open = false
     self.switch_doors(3)
 
 func open_doors():
+    self.bag.game_state.doors_open = true
     self.switch_doors(2)
 
 func switch_doors(tile_index):
@@ -116,7 +118,6 @@ func apply_room_data(data):
             self.tilemap.set_cell(x + self.side_offset, y, data[y][x])
 
 func spawn_enemies(enemies):
-    return
     var position = Vector2(0, 0)
     for enemy_data in enemies:
         position.x = enemy_data[0] + self.side_offset
