@@ -38,6 +38,8 @@ func process_ai():
             self.target = null
         elif distance > self.attack_range:
             direction = self.cast_movement_vector(self.target.get_pos())
+        else:
+            self.attack()
     self.movement_vector[0] = direction.x
     self.movement_vector[1] = direction.y
 
