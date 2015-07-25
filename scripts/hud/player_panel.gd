@@ -7,11 +7,9 @@ func _init(bag, panel_node):
     self.panel = panel_node
 
 func show():
-    self.panel.show()
     self.joined()
 
 func hide():
-    self.panel.hide()
     self.dead()
 
 func joined():

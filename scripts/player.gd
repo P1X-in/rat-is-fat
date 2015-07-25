@@ -64,6 +64,7 @@ func spawn(position):
 
 func die():
     self.is_alive = false
+    self.panel.hide()
     .die()
 
 func process(delta):
