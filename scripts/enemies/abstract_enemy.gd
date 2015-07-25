@@ -5,6 +5,8 @@ var target = null
 var aggro_range = 200
 var attack_range = 50
 var attack_strength = 1
+var attack_cooldown = 1
+var is_attack_on_cooldown = false
 var id = 0
 
 func _init(bag).(bag):
@@ -39,7 +41,7 @@ func process_ai():
             self.target = null
         elif distance > self.attack_range:
             direction = self.cast_movement_vector(self.target.get_pos())
-        else:
+        elif not self.is_attack_on_cooldown:
             self.attack()
 
     if self.push_back:
@@ -68,8 +70,13 @@ func apply_axis_threshold(axis_value):
     return axis_value
 
 func attack():
-    return
-    #print('ENEMY IS ATTACKING!!')
+    self.is_attack_on_cooldown = true
+    self.target.push_back(self)
+    self.target.recieve_damage(self.attack_strength)
+    self.bag.timers.set_timeout(self.attack_cooldown, self, "attack_cooled_down")
+
+func attack_cooled_down():
+    self.is_attack_on_cooldown = false
 
 func die():
     self.is_processing = false
