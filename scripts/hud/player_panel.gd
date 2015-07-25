@@ -1,6 +1,7 @@
 
 var bag
 var panel
+var points
 
 var fat_bar = []
 var power_bar = []
@@ -8,6 +9,7 @@ var power_bar = []
 func _init(bag, panel_node):
     self.bag = bag
     self.panel = panel_node
+    self.points = self.panel.get_node('stats/fat_2')
     for i in range(0, 16):
         self.fat_bar.append(self.panel.get_node('stats/fat/progress' + str(i)))
         self.power_bar.append(self.panel.get_node('stats/power/progress' + str(i)))
@@ -25,6 +27,9 @@ func update_bar(bar, value, frame_offset):
             bar[i].set_frame(0 + frame_offset)
         else:
             bar[i].hide()
+
+func update_points(value):
+    self.points.set_text(str(value))
 
 func show():
     self.joined()

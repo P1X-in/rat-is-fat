@@ -6,6 +6,7 @@ var max_hp
 var avatar
 var is_processing = false
 var initial_position = Vector2(0, 0)
+var score = 100
 
 func _init(bag):
     self.bag = bag
@@ -68,4 +69,6 @@ func calculate_distance(their_position):
 func recieve_damage(damage):
     self.set_hp(self.hp - damage)
 
+func will_die(damage):
+    return damage >= self.hp
 

@@ -23,6 +23,7 @@ func _init(bag, player_id).(bag):
     self.velocity = 200
     self.hp = 10
     self.max_hp = 10
+    self.score = 0
     self.avatar = preload("res://scenes/player/player.xscn").instance()
     self.body_part_head = self.avatar.get_node('head')
     self.hat = self.body_part_head.get_node('hat')
@@ -104,8 +105,9 @@ func handle_items():
             self.get_fat(item.power_up_amount)
         else:
             self.get_powert(item.power_up_amount)
-
+        self.score = self.score + item.score
         item.pick()
+        self.update_bars()
 
 
 func adjust_attack_cone():
@@ -131,8 +133,10 @@ func attack():
 
     enemies = self.bag.enemies.get_enemies_near_object(self, self.attack_range, self.target_cone_vector, self.attack_width)
     for enemy in enemies:
-        enemy.recieve_damage(self.attack_strength)
         enemy.push_back(self)
+        if enemy.will_die(self.attack_strength):
+            self.score += enemy.score
+        enemy.recieve_damage(self.attack_strength)
 
 func get_power(amount):
     self.attack_strength += amount
@@ -200,6 +204,7 @@ func move_to_entry_position(name):
 func update_bars():
     self.panel.update_bar(self.panel.fat_bar, self.hp - 1, 0)
     self.panel.update_bar(self.panel.power_bar, self.attack_strength - 1, 3)
+    self.panel.update_points(self.score)
 
 func set_hp(hp):
     .set_hp(hp)
@@ -214,3 +219,4 @@ func reset():
     self.is_playing = false
     self.is_alive = true
     self.movement_vector = [0, 0]
+    self.score = 0
