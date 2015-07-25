@@ -9,8 +9,8 @@ var initial_position = Vector2(0, 0)
 
 func _init(bag):
     self.bag = bag
-    self.max_hp = 10
-    self.hp = 10
+    self.max_hp = 5
+    self.hp = 5
 
 
 func get_hp():

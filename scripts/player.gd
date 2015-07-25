@@ -13,6 +13,7 @@ var target_cone_vector = [0, 0]
 var target_cone_angle = 0.0
 
 var panel
+var hp_cap = 16
 
 var EXIT_THRESHOLD = 30
 
@@ -20,6 +21,8 @@ func _init(bag, player_id).(bag):
     self.bag = bag
     self.player_id = player_id
     self.velocity = 200
+    self.hp = 10
+    self.max_hp = 10
     self.avatar = preload("res://scenes/player/player.xscn").instance()
     self.body_part_head = self.avatar.get_node('head')
     self.hat = self.body_part_head.get_node('hat')
@@ -32,6 +35,7 @@ func _init(bag, player_id).(bag):
     self.bind_gamepad(player_id)
     self.panel = self.bag.hud.bind_player_panel(player_id)
     self.hat.set_frame(player_id)
+    self.update_bars()
 
 func bind_gamepad(id):
     var gamepad = self.bag.input.devices['pad' + str(id)]
@@ -130,15 +134,17 @@ func attack():
 
 func get_power(amount):
     self.attack_strength += amount
-    if self.attack_range >= 16:
+    if self.attack_strength >= 16:
         self.die();
 
     self.hp -= amount
     self.max_hp -= amount
+    self.update_bars()
 
 func get_fat(amount):
     self.hp += amount
     self.max_hp += amount
+    self.update_bars()
 
 func check_colisions():
     return
@@ -185,3 +191,10 @@ func move_to_entry_position(name):
     entry_position = self.bag.room_loader.get_spawn_position(name + str(self.player_id))
     self.avatar.set_pos(entry_position)
 
+func update_bars():
+    self.panel.update_bar(self.panel.fat_bar, self.hp - 1, 0)
+    self.panel.update_bar(self.panel.power_bar, self.attack_strength - 1, 3)
+
+func set_hp(hp):
+    .set_hp(hp)
+    self.update_bars()
