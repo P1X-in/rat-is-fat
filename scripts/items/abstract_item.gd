@@ -12,6 +12,7 @@ func _init(bag).(bag):
 
 func die():
     self.bag.items.del_item(self)
+    self.bag.game_state.current_cell.del_item(self)
     self.despawn()
 
 func pick():

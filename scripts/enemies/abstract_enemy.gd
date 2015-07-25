@@ -2,7 +2,7 @@ extends "res://scripts/moving_object.gd"
 
 var destination = [0, 0]
 var target = null
-var aggro_range = 200
+var aggro_range = 500
 var attack_range = 50
 var attack_strength = 1
 var attack_cooldown = 1

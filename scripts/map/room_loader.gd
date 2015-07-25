@@ -63,7 +63,12 @@ func load_room(cell):
         self.close_doors()
     else:
         self.open_doors()
-    self.spawn_items(self.bag.game_state.current_room.items)
+    self.bag.items.reset()
+    if cell.items_loaded:
+        self.load_previous_items(cell.items)
+    else:
+        self.spawn_items(self.bag.game_state.current_room.items, cell)
+        cell.items_loaded = true
 
 func create_passages(data, cell):
     if cell.north != null:
@@ -125,13 +130,17 @@ func spawn_enemies(enemies):
         position.y = enemy_data[1]
         self.bag.enemies.spawn(enemy_data[2], position)
 
-func spawn_items(items):
+func spawn_items(items, cell):
     var position = Vector2(0, 0)
-    self.bag.items.reset()
     for item_data in items:
         position.x = item_data[0] + self.side_offset
         position.y = item_data[1]
-        self.bag.items.spawn(item_data[2], position)
+        cell.add_item(self.bag.items.spawn(item_data[2], position))
+
+func load_previous_items(items):
+    for item in items:
+        items[item].attach()
+        self.bag.items.add_item(items[item])
 
 func get_spawn_position(spawn_name):
     var position = self.bag.room_loader.spawns[spawn_name]
