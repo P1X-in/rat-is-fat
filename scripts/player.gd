@@ -56,6 +56,10 @@ func process(delta):
     self.adjust_attack_cone()
     .process(delta)
 
+func modify_position(delta):
+    .modify_position(delta)
+    self.flip(self.target_cone_vector[0])
+
 func adjust_attack_cone():
     if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:
         return
