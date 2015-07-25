@@ -129,7 +129,6 @@ func get_fat(amount):
 
 func check_colisions():
     return
-    #print ('fff', self.avatar)
 
 func check_doors():
     if not self.bag.game_state.doors_open:

@@ -34,7 +34,6 @@ func modify_position(delta):
         var n = self.avatar.get_collision_normal()
         motion = n.slide(motion)
         self.avatar.move(motion)
-        print('collider', self.avatar.get_collider())
     self.flip(self.movement_vector[0])
 
 func apply_axis_threshold(axis_value):
@@ -75,7 +74,6 @@ func push_back(enemy):
 func stun():
     self.is_processing = false
     self.bag.timers.set_timeout(0.15, self, "remove_stun")
-
 
 func remove_stun():
     self.is_processing = true

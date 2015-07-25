@@ -14,7 +14,6 @@ var player_panels = [
 func _init_bag(bag):
     self.bag = bag
     self.hud = self.bag.root.get_node("hud")
-    print(self.hud)
 
 func bind_player_panel(player_num):
     var panel = self.hud.get_node("player" + str(player_num + 1))

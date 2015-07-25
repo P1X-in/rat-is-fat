@@ -6,7 +6,6 @@ var max_hp
 var avatar
 var is_processing = false
 var initial_position = Vector2(0, 0)
-var push_back = false
 
 func _init(bag):
     self.bag = bag

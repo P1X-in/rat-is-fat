@@ -43,13 +43,8 @@ func process_ai():
         elif not self.is_attack_on_cooldown:
             self.attack()
 
-    if self.push_back:
-        print('PUSH BACK!')
-        self.movement_vector[0] = -direction.x
-        self.movement_vector[1] = -direction.y
-    else:
-        self.movement_vector[0] = direction.x
-        self.movement_vector[1] = direction.y
+    self.movement_vector[0] = direction.x
+    self.movement_vector[1] = direction.y
 
 func cast_movement_vector(destination_point):
     var my_position = self.get_pos()
