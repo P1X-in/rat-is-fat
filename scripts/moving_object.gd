@@ -13,8 +13,8 @@ var animations
 func _init(bag).(bag):
     self.bag = bag
 
-func spawn():
-    .spawn()
+func spawn(position):
+    .spawn(position)
     self.bag.processing.register(self)
 
 func despawn():

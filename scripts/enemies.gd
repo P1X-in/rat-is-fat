@@ -10,9 +10,10 @@ var enemies_list = {}
 func _init_bag(bag):
     self.bag = bag
 
-func spawn(name):
+func spawn(name, map_position):
     var new_enemy = self.enemy_templates[name].new(self.bag)
-    new_enemy.spawn()
+    var global_position = self.bag.room_loader.translate_position(map_position)
+    new_enemy.spawn(global_position)
     self.add_enemy(new_enemy)
 
     return new_enemy

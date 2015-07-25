@@ -35,8 +35,9 @@ func get_screen_pos():
     var global_y = position.y / self.bag.camera.zoom.y
     return Vector2(global_x, global_y)
 
-func spawn():
+func spawn(position):
     self.is_processing = true
+    self.initial_position = position
     self.bag.action_controller.attach_object(self.avatar)
     self.avatar.set_pos(self.initial_position)
 

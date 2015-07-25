@@ -16,7 +16,6 @@ func _init(bag, player_id).(bag):
     self.bag = bag
     self.velocity = 200
     self.avatar = preload("res://scenes/player/player.xscn").instance()
-    self.initial_position = Vector2(200, 200)
     self.body_part_head = self.avatar.get_node('head')
     self.body_part_body = self.avatar.get_node('body')
     self.body_part_footer = self.avatar.get_node('footer')
@@ -48,12 +47,12 @@ func bind_keyboard_and_mouse():
 
 func enter_game():
     self.is_playing = true
-    self.spawn()
+    self.spawn(self.bag.room_loader.get_spawn_position('initial'))
     self.panel.show()
 
-func spawn():
+func spawn(position):
     self.is_alive = true
-    .spawn()
+    .spawn(position)
 
 func die():
     self.is_alive = false
