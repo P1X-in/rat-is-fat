@@ -13,32 +13,30 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="48">
-				<string> "Control" </string>
+			<string_array  len="37">
+				<string> "shia" </string>
+				<string> "KinematicBody2D" </string>
 				<string> "_import_path" </string>
 				<string> "visibility/visible" </string>
 				<string> "visibility/opacity" </string>
 				<string> "visibility/self_opacity" </string>
 				<string> "visibility/light_mask" </string>
-				<string> "margin/right" </string>
-				<string> "margin/bottom" </string>
-				<string> "focus_neighbour/left" </string>
-				<string> "focus_neighbour/top" </string>
-				<string> "focus_neighbour/right" </string>
-				<string> "focus_neighbour/bottom" </string>
-				<string> "focus/ignore_mouse" </string>
-				<string> "focus/stop_mouse" </string>
-				<string> "size_flags/horizontal" </string>
-				<string> "size_flags/vertical" </string>
-				<string> "size_flags/stretch_ratio" </string>
-				<string> "__meta__" </string>
-				<string> "body" </string>
-				<string> "Sprite" </string>
 				<string> "transform/pos" </string>
 				<string> "transform/rot" </string>
 				<string> "transform/scale" </string>
 				<string> "z/z" </string>
 				<string> "z/relative" </string>
+				<string> "input/pickable" </string>
+				<string> "shape_count" </string>
+				<string> "shapes/0/shape" </string>
+				<string> "shapes/0/transform" </string>
+				<string> "shapes/0/trigger" </string>
+				<string> "collision/layers" </string>
+				<string> "collision/mask" </string>
+				<string> "collision/margin" </string>
+				<string> "__meta__" </string>
+				<string> "body" </string>
+				<string> "Sprite" </string>
 				<string> "texture" </string>
 				<string> "centered" </string>
 				<string> "offset" </string>
@@ -50,32 +48,28 @@
 				<string> "modulate" </string>
 				<string> "region" </string>
 				<string> "region_rect" </string>
-				<string> "KinematicBody2D" </string>
-				<string> "input/pickable" </string>
-				<string> "shape_count" </string>
-				<string> "shapes/0/shape" </string>
-				<string> "shapes/0/transform" </string>
-				<string> "shapes/0/trigger" </string>
-				<string> "collision/layers" </string>
-				<string> "collision/mask" </string>
-				<string> "collision/margin" </string>
 				<string> "CollisionShape2D" </string>
 				<string> "shape" </string>
 				<string> "trigger" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 4 </int>
+			<int> 3 </int>
 			<string> "nodes" </string>
-			<int_array  len="164"> 				-1, -1, 0, 0, -1, 17, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 4, 8, 0, 9, 0, 10, 0, 11, 0, 12, 5, 13, 1, 14, 6, 15, 6, 16, 2, 17, 7, 0, 0, 0, 19, 18, -1, 21, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 20, 8, 21, 9, 22, 10, 23, 11, 24, 1, 25, 12, 26, 1, 27, 8, 28, 5, 29, 5, 30, 3, 31, 3, 32, 11, 33, 13, 34, 5, 35, 14, 0, 1, 0, 36, 36, -1, 18, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 20, 8, 21, 9, 22, 10, 23, 11, 24, 1, 37, 5, 38, 3, 39, 15, 40, 16, 41, 5, 42, 3, 43, 3, 44, 17, 0, 2, 0, 45, 45, -1, 12, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 20, 18, 21, 9, 22, 10, 23, 11, 24, 1, 46, 15, 47, 5, 0 </int_array>
+			<int_array  len="125"> 				-1, -1, 1, 0, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 3, 14, 9, 15, 10, 16, 8, 17, 3, 18, 3, 19, 11, 20, 12, 0, 0, 0, 22, 21, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 23, 13, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 3, 30, 7, 31, 14, 32, 8, 33, 15, 0, 0, 0, 34, 34, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 16, 8, 5, 9, 6, 10, 7, 11, 1, 35, 9, 36, 8, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="19" shared="false">
+			<array  len="17" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
 				<int> 1 </int>
-				<real> 40 </real>
+				<vector2> 0, 0 </vector2>
+				<real> 0 </real>
+				<vector2> 1, 1 </vector2>
+				<int> 0 </int>
 				<bool> False </bool>
-				<int> 2 </int>
+				<resource  resource_type="Shape2D" path="local://0">  </resource>
+				<matrix32> 1, -0, 0, 1, 0, 15 </matrix32>
+				<real> 0.08 </real>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
 					<string> "2D" </string>
@@ -198,6 +192,15 @@
 							<string> "znear" </string>
 							<real> 0.1 </real>
 						</dictionary>
+						<string> "Script" </string>
+						<dictionary  shared="false">
+							<string> "current" </string>
+							<int> 0 </int>
+							<string> "sources" </string>
+							<array  len="1" shared="false">
+								<string> "res://scripts/moving_object.gd" </string>
+							</array>
+						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>
 					<dictionary  shared="false">
@@ -207,16 +210,9 @@
 						<int> 0 </int>
 					</dictionary>
 				</dictionary>
-				<vector2> 0, 0 </vector2>
-				<real> 0 </real>
-				<vector2> 1, 1 </vector2>
-				<int> 0 </int>
 				<resource  resource_type="Texture" path="res://scenes/enemies/shia.png">  </resource>
 				<color> 1, 1, 1, 1 </color>
 				<rect2> 0, 0, 0, 0 </rect2>
-				<resource  resource_type="Shape2D" path="local://0">  </resource>
-				<matrix32> 1, -0, 0, 1, 0, 15 </matrix32>
-				<real> 0.08 </real>
 				<vector2> 0, 15 </vector2>
 			</array>
 			<string> "version" </string>
