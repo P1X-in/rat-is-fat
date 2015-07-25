@@ -13,7 +13,7 @@ var target_cone_angle = 0.0
 
 var panel
 
-var EXIT_THRESHOLD = 20
+var EXIT_THRESHOLD = 16
 
 func _init(bag, player_id).(bag):
     self.bag = bag
@@ -160,6 +160,7 @@ func check_doors():
 
 func check_exit(door_coords, cell):
     var exit_area = self.bag.room_loader.translate_position(Vector2(door_coords[0] + self.bag.room_loader.side_offset, door_coords[1]))
+    exit_area = exit_area + Vector2(16, 16)
     var distance = self.calculate_distance(exit_area)
     if distance < self.EXIT_THRESHOLD:
         self.bag.map.switch_to_cell(cell)

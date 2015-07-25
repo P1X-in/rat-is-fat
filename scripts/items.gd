@@ -8,6 +8,8 @@ var item_templates = {
 var items_list = {}
 
 func reset():
+    for instance_id in self.items_list:
+        self.items_list[instance_id].detach()
     self.items_list.clear()
 
 func _init_bag(bag):

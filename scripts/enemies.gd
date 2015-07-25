@@ -28,6 +28,7 @@ func del_enemy(enemy):
     self.enemies_list.erase(enemy.get_instance_ID())
     if self.enemies_list.size() == 0:
         self.bag.room_loader.open_doors()
+        self.bag.game_state.current_cell.clear = true
 
 func get_enemies_near_object(object, attack_range, attack_direction, attack_width):
     var result = []

@@ -58,7 +58,7 @@ func load_room(cell):
     self.bag.game_state.current_room = self.room_templates[template_name].new()
     data = self.create_passages(self.bag.game_state.current_room.room, cell)
     self.apply_room_data(data)
-    if self.bag.game_state.current_room.enemies.size() > 0:
+    if self.bag.game_state.current_room.enemies.size() > 0 && not cell.clear:
         self.spawn_enemies(self.bag.game_state.current_room.enemies)
         self.close_doors()
     else:
