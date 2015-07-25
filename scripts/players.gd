@@ -20,3 +20,13 @@ func bind_players():
 func move_to_entry_position(name):
     for player in self.players:
         player.move_to_entry_position(name)
+
+func is_living_player_in_game():
+    for player in self.players:
+        if player.is_playing && player.is_alive:
+            return true
+    return false
+
+func reset():
+    for player in self.players:
+        player.reset()

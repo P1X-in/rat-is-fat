@@ -70,6 +70,8 @@ func die():
     self.is_alive = false
     self.panel.hide()
     .die()
+    if not self.bag.players.is_living_player_in_game():
+        self.bag.action_controller.end_game()
 
 func process(delta):
     self.adjust_attack_cone()
@@ -144,6 +146,10 @@ func get_power(amount):
 func get_fat(amount):
     self.hp += amount
     self.max_hp += amount
+    if self.max_hp > self.hp_cap:
+        self.max_hp = self.hp_cap
+    if self.hp > self.max_hp:
+        self.hp = self.max_hp
     self.update_bars()
 
 func check_colisions():
@@ -198,3 +204,13 @@ func update_bars():
 func set_hp(hp):
     .set_hp(hp)
     self.update_bars()
+
+func reset():
+    self.attack_strength = 1
+    self.hp = 10
+    self.max_hp = 10
+    self.target_cone_vector = [0, 0]
+    self.target_cone_angle = 0.0
+    self.is_playing = false
+    self.is_alive = true
+    self.movement_vector = [0, 0]

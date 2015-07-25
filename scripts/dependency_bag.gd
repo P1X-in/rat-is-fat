@@ -29,3 +29,12 @@ func _init(root_node):
     self.action_controller._init_bag(self)
     self.room_loader._init_bag(self)
     self.map._init_bag(self)
+
+func reset():
+    self.players.reset()
+    self.game_state.reset()
+    self.hud.reset()
+    self.enemies.reset()
+    self.items.reset()
+    self.processing.reset()
+    self.map.reset_map()

@@ -22,3 +22,6 @@ func process(delta):
     for id in self.objects:
         if self.objects[id].is_processing:
             self.objects[id].process(delta)
+
+func reset():
+    self.objects.clear()

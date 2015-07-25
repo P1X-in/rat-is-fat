@@ -18,6 +18,8 @@ func start_game():
 func end_game():
     self.bag.game_state.game_in_progress = false
     self.bag.root.remove_child(self.game_board)
+    self.bag.hud.hide()
+    self.bag.reset()
 
 func attach_object(object):
     self.game_board.add_child(object)

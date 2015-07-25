@@ -27,3 +27,6 @@ func show():
 func hide():
     self.hud.hide()
 
+func reset():
+    for panel in self.player_panels:
+        panel.reset()

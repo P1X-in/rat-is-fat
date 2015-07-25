@@ -41,3 +41,8 @@ func dead():
     self.panel.get_node('dead').show()
     self.panel.get_node('join').hide()
     self.panel.get_node('stats').hide()
+
+func reset():
+    self.panel.get_node('dead').hide()
+    self.panel.get_node('join').show()
+    self.panel.get_node('stats').hide()

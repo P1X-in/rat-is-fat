@@ -18,6 +18,8 @@ func spawn(name, map_position):
     return new_enemy
 
 func reset():
+    for enemy in self.enemies_list:
+        self.enemies_list[enemy].detach()
     self.enemies_list.clear()
 
 func add_enemy(enemy):
