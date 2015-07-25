@@ -21,6 +21,7 @@ func _init(bag, player_id).(bag):
     self.body_part_body = self.avatar.get_node('body')
     self.body_part_footer = self.avatar.get_node('footer')
     self.target_cone = self.avatar.get_node('attack_cone')
+    self.animations = self.avatar.get_node('body_animations')
 
     self.bind_gamepad(player_id)
     self.panel = self.bag.hud.bind_player_panel(player_id)
@@ -75,6 +76,10 @@ func adjust_attack_cone():
 
 func attack():
     var enemies
+    if not self.animations.get_current_animation() == 'attack':
+        self.animations.play('attack');
+    elif not self.animations.is_playing():
+        self.animations.play('attack');
     enemies = self.bag.enemies.get_enemies_near_object(self, self.attack_range, self.target_cone_vector, self.attack_width)
     for enemy in enemies:
         enemy.recieve_damage(self.attack_strength)

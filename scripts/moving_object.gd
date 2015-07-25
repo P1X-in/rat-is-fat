@@ -8,6 +8,7 @@ var AXIS_THRESHOLD = 0.15
 var body_part_head
 var body_part_body
 var body_part_footer
+var animations
 
 func _init(bag).(bag):
     self.bag = bag
