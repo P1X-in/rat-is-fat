@@ -15,7 +15,6 @@ func spawn(name, map_position):
     var global_position = self.bag.room_loader.translate_position(map_position)
     new_enemy.spawn(global_position)
     self.add_enemy(new_enemy)
-    print("enemy ", global_position)
     return new_enemy
 
 func reset():

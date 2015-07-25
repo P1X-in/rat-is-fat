@@ -16,9 +16,9 @@ func _init():
     ]
 
     self.enemies = [
-        [2, 2, 'shia'],
-        [14, 2, 'shia'],
-        [2, 8, 'shia'],
+        [3, 3, 'shia'],
+        [14, 3, 'shia'],
+        [3, 8, 'shia'],
         [14, 8, 'shia'],
     ]
 

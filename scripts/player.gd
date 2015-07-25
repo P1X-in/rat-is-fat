@@ -13,7 +13,7 @@ var target_cone_angle = 0.0
 
 var panel
 
-var EXIT_THRESHOLD = 16
+var EXIT_THRESHOLD = 30
 
 func _init(bag, player_id).(bag):
     self.bag = bag
@@ -138,28 +138,28 @@ func check_doors():
     var cell = self.bag.game_state.current_cell
     if cell.north != null:
         door_coords = self.bag.room_loader.door_definitions['north'][1]
-        if self.check_exit(door_coords, cell.north):
+        if self.check_exit(door_coords, cell.north, Vector2(0, -10)):
             self.move_to_entry_position('south')
             return
     if cell.south != null:
         door_coords = self.bag.room_loader.door_definitions['south'][1]
-        if self.check_exit(door_coords, cell.south):
+        if self.check_exit(door_coords, cell.south, Vector2(0, 40)):
             self.move_to_entry_position('north')
             return
     if cell.east != null:
         door_coords = self.bag.room_loader.door_definitions['east'][1]
-        if self.check_exit(door_coords, cell.east):
+        if self.check_exit(door_coords, cell.east, Vector2(48, 0)):
             self.move_to_entry_position('west')
             return
     if cell.west != null:
         door_coords = self.bag.room_loader.door_definitions['west'][1]
-        if self.check_exit(door_coords, cell.west):
+        if self.check_exit(door_coords, cell.west, Vector2(-28, 0)):
             self.move_to_entry_position('east')
             return
 
-func check_exit(door_coords, cell):
+func check_exit(door_coords, cell, door_offset):
     var exit_area = self.bag.room_loader.translate_position(Vector2(door_coords[0] + self.bag.room_loader.side_offset, door_coords[1]))
-    exit_area = exit_area + Vector2(16, 16)
+    exit_area = exit_area + door_offset
     var distance = self.calculate_distance(exit_area)
     if distance < self.EXIT_THRESHOLD:
         self.bag.map.switch_to_cell(cell)
