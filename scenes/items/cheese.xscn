@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="4" version="1.1" version_name="Godot Engine v1.1.stable.d3b42e41b0">
-	<ext_resource path="res://scenes/items/chees.gd" type="Script"></ext_resource>
+	<ext_resource path="res://scenes/items/cheese.gd" type="Script"></ext_resource>
 	<ext_resource path="res://scenes/items/assets/food.png" type="Texture"></ext_resource>
 	<resource type="CircleShape2D" path="local://0">
 		<real name="custom_solver_bias"> 0 </real>
@@ -85,7 +85,7 @@
 				<resource  resource_type="Shape2D" path="local://0">  </resource>
 				<matrix32> 1, 0, 0, 1, 0, 0 </matrix32>
 				<real> -1 </real>
-				<resource  resource_type="Script" path="res://scenes/items/chees.gd">  </resource>
+				<resource  resource_type="Script" path="res://scenes/items/cheese.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
 					<string> "Script" </string>
@@ -214,7 +214,7 @@
 							<int> 0 </int>
 							<string> "sources" </string>
 							<array  len="1" shared="false">
-								<string> "res://scenes/items/chees.gd" </string>
+								<string> "res://scenes/items/cheese.gd" </string>
 							</array>
 						</dictionary>
 					</dictionary>

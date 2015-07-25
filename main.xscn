@@ -91,13 +91,13 @@
 				<resource  resource_type="Script" path="res://scripts/main.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>
 						<dictionary  shared="false">
 							<string> "ofs" </string>
-							<vector2> -734.337, -614.872 </vector2>
+							<vector2> -782.592, -614.872 </vector2>
 							<string> "snap_grid" </string>
 							<bool> False </bool>
 							<string> "snap_offset" </string>
@@ -214,11 +214,12 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 1 </int>
+							<int> 2 </int>
 							<string> "sources" </string>
-							<array  len="2" shared="false">
+							<array  len="3" shared="false">
 								<string> "res://scripts/object.gd" </string>
 								<string> "res://scripts/moving_object.gd" </string>
+								<string> "res://scripts/items/cheese.gd" </string>
 							</array>
 						</dictionary>
 					</dictionary>
