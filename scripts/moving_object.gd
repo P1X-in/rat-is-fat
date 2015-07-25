@@ -69,13 +69,8 @@ func push_back(enemy):
 
 func stun():
     self.is_processing = false
-    
-    var timer = Timer.new()
-    timer.set_wait_time(0.15)
-    timer.set_one_shot(true)
-    timer.connect("timeout", self, "remove_stun")
-    self.bag.root.add_child(timer)
-    timer.start()
+    self.bag.timers.set_timeout(0.15, self, "remove_stun")
+
 
 func remove_stun():
     self.is_processing = true
