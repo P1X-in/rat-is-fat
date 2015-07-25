@@ -5,8 +5,6 @@ var movement_vector = [0, 0]
 
 var AXIS_THRESHOLD = 0.15
 
-var screen = OS.get_video_mode_size()
-
 var body_part_head
 var body_part_body
 var body_part_footer
@@ -30,30 +28,19 @@ func die():
     self.despawn()
 
 func process(delta):
-    self.modify_position()
+    self.modify_position(delta)
 
-func modify_position():
-    var position = self.avatar.get_pos()
-    var new_position = Vector2(0, 0)
-    var zoom = self.bag.camera.zoom
-
-    new_position.x = self.calculate_position(self.movement_vector[0], position.x, self.screen.x * zoom.x)
-    new_position.y = self.calculate_position(self.movement_vector[1], position.y, self.screen.y * zoom.y)
-    self.avatar.set_pos(new_position)
+func modify_position(delta):
+    var x = self.apply_axis_threshold(self.movement_vector[0])
+    var y = self.apply_axis_threshold(self.movement_vector[1])
+    var motion = Vector2(x, y) * self.velocity * delta
+    self.avatar.move(motion)
     self.flip(self.movement_vector[0])
 
-func calculate_position(axis_value, old_position, screen_limit):
+func apply_axis_threshold(axis_value):
     if abs(axis_value) < self.AXIS_THRESHOLD:
-        return old_position
-
-    var speed = axis_value * self.velocity
-    var new_position = old_position + speed
-    if new_position < 0:
-        new_position = 0
-    elif new_position > screen_limit:
-        new_position = screen_limit
-
-    return new_position
+        return 0
+    return axis_value
 
 func flip(direction):
     if direction == 0:

@@ -9,7 +9,7 @@ var id = 0
 
 func _init(bag).(bag):
     self.initial_position = Vector2(200, 200)
-    self.velocity = 2
+    self.velocity = 100
 
 func go_to(x, y):
     self.destination[0] = x
@@ -56,7 +56,10 @@ func cast_movement_vector(destination_point):
 func process(delta):
     self.reset_movement()
     self.process_ai()
-    self.modify_position()
+    self.modify_position(delta)
+
+func apply_axis_threshold(axis_value):
+    return axis_value
 
 func attack():
     return

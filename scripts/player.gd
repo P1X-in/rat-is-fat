@@ -12,7 +12,7 @@ var target_cone_angle = 0.0
 
 func _init(bag).(bag):
     self.bag = bag
-    self.velocity = 4
+    self.velocity = 200
     self.avatar = preload("res://scenes/player/player.xscn").instance()
     self.initial_position = Vector2(100, 100)
     self.body_part_head = self.avatar.get_node('head')
@@ -57,7 +57,7 @@ func die():
 
 func process(delta):
     self.adjust_attack_cone()
-    self.modify_position()
+    self.modify_position(delta)
 
 func adjust_attack_cone():
     if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:
