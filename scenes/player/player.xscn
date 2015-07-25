@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="13" version="1.1" version_name="Godot Engine v1.1.stable.d3b42e41b0">
+<resource_file type="PackedScene" subresource_count="14" version="1.1" version_name="Godot Engine v1.1.stable.d3b42e41b0">
 	<ext_resource path="res://scenes/player/assets/shadow.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/body.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/head.png" type="Texture"></ext_resource>
+	<ext_resource path="res://scenes/player/assets/hats.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/footer.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/attack.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/attack_blast.png" type="Texture"></ext_resource>
@@ -240,7 +241,7 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="61">
+			<string_array  len="62">
 				<string> "player" </string>
 				<string> "KinematicBody2D" </string>
 				<string> "_import_path" </string>
@@ -277,6 +278,7 @@
 				<string> "region_rect" </string>
 				<string> "body" </string>
 				<string> "head" </string>
+				<string> "hat" </string>
 				<string> "footer" </string>
 				<string> "collision" </string>
 				<string> "CollisionShape2D" </string>
@@ -304,11 +306,11 @@
 				<string> "anims/attack" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 12 </int>
+			<int> 13 </int>
 			<string> "nodes" </string>
-			<int_array  len="478"> 				-1, -1, 1, 0, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 3, 14, 9, 15, 10, 16, 8, 17, 3, 18, 3, 19, 11, 20, 12, 0, 0, 0, 22, 21, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 13, 8, 5, 9, 6, 10, 7, 11, 1, 23, 14, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 34, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 17, 8, 5, 9, 6, 10, 7, 11, 1, 23, 18, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 19, 30, 3, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 35, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 20, 8, 5, 9, 6, 10, 7, 11, 1, 23, 21, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 22, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 36, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 23, 8, 5, 9, 6, 10, 7, 11, 1, 23, 24, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 25, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 38, 37, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 26, 8, 5, 9, 6, 10, 7, 11, 1, 39, 9, 40, 8, 0, 0, 0, 42, 41, -1, 11, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 27, 8, 5, 9, 6, 10, 7, 11, 1, 20, 28, 0, 6, 0, 22, 43, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 29, 8, 5, 9, 6, 10, 7, 11, 1, 23, 30, 24, 1, 25, 4, 26, 8, 27, 8, 28, 31, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 6, 0, 22, 44, -1, 21, 2, 0, 3, 8, 4, 2, 5, 2, 6, 3, 7, 32, 8, 5, 9, 6, 10, 7, 11, 1, 23, 33, 24, 1, 25, 4, 26, 8, 27, 8, 28, 22, 29, 22, 30, 25, 31, 15, 32, 8, 33, 16, 0, 0, 0, 46, 45, -1, 11, 2, 0, 47, 3, 48, 5, 49, 34, 50, 35, 51, 36, 52, 37, 53, 1, 54, 2, 55, 38, 56, 39, 0, 0, 0, 46, 57, -1, 9, 2, 0, 47, 3, 48, 5, 49, 34, 58, 40, 53, 1, 54, 41, 55, 38, 56, 42, 0, 0, 0, 46, 59, -1, 9, 2, 0, 47, 3, 48, 5, 49, 34, 60, 43, 53, 1, 54, 2, 55, 38, 56, 44, 0 </int_array>
+			<int_array  len="527"> 				-1, -1, 1, 0, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 3, 14, 9, 15, 10, 16, 8, 17, 3, 18, 3, 19, 11, 20, 12, 0, 0, 0, 22, 21, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 13, 8, 5, 9, 6, 10, 7, 11, 1, 23, 14, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 34, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 17, 8, 5, 9, 6, 10, 7, 11, 1, 23, 18, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 19, 30, 3, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 35, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 20, 8, 5, 9, 6, 10, 7, 11, 1, 23, 21, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 22, 30, 7, 31, 15, 32, 8, 33, 16, 0, 3, 0, 22, 36, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 23, 8, 5, 9, 6, 10, 7, 11, 1, 23, 24, 24, 1, 25, 4, 26, 8, 27, 8, 28, 22, 29, 22, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 37, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 25, 8, 5, 9, 6, 10, 7, 11, 1, 23, 26, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 27, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 39, 38, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 28, 8, 5, 9, 6, 10, 7, 11, 1, 40, 9, 41, 8, 0, 0, 0, 43, 42, -1, 11, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 29, 8, 5, 9, 6, 10, 7, 11, 1, 20, 30, 0, 7, 0, 22, 44, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 31, 8, 5, 9, 6, 10, 7, 11, 1, 23, 32, 24, 1, 25, 4, 26, 8, 27, 8, 28, 33, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 7, 0, 22, 45, -1, 21, 2, 0, 3, 8, 4, 2, 5, 2, 6, 3, 7, 34, 8, 5, 9, 6, 10, 7, 11, 1, 23, 35, 24, 1, 25, 4, 26, 8, 27, 8, 28, 22, 29, 22, 30, 27, 31, 15, 32, 8, 33, 16, 0, 0, 0, 47, 46, -1, 11, 2, 0, 48, 3, 49, 5, 50, 36, 51, 37, 52, 38, 53, 39, 54, 1, 55, 2, 56, 40, 57, 41, 0, 0, 0, 47, 58, -1, 9, 2, 0, 48, 3, 49, 5, 50, 36, 59, 42, 54, 1, 55, 43, 56, 40, 57, 44, 0, 0, 0, 47, 60, -1, 9, 2, 0, 48, 3, 49, 5, 50, 36, 61, 45, 54, 1, 55, 2, 56, 40, 57, 46, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="45" shared="false">
+			<array  len="47" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -323,13 +325,13 @@
 				<real> 0.08 </real>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>
 						<dictionary  shared="false">
 							<string> "ofs" </string>
-							<vector2> -301.23, -150.608 </vector2>
+							<vector2> -83.3585, -45.6427 </vector2>
 							<string> "snap_grid" </string>
 							<bool> False </bool>
 							<string> "snap_offset" </string>
@@ -349,7 +351,7 @@
 							<string> "snap_step" </string>
 							<vector2> 10, 10 </vector2>
 							<string> "zoom" </string>
-							<real> 2.050546 </real>
+							<real> 7.022682 </real>
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
@@ -443,6 +445,15 @@
 							<string> "znear" </string>
 							<real> 0.1 </real>
 						</dictionary>
+						<string> "Script" </string>
+						<dictionary  shared="false">
+							<string> "current" </string>
+							<int> 0 </int>
+							<string> "sources" </string>
+							<array  len="1" shared="false">
+								<string> "res://scripts/player.gd" </string>
+							</array>
+						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>
 					<dictionary  shared="false">
@@ -462,6 +473,8 @@
 				<vector2> 0, -7 </vector2>
 				<resource  resource_type="Texture" path="res://scenes/player/assets/head.png">  </resource>
 				<int> 2 </int>
+				<vector2> 0, -5 </vector2>
+				<resource  resource_type="Texture" path="res://scenes/player/assets/hats.png">  </resource>
 				<vector2> 0, 9 </vector2>
 				<resource  resource_type="Texture" path="res://scenes/player/assets/footer.png">  </resource>
 				<int> 3 </int>

@@ -18,6 +18,7 @@ func _init(bag, player_id).(bag):
     self.velocity = 200
     self.avatar = preload("res://scenes/player/player.xscn").instance()
     self.body_part_head = self.avatar.get_node('head')
+    self.hat = self.body_part_head.get_node('hat')
     self.body_part_body = self.avatar.get_node('body')
     self.body_part_footer = self.avatar.get_node('footer')
     self.target_cone = self.avatar.get_node('attack_cone')
@@ -51,6 +52,8 @@ func enter_game():
     self.is_playing = true
     self.spawn(self.bag.room_loader.get_spawn_position('initial'))
     self.panel.show()
+    randomize()
+    self.hat.set_frame(randi()%4)
 
 func spawn(position):
     self.is_alive = true

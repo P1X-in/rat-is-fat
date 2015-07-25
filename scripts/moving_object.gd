@@ -9,6 +9,7 @@ var body_part_head
 var body_part_body
 var body_part_footer
 var animations
+var hat = false
 
 func _init(bag).(bag):
     self.bag = bag
@@ -52,6 +53,8 @@ func flip(direction):
     self.body_part_head.set_flip_h(flip_sprite)
     self.body_part_body.set_flip_h(flip_sprite)
     self.body_part_footer.set_flip_h(flip_sprite)
+    if self.hat:
+        self.hat.set_flip_h(flip_sprite)
 
 func reset_movement():
     self.movement_vector = [0, 0]
