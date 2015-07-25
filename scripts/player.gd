@@ -70,14 +70,24 @@ func process(delta):
     self.adjust_attack_cone()
     .process(delta)
     self.check_doors()
+    self.handle_items()
 
 func modify_position(delta):
     .modify_position(delta)
     self.flip(self.target_cone_vector[0])
-    if not self.animations.is_playing():
-        self.animations.play('run')
+    self.handle_animations()
 
-    self.handle_items()
+func handle_animations():
+    if not self.animations.is_playing():
+        if abs(self.movement_vector[0]) > self.AXIS_THRESHOLD || abs(self.movement_vector[1]) > self.AXIS_THRESHOLD:
+            self.animations.play('run')
+        else:
+            self.animations.play('idle')
+    else:
+        if self.animations.get_current_animation() == 'idle' && (abs(self.movement_vector[0]) > self.AXIS_THRESHOLD || abs(self.movement_vector[1]) > self.AXIS_THRESHOLD):
+            self.animations.play('run')
+        elif self.animations.get_current_animation() == 'run' && abs(self.movement_vector[0]) < self.AXIS_THRESHOLD && abs(self.movement_vector[1]) < self.AXIS_THRESHOLD:
+            self.animations.play('idle')
 
 
 func handle_items():
