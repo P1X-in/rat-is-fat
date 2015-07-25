@@ -11,7 +11,8 @@ func _init_bag(bag):
 func start_game():
     self.bag.game_state.game_in_progress = true
     self.bag.root.add_child(self.game_board)
-    self.bag.room_loader.load_room('easy1')
+    self.bag.map.generate_map(1)
+    self.bag.map.load_current_cell()
 
 func end_game():
     self.bag.game_state.game_in_progress = false

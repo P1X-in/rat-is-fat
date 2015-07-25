@@ -27,12 +27,18 @@ func _init_bag(bag):
     self.bag = bag
     self.tilemap = self.bag.action_controller.tilemap
 
-func load_room(template_name):
+func load_room(cell):
+    var template_name = cell.template_name
+    var data
     self.clear_space()
     self.bag.game_state.current_room = self.room_templates[template_name].new()
-    self.apply_room_data(self.bag.game_state.current_room.room)
+    data = self.close_passages(self.bag.game_state.current_room.room, cell)
+    self.apply_room_data(data)
     self.spawn_enemies(self.bag.game_state.current_room.enemies)
     self.spawn_items(self.bag.game_state.current_room.items)
+
+func close_passages(data, cell):
+    return data
 
 func clear_space():
     for x in range(self.room_max_size.x):
