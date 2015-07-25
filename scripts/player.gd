@@ -136,6 +136,7 @@ func attack():
         enemy.push_back(self)
         if enemy.will_die(self.attack_strength):
             self.score += enemy.score
+            self.update_bars()
         enemy.recieve_damage(self.attack_strength)
 
 func get_power(amount):
