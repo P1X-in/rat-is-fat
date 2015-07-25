@@ -56,7 +56,7 @@ func cast_movement_vector(destination_point):
 func process(delta):
     self.reset_movement()
     self.process_ai()
-    self.modify_position(delta)
+    .process(delta)
 
 func apply_axis_threshold(axis_value):
     return axis_value

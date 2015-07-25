@@ -46,19 +46,15 @@ func enter_game():
 
 func spawn():
     self.is_alive = true
-    self.is_processing = true
-    self.bag.action_controller.game_board.add_child(self.avatar)
-    self.avatar.set_pos(self.initial_position)
-    self.bag.processing.register(self)
+    .spawn()
 
 func die():
     self.is_alive = false
-    self.is_processing = false
-    self.despawn()
+    .die()
 
 func process(delta):
     self.adjust_attack_cone()
-    self.modify_position(delta)
+    .process(delta)
 
 func adjust_attack_cone():
     if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:

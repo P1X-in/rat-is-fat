@@ -13,19 +13,12 @@ func _init(bag).(bag):
     self.bag = bag
 
 func spawn():
-    self.is_processing = true
-    self.bag.action_controller.game_board.add_child(self.avatar)
-    self.avatar.set_pos(self.initial_position)
+    .spawn()
     self.bag.processing.register(self)
 
 func despawn():
     self.bag.processing.remove(self)
-    self.bag.action_controller.game_board.remove_child(self.avatar)
-    self.avatar.queue_free()
-
-func die():
-    self.is_processing = false
-    self.despawn()
+    .despawn()
 
 func process(delta):
     self.modify_position(delta)
