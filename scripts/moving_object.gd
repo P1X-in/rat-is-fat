@@ -33,9 +33,10 @@ func process(delta):
 func modify_position():
     var position = self.avatar.get_pos()
     var new_position = Vector2(0, 0)
+    var zoom = self.bag.camera.zoom
 
-    new_position.x = self.calculate_position(self.movement_vector[0], position.x, self.screen.x)
-    new_position.y = self.calculate_position(self.movement_vector[1], position.y, self.screen.y)
+    new_position.x = self.calculate_position(self.movement_vector[0], position.x, self.screen.x * zoom.x)
+    new_position.y = self.calculate_position(self.movement_vector[1], position.y, self.screen.y * zoom.y)
     self.avatar.set_pos(new_position)
     self.flip(self.movement_vector[0])
 

@@ -16,3 +16,11 @@ func handle(event):
         self.player.target_cone_vector[0] = event.x - position.x
         self.player.target_cone_vector[1] = event.y - position.y
 
+        var diff_x = event.x - position.x
+        var diff_y = event.y - position.y
+        var ratio_x = diff_x / position.x
+        var ratio_y = diff_y / position.y
+
+        print("player ", position)
+        print("mouse ", event.x, ' ', event.y)
+        print("drift ", ratio_x, ' ', ratio_y)

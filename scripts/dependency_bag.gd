@@ -8,11 +8,13 @@ var input = preload("res://scripts/input/input.gd").new()
 var players = preload("res://scripts/players.gd").new()
 var enemies = preload("res://scripts/enemies.gd").new()
 var processing = preload("res://scripts/processing.gd").new()
+var camera = preload("res://scripts/camera.gd").new()
 
 func _init(root_node):
     self.root = root_node
     self.game_state._init_bag(self)
     self.input._init_bag(self)
+    self.camera._init_bag(self)
     self.players._init_bag(self)
     self.enemies._init_bag(self)
     self.processing._init_bag(self)

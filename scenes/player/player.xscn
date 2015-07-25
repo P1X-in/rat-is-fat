@@ -311,7 +311,7 @@
 				<vector2> 0, 14 </vector2>
 				<vector2> 1.2, 0.5 </vector2>
 				<vector2> 0, 4 </vector2>
-				<vector2> 0, -17 </vector2>
+				<vector2> 0, -26 </vector2>
 				<resource  resource_type="Texture" path="res://scenes/player/assets/attack.png">  </resource>
 				<node_path> ".." </node_path>
 				<resource  resource_type="Animation" path="local://2">  </resource>

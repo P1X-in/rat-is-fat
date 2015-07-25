@@ -29,7 +29,10 @@ func get_pos():
     return self.avatar.get_pos()
 
 func get_screen_pos():
-    return self.get_pos() + Vector2(100, 100)
+    var position = self.get_pos()
+    var global_x = position.x / self.bag.camera.zoom.x
+    var global_y = position.y / self.bag.camera.zoom.y
+    return Vector2(global_x, global_y)
 
 func spawn():
     self.is_processing = true
