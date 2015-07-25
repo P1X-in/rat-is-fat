@@ -20,6 +20,6 @@ func _init(root_node):
     self.players._init_bag(self)
     self.enemies._init_bag(self)
     self.processing._init_bag(self)
-    self.map._init_bag(self)
-    self.room_loader._init_bag(self)
     self.action_controller._init_bag(self)
+    self.room_loader._init_bag(self)
+    self.map._init_bag(self)

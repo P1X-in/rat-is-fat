@@ -6,11 +6,12 @@ var tilemap
 
 func _init_bag(bag):
     self.bag = bag
-    self.tilemap = self.game_board.get_node('level/tilemap')
+    self.tilemap = self.game_board.get_node('level/TileMap')
 
 func start_game():
     self.bag.game_state.game_in_progress = true
     self.bag.root.add_child(self.game_board)
+    self.bag.room_loader.load_room('start')
     var shia = self.bag.enemies.spawn('shia')
 
 func end_game():
