@@ -32,6 +32,7 @@ func add_cell(room_template_name, x, y):
     cell.y = y
     cell.template_name = room_template_name
     self.map[y][x] = cell
+    self.cells.append(cell)
     self.connect_room(cell)
     return cell
 
@@ -58,9 +59,59 @@ func connect_room_cell(cell, x, y, direction):
         cell.west = neighbour_cell
         neighbour_cell.east = cell
 
-func generate_map(difficulty):
+func generate_map(difficulty, room_count):
     self.reset_map()
+    var free_cell
+    var free_spot
+    var room_type
+    var new_cell
+    for i in range(room_count):
+        free_cell = self.pick_random_free_cell()
+        if free_cell != null:
+            free_spot = self.pick_random_free_neighbout_spot(free_cell)
+            room_type = self.pick_random_room_type(difficulty)
+            self.add_cell(room_type, free_spot.x, free_spot.y)
+
+func pick_random_free_cell():
+    var available_cells = []
+    for cell in self.cells:
+        if cell.has_free_connections():
+            available_cells.append(cell)
+    randomize()
+    if available_cells.size() == 0:
+        return null
+    return available_cells[randi() % available_cells.size()]
+
+func pick_random_free_neighbout_spot(cell):
+    var directions = []
+    var randomed
+    if cell.north == null && cell.y - 1 >= 0:
+        directions.append('north')
+    if cell.south == null && cell.y + 1 < self.map.size():
+        directions.append('south')
+    if cell.east == null && cell.x + 1 < self.map[0].size():
+        directions.append('east')
+    if cell.west == null && cell.x - 1 >= 0:
+        directions.append('west')
+    randomize()
+    randomed = directions[randi() % directions.size()]
+    if randomed == 'north':
+        return Vector2(cell.x, cell.y - 1)
+    if randomed == 'south':
+        return Vector2(cell.x, cell.y + 1)
+    if randomed == 'east':
+        return Vector2(cell.x + 1, cell.y)
+    if randomed == 'west':
+        return Vector2(cell.x - 1, cell.y)
+
+func pick_random_room_type(difficulty):
+    var on_level_templates = self.bag.room_loader.difficulty_templates[difficulty]
+    randomize()
+    return on_level_templates[randi() % on_level_templates.size()]
 
 func load_current_cell():
     self.bag.game_state.current_cell = self.start_cell
     self.bag.room_loader.load_room(self.start_cell)
+
+func switch_to_cell(cell):
+    return

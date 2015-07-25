@@ -11,6 +11,9 @@ var south = null
 var east = null
 var west = null
 
+var clear = false
+var items = null
+
 func _init(bag):
     self.bag = bag
 

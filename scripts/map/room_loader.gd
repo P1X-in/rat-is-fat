@@ -23,6 +23,30 @@ var difficulty_templates = [
     ['easy1'],
 ]
 
+
+var door_definitions = {
+    'north' : [
+        [7, 0, 14],
+        [8, 0, 0],
+        [9, 0, 13],
+    ],
+    'south' : [
+        [7, 10, 16],
+        [8, 10, 0],
+        [9, 10, 15],
+    ],
+    'east' : [
+        [16, 4, 13],
+        [16, 5, 0],
+        [16, 6, 15],
+    ],
+    'west' : [
+        [0, 4, 14],
+        [0, 5, 0],
+        [0, 6, 16],
+    ],
+}
+
 func _init_bag(bag):
     self.bag = bag
     self.tilemap = self.bag.action_controller.tilemap
@@ -32,12 +56,25 @@ func load_room(cell):
     var data
     self.clear_space()
     self.bag.game_state.current_room = self.room_templates[template_name].new()
-    data = self.close_passages(self.bag.game_state.current_room.room, cell)
+    data = self.open_passages(self.bag.game_state.current_room.room, cell)
     self.apply_room_data(data)
     self.spawn_enemies(self.bag.game_state.current_room.enemies)
     self.spawn_items(self.bag.game_state.current_room.items)
 
-func close_passages(data, cell):
+func open_passages(data, cell):
+    if cell.north != null:
+        data = self.open_passage(data, self.door_definitions['north'])
+    if cell.south != null:
+        data = self.open_passage(data, self.door_definitions['south'])
+    if cell.east != null:
+        data = self.open_passage(data, self.door_definitions['east'])
+    if cell.west != null:
+        data = self.open_passage(data, self.door_definitions['west'])
+    return data
+
+func open_passage(data, passage):
+    for tile in passage:
+        data[tile[1]][tile[0]] = tile[2]
     return data
 
 func clear_space():
