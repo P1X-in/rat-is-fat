@@ -6,11 +6,26 @@ var room_max_size = Vector2(20, 12)
 var side_offset = 3
 
 var spawns = {
-    'initial' : Vector2(8, 5),
-    'north' : Vector2(8, 1),
-    'south' : Vector2(8, 9),
-    'east' : Vector2(15, 5),
-    'west' : Vector2(1, 5),
+    'initial0' : Vector2(8, 5),
+    'initial1' : Vector2(9, 5),
+    'initial2' : Vector2(8, 6),
+    'initial3' : Vector2(9, 6),
+    'north0' : Vector2(8, 1),
+    'north1' : Vector2(9, 1),
+    'north2' : Vector2(8, 2),
+    'north3' : Vector2(9, 2),
+    'south0' : Vector2(8, 9),
+    'south1' : Vector2(9, 9),
+    'south2' : Vector2(8, 8),
+    'south3' : Vector2(9, 8),
+    'east0' : Vector2(15, 5),
+    'east1' : Vector2(14, 5),
+    'east2' : Vector2(15, 6),
+    'east3' : Vector2(14, 6),
+    'west0' : Vector2(1, 5),
+    'west1' : Vector2(2, 5),
+    'west2' : Vector2(1, 6),
+    'west3' : Vector2(2, 6),
 }
 
 var room_templates = {

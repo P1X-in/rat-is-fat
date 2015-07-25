@@ -1,5 +1,6 @@
 extends "res://scripts/moving_object.gd"
 
+var player_id
 var is_playing = false
 var is_alive = true
 var attack_range = 100
@@ -17,6 +18,7 @@ var EXIT_THRESHOLD = 30
 
 func _init(bag, player_id).(bag):
     self.bag = bag
+    self.player_id = player_id
     self.velocity = 200
     self.avatar = preload("res://scenes/player/player.xscn").instance()
     self.body_part_head = self.avatar.get_node('head')
@@ -53,7 +55,7 @@ func bind_keyboard_and_mouse():
 
 func enter_game():
     self.is_playing = true
-    self.spawn(self.bag.room_loader.get_spawn_position('initial'))
+    self.spawn(self.bag.room_loader.get_spawn_position('initial' + str(self.player_id)))
     self.panel.show()
 
 func spawn(position):
@@ -139,22 +141,22 @@ func check_doors():
     if cell.north != null:
         door_coords = self.bag.room_loader.door_definitions['north'][1]
         if self.check_exit(door_coords, cell.north, Vector2(0, -10)):
-            self.move_to_entry_position('south')
+            self.bag.players.move_to_entry_position('south')
             return
     if cell.south != null:
         door_coords = self.bag.room_loader.door_definitions['south'][1]
         if self.check_exit(door_coords, cell.south, Vector2(0, 40)):
-            self.move_to_entry_position('north')
+            self.bag.players.move_to_entry_position('north')
             return
     if cell.east != null:
         door_coords = self.bag.room_loader.door_definitions['east'][1]
         if self.check_exit(door_coords, cell.east, Vector2(48, 0)):
-            self.move_to_entry_position('west')
+            self.bag.players.move_to_entry_position('west')
             return
     if cell.west != null:
         door_coords = self.bag.room_loader.door_definitions['west'][1]
         if self.check_exit(door_coords, cell.west, Vector2(-28, 0)):
-            self.move_to_entry_position('east')
+            self.bag.players.move_to_entry_position('east')
             return
 
 func check_exit(door_coords, cell, door_offset):
@@ -168,6 +170,7 @@ func check_exit(door_coords, cell, door_offset):
 
 func move_to_entry_position(name):
     var entry_position
-    entry_position = self.bag.room_loader.get_spawn_position(name)
-    self.avatar.set_pos(self.initial_position)
+    print(name, self.player_id)
+    entry_position = self.bag.room_loader.get_spawn_position(name + str(self.player_id))
+    self.avatar.set_pos(entry_position)
 
