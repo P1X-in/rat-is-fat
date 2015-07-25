@@ -30,7 +30,6 @@ func get_enemies_nearby_object(object):
     var result = []
     for instance_id in self.enemies_list:
         if self.enemies_list[instance_id].calculate_distance_to_object(object) < 50: #TODO attack range
-            print('enemy nearby!')
             result.append(self.enemies_list[instance_id])
 
     return result

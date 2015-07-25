@@ -24,6 +24,7 @@ func set_hp(hp):
             self.hp = hp
         else:
             self.hp = self.max_hp
+
 func get_pos():
     return self.avatar.get_pos()
 
