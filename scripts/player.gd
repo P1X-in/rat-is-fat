@@ -27,6 +27,7 @@ func _init(bag, player_id).(bag):
 
     self.bind_gamepad(player_id)
     self.panel = self.bag.hud.bind_player_panel(player_id)
+    self.hat.set_frame(player_id)
 
 func bind_gamepad(id):
     var gamepad = self.bag.input.devices['pad' + str(id)]
@@ -52,8 +53,6 @@ func enter_game():
     self.is_playing = true
     self.spawn(self.bag.room_loader.get_spawn_position('initial'))
     self.panel.show()
-    randomize()
-    self.hat.set_frame(randi()%4)
 
 func spawn(position):
     self.is_alive = true
