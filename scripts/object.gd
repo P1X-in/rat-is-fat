@@ -36,11 +36,11 @@ func get_screen_pos():
 
 func spawn():
     self.is_processing = true
-    self.bag.action_controller.game_board.add_child(self.avatar)
+    self.bag.action_controller.attach_object(self.avatar)
     self.avatar.set_pos(self.initial_position)
 
 func despawn():
-    self.bag.action_controller.game_board.remove_child(self.avatar)
+    self.bag.action_controller.detach_object(self.avatar)
     self.avatar.queue_free()
 
 func die():
