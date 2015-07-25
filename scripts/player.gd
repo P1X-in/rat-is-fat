@@ -2,6 +2,7 @@ extends "res://scripts/moving_object.gd"
 
 var is_playing = false
 var is_alive = true
+var attack_range = 50
 
 var target_cone
 var target_cone_vector = [0, 0]
@@ -59,9 +60,9 @@ func adjust_attack_cone():
     if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:
         return
 
-    self.player.target_cone_angle = -atan2(self.player.target_cone_vector[1], self.player.target_cone_vector[0]) - PI/2
+    self.target_cone_angle = -atan2(self.target_cone_vector[1], self.target_cone_vector[0]) - PI/2
     self.target_cone.set_rot(self.target_cone_angle)
 
 func attack():
-    self.bag.enemies.get_enemies_nearby_object(self)
+    self.bag.enemies.get_enemies_near_object(self, self.attack_range)
     print('attack!!!!')

@@ -26,10 +26,10 @@ func add_enemy(enemy):
 func del_enemy(enemy):
     self.enemies_list.erase(enemy.get_instance_ID())
 
-func get_enemies_nearby_object(object):
+func get_enemies_near_object(object, attack_range):
     var result = []
     for instance_id in self.enemies_list:
-        if self.enemies_list[instance_id].calculate_distance_to_object(object) < 50: #TODO attack range
+        if self.enemies_list[instance_id].calculate_distance_to_object(object) < attack_range:
             result.append(self.enemies_list[instance_id])
 
     return result
