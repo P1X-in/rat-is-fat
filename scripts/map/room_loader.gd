@@ -3,7 +3,6 @@
 var bag
 var tilemap
 var room_max_size = Vector2(20, 12)
-var top_offset = 0
 var side_offset = 3
 
 var room_templates = {
@@ -26,7 +25,7 @@ func clear_space():
 
 func apply_room_data(data):
     var row
-    for y in range(0, data.size() - (self.top_offset)):
+    for y in range(0, data.size()):
         row = data[y]
-        for x in range(0, row.size() - self.side_offset):
-            self.tilemap.set_cell(x + self.side_offset, y + self.top_offset, data[y][x])
+        for x in range(0, row.size()):
+            self.tilemap.set_cell(x + self.side_offset, y, data[y][x])
