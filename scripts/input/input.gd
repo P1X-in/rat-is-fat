@@ -21,4 +21,5 @@ func handle_event(event):
 
 func load_basic_input():
     self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/quit_game.gd").new())
-    self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/start_game.gd").new(self.bag))
+    self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/start_game_key.gd").new(self.bag))
+    self.devices['pad0'].register_handler(preload("res://scripts/input/handlers/start_game_gamepad.gd").new(self.bag))
