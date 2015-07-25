@@ -62,6 +62,7 @@ func die():
 
 func process(delta):
     self.adjust_attack_cone()
+
     .process(delta)
 
 func modify_position(delta):
@@ -69,6 +70,14 @@ func modify_position(delta):
     self.flip(self.target_cone_vector[0])
     if not self.animations.is_playing():
         self.animations.play('run')
+
+    self.handle_items()
+
+
+func handle_items():
+    var items = self.bag.items.get_items_near_object(self)
+    for item in items:
+        print('ITEM _ FOUNDh')
 
 func adjust_attack_cone():
     if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:
@@ -107,5 +116,9 @@ func get_power(amount):
 func get_fat(amount):
     self.hp += amount
     self.max_hp += amount
+
+func check_colisions():
+    return
+    #print ('fff', self.avatar)
 
 

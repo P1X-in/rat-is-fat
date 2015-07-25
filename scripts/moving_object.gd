@@ -33,6 +33,7 @@ func modify_position(delta):
         var n = self.avatar.get_collision_normal()
         motion = n.slide(motion)
         self.avatar.move(motion)
+        print('collider', self.avatar.get_collider())
     self.flip(self.movement_vector[0])
 
 func apply_axis_threshold(axis_value):

@@ -90,6 +90,7 @@ func apply_room_data(data):
             self.tilemap.set_cell(x + self.side_offset, y, data[y][x])
 
 func spawn_enemies(enemies):
+    return
     var position = Vector2(0, 0)
     for enemy_data in enemies:
         position.x = enemy_data[0] + self.side_offset
