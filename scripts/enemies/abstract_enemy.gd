@@ -58,7 +58,8 @@ func process(delta):
     self.modify_position()
 
 func attack():
-    print('ENEMY IS ATTACKING!!')
+    return
+    #print('ENEMY IS ATTACKING!!')
 
 func die():
     self.is_processing = false
