@@ -174,7 +174,7 @@
 				<string> "playback/speed" </string>
 				<string> "blend_times" </string>
 				<string> "autoplay" </string>
-				<string> "attack_animation" </string>
+				<string> "attack_animations" </string>
 				<string> "anims/attack" </string>
 			</string_array>
 			<string> "node_count" </string>
