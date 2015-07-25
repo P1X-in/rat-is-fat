@@ -214,12 +214,16 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 2 </int>
+							<int> 6 </int>
 							<string> "sources" </string>
-							<array  len="3" shared="false">
+							<array  len="7" shared="false">
 								<string> "res://scripts/object.gd" </string>
 								<string> "res://scripts/moving_object.gd" </string>
 								<string> "res://scripts/items/cheese.gd" </string>
+								<string> "res://scenes/items/cheese.gd" </string>
+								<string> "res://scripts/player.gd" </string>
+								<string> "res://scripts/items.gd" </string>
+								<string> "res://scripts/items/abstract_item.gd" </string>
 							</array>
 						</dictionary>
 					</dictionary>

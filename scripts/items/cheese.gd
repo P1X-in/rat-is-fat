@@ -7,8 +7,6 @@ func _init(bag).(bag):
     self.body = self.avatar.get_node('body')
     self.randomize_frame()
 
-func die():
-    self.despawn()
 
 func randomize_frame():
     randomize()

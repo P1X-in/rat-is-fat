@@ -16,7 +16,7 @@ func _init_bag(bag):
 func add_item(item):
     self.items_list[item.get_instance_ID()] = item
 
-func del_enemy(item):
+func del_item(item):
     self.items_list.erase(item.get_instance_ID())
 
 func spawn(name, map_position):
@@ -30,7 +30,7 @@ func spawn(name, map_position):
 func get_items_near_object(object):
     var results = []
     for instance_id in self.items_list:
-        if self.items_list[instance_id].calculate_distance_to_object(object) < 50: #TODO attack range
+        if self.items_list[instance_id].calculate_distance_to_object(object) < 15: #TODO attack range
             results.append(self.items_list[instance_id])
 
     return results

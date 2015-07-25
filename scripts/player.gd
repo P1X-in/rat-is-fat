@@ -79,7 +79,13 @@ func modify_position(delta):
 func handle_items():
     var items = self.bag.items.get_items_near_object(self)
     for item in items:
-        print('ITEM _ FOUNDh')
+        if item.power_up_type == 0:
+            self.get_fat(item.power_up_amount)
+        else:
+            self.get_powert(item.power_up_amount)
+
+        item.pick()
+
 
 func adjust_attack_cone():
     if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:
