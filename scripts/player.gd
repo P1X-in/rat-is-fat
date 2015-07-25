@@ -10,15 +10,20 @@ var target_cone
 var target_cone_vector = [0, 0]
 var target_cone_angle = 0.0
 
-func _init(bag).(bag):
+var panel
+
+func _init(bag, player_id).(bag):
     self.bag = bag
     self.velocity = 200
     self.avatar = preload("res://scenes/player/player.xscn").instance()
-    self.initial_position = Vector2(100, 100)
+    self.initial_position = Vector2(200, 200)
     self.body_part_head = self.avatar.get_node('head')
     self.body_part_body = self.avatar.get_node('body')
     self.body_part_footer = self.avatar.get_node('footer')
     self.target_cone = self.avatar.get_node('attack_cone')
+
+    self.bind_gamepad(player_id)
+    self.panel = self.bag.hud.bind_player_panel(player_id)
 
 func bind_gamepad(id):
     var gamepad = self.bag.input.devices['pad' + str(id)]
@@ -43,6 +48,7 @@ func bind_keyboard_and_mouse():
 func enter_game():
     self.is_playing = true
     self.spawn()
+    self.panel.show()
 
 func spawn():
     self.is_alive = true
@@ -78,7 +84,7 @@ func get_power(amount):
     self.attack_strength += amount
     if self.attack_range >= 16:
         self.die();
-        
+
     self.hp -= amount
     self.max_hp -= amount
 

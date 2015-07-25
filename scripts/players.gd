@@ -10,14 +10,9 @@ func _init_bag(bag):
 
 func bind_players():
     self.players = [
-        self.player_template.new(self.bag),
-        self.player_template.new(self.bag),
-        self.player_template.new(self.bag),
-        self.player_template.new(self.bag),
+        self.player_template.new(self.bag, 0),
+        self.player_template.new(self.bag, 1),
+        self.player_template.new(self.bag, 2),
+        self.player_template.new(self.bag, 3),
     ]
-
-    self.players[0].bind_gamepad(0)
     self.players[0].bind_keyboard_and_mouse()
-    self.players[1].bind_gamepad(1)
-    self.players[2].bind_gamepad(2)
-    self.players[3].bind_gamepad(3)

@@ -8,7 +8,7 @@ var attack_strength = 1
 var id = 0
 
 func _init(bag).(bag):
-    self.initial_position = Vector2(200, 200)
+    self.initial_position = Vector2(200, 100)
     self.velocity = 100
 
 func go_to(x, y):
