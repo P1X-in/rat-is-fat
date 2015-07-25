@@ -66,6 +66,8 @@ func process(delta):
 func modify_position(delta):
     .modify_position(delta)
     self.flip(self.target_cone_vector[0])
+    if not self.animations.is_playing():
+        self.animations.play('run')
 
 func adjust_attack_cone():
     if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:
@@ -76,10 +78,16 @@ func adjust_attack_cone():
 
 func attack():
     var enemies
-    if not self.animations.get_current_animation() == 'attack':
-        self.animations.play('attack');
+    var random_attack = 'attack'+ str(1 + randi() % 2)
+
+    if not self.animations.get_current_animation() == 'attack1' and not self.animations.get_current_animation() == 'attack2' :
+        self.animations.play(random_attack);
     elif not self.animations.is_playing():
-        self.animations.play('attack');
+        if self.animations.get_current_animation() == 'attack1':
+            self.animations.play('attack2')
+        else:
+            self.animations.play('attack1')
+
     enemies = self.bag.enemies.get_enemies_near_object(self, self.attack_range, self.target_cone_vector, self.attack_width)
     for enemy in enemies:
         enemy.recieve_damage(self.attack_strength)
