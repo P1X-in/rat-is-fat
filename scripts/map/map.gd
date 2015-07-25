@@ -109,9 +109,6 @@ func pick_random_room_type(difficulty):
     randomize()
     return on_level_templates[randi() % on_level_templates.size()]
 
-func load_current_cell():
-    self.bag.game_state.current_cell = self.start_cell
-    self.bag.room_loader.load_room(self.start_cell)
-
 func switch_to_cell(cell):
-    return
+    self.bag.game_state.current_cell = cell
+    self.bag.room_loader.load_room(cell)

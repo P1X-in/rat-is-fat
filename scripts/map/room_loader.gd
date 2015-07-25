@@ -27,22 +27,22 @@ var difficulty_templates = [
 var door_definitions = {
     'north' : [
         [7, 0, 14],
-        [8, 0, 0],
+        [8, 0, 0, 5],
         [9, 0, 13],
     ],
     'south' : [
         [7, 10, 16],
-        [8, 10, 0],
+        [8, 10, 0, 10],
         [9, 10, 15],
     ],
     'east' : [
         [16, 4, 13],
-        [16, 5, 0],
+        [16, 5, 0, 9],
         [16, 6, 15],
     ],
     'west' : [
         [0, 4, 14],
-        [0, 5, 0],
+        [0, 5, 0, 7],
         [0, 6, 16],
     ],
 }
@@ -56,12 +56,16 @@ func load_room(cell):
     var data
     self.clear_space()
     self.bag.game_state.current_room = self.room_templates[template_name].new()
-    data = self.open_passages(self.bag.game_state.current_room.room, cell)
+    data = self.create_passages(self.bag.game_state.current_room.room, cell)
     self.apply_room_data(data)
-    self.spawn_enemies(self.bag.game_state.current_room.enemies)
+    if self.bag.game_state.current_room.enemies.size() > 0:
+        self.spawn_enemies(self.bag.game_state.current_room.enemies)
+        self.close_doors()
+    else:
+        self.open_doors()
     self.spawn_items(self.bag.game_state.current_room.items)
 
-func open_passages(data, cell):
+func create_passages(data, cell):
     if cell.north != null:
         data = self.open_passage(data, self.door_definitions['north'])
     if cell.south != null:
@@ -76,6 +80,28 @@ func open_passage(data, passage):
     for tile in passage:
         data[tile[1]][tile[0]] = tile[2]
     return data
+
+func close_doors():
+    self.switch_doors(3)
+
+func open_doors():
+    self.switch_doors(2)
+
+func switch_doors(tile_index):
+    var door_coords
+    var cell = self.bag.game_state.current_cell
+    if cell.north != null:
+        door_coords = self.door_definitions['north'][1]
+        self.tilemap.set_cell(door_coords[0] + self.side_offset, door_coords[1], door_coords[tile_index])
+    if cell.south != null:
+        door_coords = self.door_definitions['south'][1]
+        self.tilemap.set_cell(door_coords[0] + self.side_offset, door_coords[1], door_coords[tile_index])
+    if cell.east != null:
+        door_coords = self.door_definitions['east'][1]
+        self.tilemap.set_cell(door_coords[0] + self.side_offset, door_coords[1], door_coords[tile_index])
+    if cell.west != null:
+        door_coords = self.door_definitions['west'][1]
+        self.tilemap.set_cell(door_coords[0] + self.side_offset, door_coords[1], door_coords[tile_index])
 
 func clear_space():
     for x in range(self.room_max_size.x):
