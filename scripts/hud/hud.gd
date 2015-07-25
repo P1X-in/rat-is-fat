@@ -21,3 +21,10 @@ func bind_player_panel(player_num):
     self.player_panels[player_num] = self.player_panel_template.new(self.bag, panel)
 
     return self.player_panels[player_num]
+
+func show():
+    self.hud.show()
+
+func hide():
+    self.hud.hide()
+
