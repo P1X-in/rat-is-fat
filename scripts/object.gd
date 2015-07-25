@@ -36,14 +36,21 @@ func get_screen_pos():
     return Vector2(global_x, global_y)
 
 func spawn(position):
-    self.is_processing = true
+    self.attach()
     self.initial_position = position
-    self.bag.action_controller.attach_object(self.avatar)
     self.avatar.set_pos(self.initial_position)
 
 func despawn():
-    self.bag.action_controller.detach_object(self.avatar)
+    self.detach()
     self.avatar.queue_free()
+
+func attach():
+    self.is_processing = true
+    self.bag.action_controller.attach_object(self.avatar)
+
+func detach():
+    self.is_processing = false
+    self.bag.action_controller.detach_object(self.avatar)
 
 func die():
     self.is_processing = false
