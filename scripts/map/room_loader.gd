@@ -31,11 +31,11 @@ var spawns = {
 var room_templates = {
     'start' : preload("res://scripts/map/rooms/start_room.gd"),
     'easy1' : preload("res://scripts/map/rooms/easy1_room.gd"),
-    'easy2' : preload("res://scripts/map/rooms/easy1_room.gd"),
-    'easy3' : preload("res://scripts/map/rooms/easy1_room.gd"),
-    'easy4' : preload("res://scripts/map/rooms/easy1_room.gd"),
-    'easy5' : preload("res://scripts/map/rooms/easy1_room.gd"),
-    'easy6' : preload("res://scripts/map/rooms/easy1_room.gd"),
+    'easy2' : preload("res://scripts/map/rooms/easy2_room.gd"),
+    'easy3' : preload("res://scripts/map/rooms/easy3_room.gd"),
+    'easy4' : preload("res://scripts/map/rooms/easy4_room.gd"),
+    'easy5' : preload("res://scripts/map/rooms/easy5_room.gd"),
+    'easy6' : preload("res://scripts/map/rooms/easy6_room.gd"),
 }
 
 var difficulty_templates = [
