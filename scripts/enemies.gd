@@ -38,16 +38,19 @@ func is_enemy_in_cone(enemy, object, attack_range, attack_direction, attack_widt
     var enemy_position
     var object_position
     var position_delta_x
-    var positoin_delta_y
+    var position_delta_y
     var angle
     if enemy.calculate_distance_to_object(object) < attack_range:
         enemy_position = enemy.get_pos()
         object_position = object.get_pos()
         position_delta_x = enemy_position.x - object_position.x
-        positoin_delta_y = enemy_position.y - object_position.y
-        angle = atan2(position_delta_x * attack_direction[1] - positoin_delta_y * attack_direction[0], position_delta_x * attack_direction[0] + positoin_delta_y * attack_direction[1] )
+        position_delta_y = enemy_position.y - object_position.y
+        angle = atan2(position_delta_x * attack_direction[1] - position_delta_y * attack_direction[0], position_delta_x * attack_direction[0] + position_delta_y * attack_direction[1] )
         if abs(angle) < attack_width:
             return true
     return false
+
+
+
 
 

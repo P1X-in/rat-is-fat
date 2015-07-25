@@ -41,8 +41,14 @@ func process_ai():
             direction = self.cast_movement_vector(self.target.get_pos())
         else:
             self.attack()
-    self.movement_vector[0] = direction.x
-    self.movement_vector[1] = direction.y
+
+    if self.push_back:
+        print('PUSH BACK!')
+        self.movement_vector[0] = -direction.x
+        self.movement_vector[1] = -direction.y
+    else:
+        self.movement_vector[0] = direction.x
+        self.movement_vector[1] = direction.y
 
 func cast_movement_vector(destination_point):
     var my_position = self.get_pos()

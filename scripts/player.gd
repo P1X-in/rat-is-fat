@@ -72,3 +72,4 @@ func attack():
     enemies = self.bag.enemies.get_enemies_near_object(self, self.attack_range, self.target_cone_vector, self.attack_width)
     for enemy in enemies:
         enemy.recieve_damage(self.attack_strength)
+        enemy.push_back(self)

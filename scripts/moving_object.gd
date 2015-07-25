@@ -53,3 +53,31 @@ func flip(direction):
 
 func reset_movement():
     self.movement_vector = [0, 0]
+
+func push_back(enemy):
+    var enemy_position = enemy.get_pos()
+    var object_position = self.get_pos()
+
+    var position_delta_x =  object_position.x - enemy_position.x
+    var position_delta_y = object_position.y - enemy_position.y
+
+    var power = enemy.attack_strength * 20
+    var scale = power / self.calculate_distance(enemy_position)
+
+    self.avatar.move(Vector2(position_delta_x * scale, position_delta_y * scale))
+    self.stun()
+
+func stun():
+    self.is_processing = false
+    
+    var timer = Timer.new()
+    timer.set_wait_time(0.15)
+    timer.set_one_shot(true)
+    timer.connect("timeout", self, "remove_stun")
+    self.bag.root.add_child(timer)
+    timer.start()
+
+func remove_stun():
+    self.is_processing = true
+
+
