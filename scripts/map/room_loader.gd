@@ -119,6 +119,7 @@ func apply_room_data(data):
 
 func spawn_enemies(enemies):
     var position = Vector2(0, 0)
+    self.bag.enemies.reset()
     for enemy_data in enemies:
         position.x = enemy_data[0] + self.side_offset
         position.y = enemy_data[1]
@@ -126,6 +127,7 @@ func spawn_enemies(enemies):
 
 func spawn_items(items):
     var position = Vector2(0, 0)
+    self.bag.items.reset()
     for item_data in items:
         position.x = item_data[0] + self.side_offset
         position.y = item_data[1]

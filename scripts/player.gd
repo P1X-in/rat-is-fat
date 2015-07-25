@@ -13,7 +13,7 @@ var target_cone_angle = 0.0
 
 var panel
 
-var EXIT_THRESHOLD = 10
+var EXIT_THRESHOLD = 20
 
 func _init(bag, player_id).(bag):
     self.bag = bag
