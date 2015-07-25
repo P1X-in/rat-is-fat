@@ -150,22 +150,22 @@ func check_doors():
     var cell = self.bag.game_state.current_cell
     if cell.north != null:
         door_coords = self.bag.room_loader.door_definitions['north'][1]
-        if self.check_exit(door_coords, cell.north, Vector2(0, -10)):
+        if self.check_exit(door_coords, cell.north, Vector2(16, 0)):
             self.bag.players.move_to_entry_position('south')
             return
     if cell.south != null:
         door_coords = self.bag.room_loader.door_definitions['south'][1]
-        if self.check_exit(door_coords, cell.south, Vector2(0, 40)):
+        if self.check_exit(door_coords, cell.south, Vector2(16, 40)):
             self.bag.players.move_to_entry_position('north')
             return
     if cell.east != null:
         door_coords = self.bag.room_loader.door_definitions['east'][1]
-        if self.check_exit(door_coords, cell.east, Vector2(48, 0)):
+        if self.check_exit(door_coords, cell.east, Vector2(40, 0)):
             self.bag.players.move_to_entry_position('west')
             return
     if cell.west != null:
         door_coords = self.bag.room_loader.door_definitions['west'][1]
-        if self.check_exit(door_coords, cell.west, Vector2(-28, 0)):
+        if self.check_exit(door_coords, cell.west, Vector2(-10, 0)):
             self.bag.players.move_to_entry_position('east')
             return
 
