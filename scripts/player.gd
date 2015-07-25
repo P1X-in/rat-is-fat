@@ -104,7 +104,7 @@ func handle_items():
         if item.power_up_type == 0:
             self.get_fat(item.power_up_amount)
         else:
-            self.get_powert(item.power_up_amount)
+            self.get_power(item.power_up_amount)
         self.score = self.score + item.score
         item.pick()
         self.update_bars()
@@ -133,11 +133,8 @@ func attack():
 
     enemies = self.bag.enemies.get_enemies_near_object(self, self.attack_range, self.target_cone_vector, self.attack_width)
     for enemy in enemies:
-        enemy.push_back(self)
-        if enemy.will_die(self.attack_strength):
-            self.score += enemy.score
-            self.update_bars()
         enemy.recieve_damage(self.attack_strength)
+        enemy.push_back(self)
 
 func get_power(amount):
     self.attack_strength += amount

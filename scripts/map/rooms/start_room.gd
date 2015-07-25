@@ -16,5 +16,6 @@ func _init():
     ]
 
     self.items = [
-        [13, 5, 'cheese']
+        [13, 5, 'cheese'],
+        [12, 5, 'medicals']
     ]

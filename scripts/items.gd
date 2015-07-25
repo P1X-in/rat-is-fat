@@ -3,6 +3,7 @@ var bag
 
 var item_templates = {
     'cheese' : preload("res://scripts/items/cheese.gd"),
+    'medicals' : preload("res://scripts/items/medicals.gd")
 }
 
 var items_list = {}
