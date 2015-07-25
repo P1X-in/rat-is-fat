@@ -46,24 +46,24 @@ var difficulty_templates = [
 
 var door_definitions = {
     'north' : [
-        [7, 0, 14],
-        [8, 0, 0, 5],
-        [9, 0, 13],
+        [7, 0, 14, 21],
+        [8, 0, 0, 19],
+        [9, 0, 13, 20],
     ],
     'south' : [
-        [7, 10, 16],
-        [8, 10, 0, 10],
-        [9, 10, 15],
+        [7, 10, 16, 26],
+        [8, 10, 0, 27],
+        [9, 10, 15, 28],
     ],
     'east' : [
-        [16, 4, 13],
-        [16, 5, 0, 9],
-        [16, 6, 15],
+        [16, 4, 13, 17],
+        [16, 5, 0, 22],
+        [16, 6, 15, 24],
     ],
     'west' : [
-        [0, 4, 14],
-        [0, 5, 0, 7],
-        [0, 6, 16],
+        [0, 4, 14, 18],
+        [0, 5, 0, 23],
+        [0, 6, 16, 25],
     ],
 }
 
@@ -115,20 +115,19 @@ func open_doors():
     self.switch_doors(2)
 
 func switch_doors(tile_index):
-    var door_coords
     var cell = self.bag.game_state.current_cell
     if cell.north != null:
-        door_coords = self.door_definitions['north'][1]
-        self.tilemap.set_cell(door_coords[0] + self.side_offset, door_coords[1], door_coords[tile_index])
+        self.apply_door(self.door_definitions['north'], tile_index)
     if cell.south != null:
-        door_coords = self.door_definitions['south'][1]
-        self.tilemap.set_cell(door_coords[0] + self.side_offset, door_coords[1], door_coords[tile_index])
+        self.apply_door(self.door_definitions['south'], tile_index)
     if cell.east != null:
-        door_coords = self.door_definitions['east'][1]
-        self.tilemap.set_cell(door_coords[0] + self.side_offset, door_coords[1], door_coords[tile_index])
+        self.apply_door(self.door_definitions['east'], tile_index)
     if cell.west != null:
-        door_coords = self.door_definitions['west'][1]
-        self.tilemap.set_cell(door_coords[0] + self.side_offset, door_coords[1], door_coords[tile_index])
+        self.apply_door(self.door_definitions['west'], tile_index)
+
+func apply_door(definition, tile_index):
+    for tile in definition:
+        self.tilemap.set_cell(tile[0] + self.side_offset, tile[1], tile[tile_index])
 
 func clear_space():
     for x in range(self.room_max_size.x):
