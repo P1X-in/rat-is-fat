@@ -5,6 +5,7 @@ var is_alive = true
 
 var target_cone
 var target_cone_vector = [0, 0]
+var target_cone_angle = 0.0
 
 func _init(bag).(bag):
     self.bag = bag
@@ -26,11 +27,13 @@ func bind_gamepad(id):
 
 func bind_keyboard_and_mouse():
     var keyboard = self.bag.input.devices['keyboard']
+    var mouse = self.bag.input.devices['mouse']
     keyboard.register_handler(preload("res://scripts/input/handlers/player_enter_game_keyboard.gd").new(self.bag, self))
     keyboard.register_handler(preload("res://scripts/input/handlers/player_move_key.gd").new(self.bag, self, 1, KEY_W, -1))
     keyboard.register_handler(preload("res://scripts/input/handlers/player_move_key.gd").new(self.bag, self, 1, KEY_S, 1))
     keyboard.register_handler(preload("res://scripts/input/handlers/player_move_key.gd").new(self.bag, self, 0, KEY_A, -1))
     keyboard.register_handler(preload("res://scripts/input/handlers/player_move_key.gd").new(self.bag, self, 0, KEY_D, 1))
+    mouse.register_handler(preload("res://scripts/input/handlers/player_cone_mouse.gd").new(self.bag, self))
 
 func enter_game():
     self.is_playing = true
@@ -53,24 +56,11 @@ func process(delta):
     self.modify_position()
 
 func adjust_attack_cone():
-    var tangent
-    var angle = 0
-
     if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:
         return
 
-    if self.target_cone_vector[0] == 0:
-        if self.target_cone_vector[1] < 0:
-            angle = 0
-        else:
-            angle = 180
-    else:
-        tangent = atan2(self.target_cone_vector[1], self.target_cone_vector[0])
-        #angle = 180 + (tangent * 180) / PI
-        angle = -tangent - PI/2
-        print(angle)
-    self.target_cone.set_rot(angle)
-    self.despawn()
+    self.player.target_cone_angle = -atan2(self.player.target_cone_vector[1], self.player.target_cone_vector[0]) - PI/2
+    self.target_cone.set_rot(self.target_cone_angle)
 
 func attack():
     self.bag.enemies.get_enemies_nearby_object(self)

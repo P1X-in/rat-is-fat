@@ -28,6 +28,9 @@ func set_hp(hp):
 func get_pos():
     return self.avatar.get_pos()
 
+func get_screen_pos():
+    return self.get_pos() + Vector2(100, 100)
+
 func spawn():
     self.is_processing = true
     self.bag.action_controller.game_board.add_child(self.avatar)

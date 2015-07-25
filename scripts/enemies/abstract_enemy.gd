@@ -17,9 +17,10 @@ func go_to(x, y):
 func process_ai():
     var distance
     var direction = Vector2(0, 0)
+
     if self.target == null:
         for player in self.bag.players.players:
-            if player.is_playing:
+            if player.is_playing && player.is_alive:
                 distance = self.calculate_distance_to_object(player)
                 if distance < self.aggro_range:
                     if self.target != null:
@@ -33,7 +34,7 @@ func process_ai():
                 direction = self.cast_movement_vector(self.initial_position)
     else:
         distance = self.calculate_distance_to_object(self.target)
-        if distance > self.aggro_range:
+        if not self.target.is_alive || distance > self.aggro_range:
             self.target = null
         elif distance > self.attack_range:
             direction = self.cast_movement_vector(self.target.get_pos())
