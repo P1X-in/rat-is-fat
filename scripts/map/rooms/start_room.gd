@@ -18,8 +18,8 @@ func _init():
         [3, 3, 'retarded_rat'],
         [3, 5, 'retarded_rat'],
         [3, 6, 'retarded_rat'],
-        [3, 7, 'retarded_rat'],
-        [3, 8, 'retarded_rat'],
+        [3, 7, 'jumping_rat'],
+        [3, 8, 'fat_rat'],
     ]
     self.items = [
         [13, 5, 'cheese'],
