@@ -15,3 +15,4 @@ var room = [
 
 var enemies = []
 var items = []
+var doors = []

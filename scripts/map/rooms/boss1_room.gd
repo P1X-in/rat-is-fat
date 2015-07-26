@@ -18,3 +18,8 @@ func _init():
     self.enemies = [
         [7, 5, 'shia'],
     ]
+
+    self.doors = [
+        [1, 2, 'south'],
+        [1, 3, 'north']
+    ]

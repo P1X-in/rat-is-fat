@@ -4,6 +4,8 @@ var bag
 var tilemap
 var room_max_size = Vector2(20, 12)
 var side_offset = 3
+var DOORS_CLOSED = 3
+var DOORS_OPEN = 2
 
 var spawns = {
     'initial0' : Vector2(8, 5),
@@ -52,24 +54,24 @@ var difficulty_bosses = [
 
 var door_definitions = {
     'north' : [
-        [7, 0, 14, 21],
-        [8, 0, 0, 19],
-        [9, 0, 13, 20],
+        [0, 0, 14, 21],
+        [1, 0, 0, 19],
+        [2, 0, 13, 20],
     ],
     'south' : [
-        [7, 10, 16, 26],
-        [8, 10, 0, 27],
-        [9, 10, 15, 28],
+        [0, 0, 16, 26],
+        [1, 0, 0, 27],
+        [2, 0, 15, 28],
     ],
     'east' : [
-        [16, 4, 13, 17],
-        [16, 5, 0, 22],
-        [16, 6, 15, 24],
+        [0, 0, 13, 17],
+        [0, 1, 0, 22],
+        [0, 2, 15, 24],
     ],
     'west' : [
-        [0, 4, 14, 18],
-        [0, 5, 0, 23],
-        [0, 6, 16, 25],
+        [0, 0, 14, 18],
+        [0, 1, 0, 23],
+        [0, 2, 16, 25],
     ],
 }
 
@@ -98,42 +100,47 @@ func load_room(cell):
 
 func create_passages(data, cell):
     if cell.north != null:
-        data = self.open_passage(data, self.door_definitions['north'])
+        data = self.open_passage(data, self.door_definitions['north'], 7, 0)
     if cell.south != null:
-        data = self.open_passage(data, self.door_definitions['south'])
+        data = self.open_passage(data, self.door_definitions['south'], 7, 10)
     if cell.east != null:
-        data = self.open_passage(data, self.door_definitions['east'])
+        data = self.open_passage(data, self.door_definitions['east'], 16, 4)
     if cell.west != null:
-        data = self.open_passage(data, self.door_definitions['west'])
+        data = self.open_passage(data, self.door_definitions['west'], 0, 4)
     return data
 
-func open_passage(data, passage):
+func open_passage(data, passage, x, y):
     for tile in passage:
-        data[tile[1]][tile[0]] = tile[2]
+        data[tile[1] + y][tile[0] + x] = tile[2]
     return data
 
 func close_doors():
     self.bag.game_state.doors_open = false
-    self.switch_doors(3)
+    self.switch_doors(self.DOORS_CLOSED)
 
 func open_doors():
     self.bag.game_state.doors_open = true
-    self.switch_doors(2)
+    self.switch_doors(self.DOORS_OPEN)
+
+func switch_custom_doors(tile_index):
+    for custom_door in self.bag.game_state.current_room.doors:
+        self.apply_door(self.door_definitions[custom_door[2]], tile_index, custom_door[0], custom_door[1])
 
 func switch_doors(tile_index):
     var cell = self.bag.game_state.current_cell
     if cell.north != null:
-        self.apply_door(self.door_definitions['north'], tile_index)
+        self.apply_door(self.door_definitions['north'], tile_index, 7, 0)
     if cell.south != null:
-        self.apply_door(self.door_definitions['south'], tile_index)
+        self.apply_door(self.door_definitions['south'], tile_index, 7, 10)
     if cell.east != null:
-        self.apply_door(self.door_definitions['east'], tile_index)
+        self.apply_door(self.door_definitions['east'], tile_index, 16, 4)
     if cell.west != null:
-        self.apply_door(self.door_definitions['west'], tile_index)
+        self.apply_door(self.door_definitions['west'], tile_index, 0, 4)
+    self.switch_custom_doors(tile_index)
 
-func apply_door(definition, tile_index):
+func apply_door(definition, tile_index, x, y):
     for tile in definition:
-        self.tilemap.set_cell(tile[0] + self.side_offset, tile[1], tile[tile_index])
+        self.tilemap.set_cell(tile[0] + self.side_offset + x, tile[1] + y, tile[tile_index])
 
 func clear_space():
     for x in range(self.room_max_size.x):
