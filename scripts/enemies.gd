@@ -6,12 +6,13 @@ var enemy_templates = {
     'retarded_rat' : preload("res://scripts/enemies/retarded_rat.gd"),
     'fat_rat' : preload("res://scripts/enemies/fat_rat.gd"),
     'jumping_rat' : preload("res://scripts/enemies/jumping_rat.gd"),
+    'spider' : preload("res://scripts/enemies/spider.gd"),
     'shia_prime' : preload("res://scripts/enemies/shia_prime.gd"),
 }
 
 var enemy_difficulties = [
     [],
-    ['shia', 'retarded_rat', 'fat_rat', 'jumping_rat'],
+    ['shia', 'retarded_rat', 'fat_rat', 'jumping_rat', 'spider'],
 ]
 
 var enemies_list = {}
