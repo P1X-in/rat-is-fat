@@ -8,6 +8,12 @@ var is_processing = false
 var initial_position = Vector2(0, 0)
 var score = 100
 
+var sounds = {
+    'attack' : null,
+    'die' : null,
+    'hit' : null,
+}
+
 func _init(bag):
     self.bag = bag
     self.max_hp = 5
@@ -53,6 +59,7 @@ func detach():
     self.bag.action_controller.detach_object(self.avatar)
 
 func die():
+    self.play_sound('die')
     self.is_processing = false
     self.despawn()
 
@@ -67,8 +74,12 @@ func calculate_distance(their_position):
     return sqrt(delta_x * delta_x + delta_y * delta_y)
 
 func recieve_damage(damage):
+    self.play_sound('hit')
     self.set_hp(self.hp - damage)
 
 func will_die(damage):
     return damage >= self.hp
 
+func play_sound(name):
+    if self.sounds[name] != null:
+        self.bag.sample_player.play(self.sounds[name])

@@ -38,6 +38,11 @@ func _init(bag, player_id).(bag):
     self.hat.set_frame(player_id)
     self.update_bars()
 
+    self.sounds['hit'] = 'player_hit'
+    self.sounds['die'] = 'player_die'
+    self.sounds['attack1'] = 'player_attack1'
+    self.sounds['attack2'] = 'player_attack2'
+
 func bind_gamepad(id):
     var gamepad = self.bag.input.devices['pad' + str(id)]
     gamepad.register_handler(preload("res://scripts/input/handlers/player_enter_game_gamepad.gd").new(self.bag, self))
@@ -122,13 +127,16 @@ func attack():
     var random_attack = 'attack'+ str(1 + randi() % 2)
 
     if not self.animations.get_current_animation() == 'attack1' and not self.animations.get_current_animation() == 'attack2' :
-        self.animations.play(random_attack);
+        self.animations.play(random_attack)
+        self.play_sound(random_attack)
         self.blast.play('blast')
     elif not self.animations.is_playing():
         if self.animations.get_current_animation() == 'attack1':
             self.animations.play('attack2')
+            self.play_sound('attack2')
         else:
             self.animations.play('attack1')
+            self.play_sound('attack1')
         self.blast.play('blast')
 
     enemies = self.bag.enemies.get_enemies_near_object(self, self.attack_range, self.target_cone_vector, self.attack_width)

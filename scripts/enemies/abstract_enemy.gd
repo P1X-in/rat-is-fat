@@ -64,6 +64,7 @@ func apply_axis_threshold(axis_value):
     return axis_value
 
 func attack():
+    self.play_sound('attack')
     self.is_attack_on_cooldown = true
     self.target.push_back(self)
     self.target.recieve_damage(self.attack_strength)

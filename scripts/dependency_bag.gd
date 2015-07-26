@@ -14,6 +14,8 @@ var processing = preload("res://scripts/processing.gd").new()
 var camera = preload("res://scripts/camera.gd").new()
 var map = preload("res://scripts/map/map.gd").new()
 var room_loader = preload("res://scripts/map/room_loader.gd").new()
+var sample_player
+var stream_player
 
 func _init(root_node):
     self.root = root_node
@@ -29,6 +31,8 @@ func _init(root_node):
     self.action_controller._init_bag(self)
     self.room_loader._init_bag(self)
     self.map._init_bag(self)
+    self.sample_player = self.root.get_node('SamplePlayer')
+    self.stream_player = self.root.get_node('StreamPlayer')
 
 func reset():
     self.players.reset()
