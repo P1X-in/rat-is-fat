@@ -235,6 +235,10 @@ func set_hp(hp):
     .set_hp(hp)
     self.update_bars()
 
+func recieve_damage(damage):
+    self.bag.camera.shake()
+    .recieve_damage(damage)
+
 func reset():
     self.attack_strength = 1
     self.hp = 10
