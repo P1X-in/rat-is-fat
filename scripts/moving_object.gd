@@ -69,7 +69,7 @@ func push_back(enemy):
     var position_delta_y = object_position.y - enemy_position.y
     var force = pow(enemy.attack_strength, -1)
 
-    var scale = force / self.calculate_distance(enemy_position) * 20 - mass / force
+    var scale = force / self.calculate_distance(enemy_position) * 10
 
     self.avatar.move(Vector2(position_delta_x * scale, position_delta_y * scale))
     self.stun()
