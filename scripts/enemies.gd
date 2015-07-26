@@ -6,7 +6,13 @@ var enemy_templates = {
     'retarded_rat' : preload("res://scripts/enemies/retarded_rat.gd"),
     'fat_rat' : preload("res://scripts/enemies/fat_rat.gd"),
     'jumping_rat' : preload("res://scripts/enemies/jumping_rat.gd"),
+    'shia_prime' : preload("res://scripts/enemies/shia.gd"),
 }
+
+var enemy_difficulties = [
+    [],
+    ['shia', 'retarded_rat', 'fat_rat', 'jumping_rat'],
+]
 
 var enemies_list = {}
 
@@ -58,7 +64,9 @@ func is_enemy_in_cone(enemy, object, attack_range, attack_direction, attack_widt
             return true
     return false
 
-
-
+func get_random_enemy_name(difficulty):
+    randomize()
+    var apropriate_enemies = self.enemy_difficulties[difficulty]
+    return apropriate_enemies[randi() % apropriate_enemies.size()]
 
 

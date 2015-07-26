@@ -59,10 +59,16 @@ func connect_room_cell(cell, x, y, direction):
         cell.west = neighbour_cell
         neighbour_cell.east = cell
 
-func generate_map(difficulty, room_count):
+func generate_map(level):
+    var level_settings = self.bag.game_state.levels[level]
+    var room_count = level_settings['rooms']
+    var pickup_count = level_settings['pickup_rooms']
+    var difficulty = level_settings['room_difficulty']
     self.reset_map()
     for i in range(room_count):
         self.randomize_cell(difficulty, self.bag.room_loader.difficulty_templates)
+    for i in range(pickup_count):
+        self.randomize_cell(difficulty, self.bag.room_loader.difficulty_pickups)
     self.randomize_cell(difficulty, self.bag.room_loader.difficulty_bosses)
 
 func randomize_cell(difficulty, room_collection):

@@ -40,12 +40,20 @@ var room_templates = {
     'easy6' : preload("res://scripts/map/rooms/easy6_room.gd"),
     'boss1' : preload("res://scripts/map/rooms/boss1_room.gd"),
     'boss2' : preload("res://scripts/map/rooms/boss2_room.gd"),
+    'pickup1' : preload("res://scripts/map/rooms/pickup1_room.gd"),
+    'pickup2' : preload("res://scripts/map/rooms/pickup2_room.gd"),
 }
 
 var difficulty_templates = [
     ['start'],
     ['easy1', 'easy2', 'easy4', 'easy5', 'easy6'],
     ['easy2', 'easy3', 'easy4', 'easy6'],
+]
+
+var difficulty_pickups = [
+    [],
+    ['pickup1'],
+    ['pickup2'],
 ]
 
 var difficulty_bosses = [
@@ -159,11 +167,16 @@ func apply_room_data(data):
 
 func spawn_enemies(enemies):
     var position = Vector2(0, 0)
+    var enemy_name
     self.bag.enemies.reset()
     for enemy_data in enemies:
         position.x = enemy_data[0] + self.side_offset
         position.y = enemy_data[1]
-        self.bag.enemies.spawn(enemy_data[2], position)
+        if enemy_data[2] == null:
+            enemy_name = self.bag.enemies.get_random_enemy_name(enemy_data[3])
+        else:
+            enemy_name = enemy_data[2]
+        self.bag.enemies.spawn(enemy_name, position)
 
 func spawn_items(items, cell):
     var position = Vector2(0, 0)

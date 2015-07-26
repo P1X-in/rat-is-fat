@@ -14,14 +14,3 @@ func _init():
         [ 7,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  9],
         [12, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11],
     ]
-    self.enemies = [
-        [3, 3, 'retarded_rat'],
-        [3, 5, 'retarded_rat'],
-        [3, 6, 'retarded_rat'],
-        [3, 7, 'retarded_rat'],
-        [3, 8, 'retarded_rat'],
-    ]
-    self.items = [
-        [13, 5, 'cheese'],
-        [12, 5, 'medicals']
-    ]
