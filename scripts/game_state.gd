@@ -5,12 +5,12 @@ var game_in_progress = false
 var current_room
 var current_cell
 var doors_open = true
-var difficulty = 0
+var level = 0
 
 var levels = [
-    {'room_difficulty' : 1, 'rooms' : 6},
-    {'room_difficulty' : 1, 'rooms' : 10},
-    {'room_difficulty' : 2, 'rooms' : 10},
+    {'room_difficulty' : 1, 'rooms' : 6, 'pickup_rooms' : 1},
+    {'room_difficulty' : 1, 'rooms' : 10, 'pickup_rooms' : 2},
+    {'room_difficulty' : 2, 'rooms' : 10, 'pickup_rooms' : 2},
 ]
 
 func _init_bag(bag):
@@ -21,4 +21,4 @@ func reset():
     self.current_room = null
     self.current_cell = null
     self.doors_open = true
-    self.difficulty = 0
+    self.level = 0

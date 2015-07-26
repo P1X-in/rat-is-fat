@@ -16,5 +16,5 @@ func _init():
     ]
 
     self.enemies = [
-        [7, 5, 'shia'],
+        [7, 5, null, 1],
     ]

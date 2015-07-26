@@ -16,7 +16,7 @@ func _init():
     ]
 
     self.enemies = [
-        [3, 8, 'shia'],
+        [3, 8, null, 1],
     ]
 
     self.items = [

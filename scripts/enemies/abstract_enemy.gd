@@ -55,8 +55,6 @@ func cast_movement_vector(destination_point):
     var delta_x = (destination_point.x - my_position.x) * scale
     var delta_y = (destination_point.y - my_position.y) * scale
 
-    print(delta_x, delta_y)
-
     return Vector2(delta_x, delta_y)
 
 func randomize_movement_vector(vector):

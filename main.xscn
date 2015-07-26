@@ -10,6 +10,22 @@
 	<ext_resource path="res://scenes/player/assets/hit.wav" type="Sample"></ext_resource>
 	<ext_resource path="res://scenes/dance.ogg" type="AudioStream"></ext_resource>
 	<resource type="SampleLibrary" path="local://1">
+		<dictionary name="samples/player_die" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "sample" </string>
+			<resource  resource_type="Sample" path="res://scenes/player/assets/die.wav">  </resource>
+		</dictionary>
+		<dictionary name="samples/game_over" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "sample" </string>
+			<resource  resource_type="Sample" path="res://scenes/game_over.wav">  </resource>
+		</dictionary>
 		<dictionary name="samples/player_hit" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
@@ -26,14 +42,6 @@
 			<string> "sample" </string>
 			<resource  resource_type="Sample" path="res://scenes/player/assets/attack_left.wav">  </resource>
 		</dictionary>
-		<dictionary name="samples/game_over" shared="false">
-			<string> "db" </string>
-			<real> 0 </real>
-			<string> "pitch" </string>
-			<real> 1 </real>
-			<string> "sample" </string>
-			<resource  resource_type="Sample" path="res://scenes/game_over.wav">  </resource>
-		</dictionary>
 		<dictionary name="samples/player_attack2" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
@@ -41,14 +49,6 @@
 			<real> 1 </real>
 			<string> "sample" </string>
 			<resource  resource_type="Sample" path="res://scenes/player/assets/attack_right.wav">  </resource>
-		</dictionary>
-		<dictionary name="samples/player_die" shared="false">
-			<string> "db" </string>
-			<real> 0 </real>
-			<string> "pitch" </string>
-			<real> 1 </real>
-			<string> "sample" </string>
-			<resource  resource_type="Sample" path="res://scenes/player/assets/die.wav">  </resource>
 		</dictionary>
 
 	</resource>
@@ -285,10 +285,12 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 0 </int>
+							<int> 2 </int>
 							<string> "sources" </string>
-							<array  len="1" shared="false">
+							<array  len="3" shared="false">
 								<string> "res://scripts/object.gd" </string>
+								<string> "res://scripts/camera.gd" </string>
+								<string> "res://scripts/player.gd" </string>
 							</array>
 						</dictionary>
 					</dictionary>
