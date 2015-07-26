@@ -11,6 +11,9 @@ var body_part_footer
 var animations
 var hat = false
 
+var stun_duration = 0.15
+var stun_level = 0
+
 func _init(bag).(bag):
     self.bag = bag
 
@@ -65,17 +68,22 @@ func push_back(enemy):
     var position_delta_x =  object_position.x - enemy_position.x
     var position_delta_y = object_position.y - enemy_position.y
 
-    var power = enemy.attack_strength * 20
+    var power = enemy.attack_strength * 2 + 15
     var scale = power / self.calculate_distance(enemy_position)
 
     self.avatar.move(Vector2(position_delta_x * scale, position_delta_y * scale))
     self.stun()
 
-func stun():
+func stun(duration=null):
+    if duration == null:
+        duration = self.stun_duration
     self.is_processing = false
-    self.bag.timers.set_timeout(0.15, self, "remove_stun")
+    self.stun_level = stun_level + 1
+    self.bag.timers.set_timeout(duration, self, "remove_stun")
 
 func remove_stun():
-    self.is_processing = true
+    self.stun_level = stun_level - 1
+    if self.stun_level == 0:
+        self.is_processing = true
 
 

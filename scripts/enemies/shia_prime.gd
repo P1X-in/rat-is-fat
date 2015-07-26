@@ -19,7 +19,9 @@ func _init(bag).(bag):
     ]
 
 func phase2():
+    self.stun(2)
     self.bag.sample_player.play('game_over')
 
 func phase3():
+    self.stun(2)
     self.bag.sample_player.play('you_can')
