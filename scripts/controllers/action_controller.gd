@@ -25,7 +25,7 @@ func end_game():
 func next_level(next):
     var level_settings
     if next == 'next':
-        #self.bag.game_state.difficulty = self.bag.game_state.difficulty + 1
+        self.bag.game_state.difficulty = self.bag.game_state.difficulty + 1
         level_settings = self.bag.game_state.levels[self.bag.game_state.difficulty]
         self.bag.map.generate_map(level_settings['room_difficulty'], level_settings['rooms'])
         self.bag.map.switch_to_cell(self.bag.map.start_cell)

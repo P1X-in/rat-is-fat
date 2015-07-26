@@ -10,6 +10,7 @@ var difficulty = 0
 var levels = [
     {'room_difficulty' : 1, 'rooms' : 6},
     {'room_difficulty' : 1, 'rooms' : 10},
+    {'room_difficulty' : 2, 'rooms' : 10},
 ]
 
 func _init_bag(bag):
