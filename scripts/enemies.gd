@@ -2,7 +2,10 @@
 var bag
 
 var enemy_templates = {
-    'shia' : preload("res://scripts/enemies/shia.gd")
+    'shia' : preload("res://scripts/enemies/shia.gd"),
+    'retarded_rat' : preload("res://scripts/enemies/retarded_rat.gd"),
+    'fat_rat' : preload("res://scripts/enemies/fat_rat.gd"),
+    'jumping_rat' : preload("res://scripts/enemies/jumping_rat.gd"),
 }
 
 var enemies_list = {}
