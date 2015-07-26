@@ -8,6 +8,7 @@ var attack_strength = 1
 var attack_cooldown = 1
 var is_attack_on_cooldown = false
 var id = 0
+var moving_speed = 1
 
 func _init(bag).(bag):
     self.velocity = 100
@@ -34,6 +35,7 @@ func process_ai():
             distance = self.calculate_distance(self.initial_position)
             if distance > 10:
                 direction = self.cast_movement_vector(self.initial_position)
+                direction = self.randomize_movement_vector(direction)
     else:
         distance = self.calculate_distance_to_object(self.target)
         if not self.target.is_alive || distance > self.aggro_range:
@@ -53,7 +55,18 @@ func cast_movement_vector(destination_point):
     var delta_x = (destination_point.x - my_position.x) * scale
     var delta_y = (destination_point.y - my_position.y) * scale
 
+    print(delta_x, delta_y)
+
     return Vector2(delta_x, delta_y)
+
+func randomize_movement_vector(vector):
+    var range_x = vector.x / 10
+    var range_y = vector.y / 10
+
+    randomize()
+    # randi() % 10
+
+    return Vector2(vector.x + rand_range(0, range_x), vector.y + rand_range(0, range_y))
 
 func process(delta):
     self.reset_movement()
