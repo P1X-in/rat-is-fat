@@ -201,6 +201,8 @@ func check_doors():
             self.bag.players.move_to_entry_position('east')
             return
 
+    self.check_level_exit()
+
 func check_exit(door_coords, cell, door_offset):
     var exit_area = self.bag.room_loader.translate_position(Vector2(door_coords[0] + self.bag.room_loader.side_offset, door_coords[1]))
     exit_area = exit_area + door_offset
@@ -209,6 +211,15 @@ func check_exit(door_coords, cell, door_offset):
         self.bag.map.switch_to_cell(cell)
         return true
     return false
+
+func check_level_exit():
+    var exit_area
+    var distance
+    for exit in self.bag.game_state.current_room.exits:
+        exit_area = self.bag.room_loader.translate_position(Vector2(exit[0] + self.bag.room_loader.side_offset, exit[1]))
+        distance = self.calculate_distance(exit_area)
+        if distance < self.EXIT_THRESHOLD:
+            self.bag.action_controller.next_level(exit[2])
 
 func move_to_entry_position(name):
     var entry_position

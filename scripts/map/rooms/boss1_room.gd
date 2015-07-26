@@ -23,3 +23,7 @@ func _init():
         [1, 2, 'south'],
         [1, 3, 'north']
     ]
+
+    self.exits = [
+        [2, 1, 'next']
+    ]
