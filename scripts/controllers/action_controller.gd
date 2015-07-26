@@ -18,6 +18,7 @@ func start_game():
     self.bag.hud.show()
 
 func end_game():
+    self.bag.game_state.current_cell.detach_persistent_objects()
     self.bag.game_state.game_in_progress = false
     self.bag.root.remove_child(self.game_board)
     self.bag.hud.hide()
