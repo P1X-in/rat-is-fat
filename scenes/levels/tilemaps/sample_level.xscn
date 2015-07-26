@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="2" version="1.1" version_name="Godot Engine v1.1.stable.d3b42e41b0">
-	<ext_resource path="res://scenes/levels/main_tileset.res" type="TileSet"></ext_resource>
+	<ext_resource path="res://scenes/levels/main_tileset1.res" type="TileSet"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "conn_count" </string>
@@ -194,7 +194,7 @@
 				<real> 0 </real>
 				<vector2> 1, 1 </vector2>
 				<int> 0 </int>
-				<resource  resource_type="TileSet" path="res://scenes/levels/main_tileset.res">  </resource>
+				<resource  resource_type="TileSet" path="res://scenes/levels/main_tileset1.res">  </resource>
 				<vector2> 32, 32 </vector2>
 				<int> 16 </int>
 				<matrix32> 1, 0, 0, 1, 0, 0 </matrix32>
