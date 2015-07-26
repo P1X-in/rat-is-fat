@@ -7,7 +7,7 @@ var zoom
 var shake_timer
 var shakes = 0
 export var shakes_max = 5
-export var shake_time = 0.25
+export var shake_time = 0.1
 export var shake_boundary = 5
 var shake_initial_position
 var temp_delta = 0
