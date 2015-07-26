@@ -61,16 +61,21 @@ func connect_room_cell(cell, x, y, direction):
 
 func generate_map(difficulty, room_count):
     self.reset_map()
+    for i in range(room_count):
+        self.randomize_cell(difficulty, self.bag.room_loader.difficulty_templates)
+    self.randomize_cell(difficulty, self.bag.room_loader.difficulty_bosses)
+
+func randomize_cell(difficulty, room_collection):
     var free_cell
     var free_spot
     var room_type
     var new_cell
-    for i in range(room_count):
-        free_cell = self.pick_random_free_cell()
-        if free_cell != null:
-            free_spot = self.pick_random_free_neighbout_spot(free_cell)
-            room_type = self.pick_random_room_type(difficulty)
-            self.add_cell(room_type, free_spot.x, free_spot.y)
+    free_cell = self.pick_random_free_cell()
+    if free_cell != null:
+        free_spot = self.pick_random_free_neighbout_spot(free_cell)
+        room_type = self.pick_random_room_type(difficulty, room_collection)
+        self.add_cell(room_type, free_spot.x, free_spot.y)
+
 
 func pick_random_free_cell():
     var available_cells = []
@@ -104,8 +109,8 @@ func pick_random_free_neighbout_spot(cell):
     if randomed == 'west':
         return Vector2(cell.x - 1, cell.y)
 
-func pick_random_room_type(difficulty):
-    var on_level_templates = self.bag.room_loader.difficulty_templates[difficulty]
+func pick_random_room_type(difficulty, collection):
+    var on_level_templates = collection[difficulty]
     randomize()
     return on_level_templates[randi() % on_level_templates.size()]
 

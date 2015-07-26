@@ -36,11 +36,17 @@ var room_templates = {
     'easy4' : preload("res://scripts/map/rooms/easy4_room.gd"),
     'easy5' : preload("res://scripts/map/rooms/easy5_room.gd"),
     'easy6' : preload("res://scripts/map/rooms/easy6_room.gd"),
+    'boss1' : preload("res://scripts/map/rooms/boss1_room.gd"),
 }
 
 var difficulty_templates = [
     ['start'],
     ['easy1', 'easy2', 'easy3', 'easy4', 'easy5', 'easy6'],
+]
+
+var difficulty_bosses = [
+    [],
+    ['boss1']
 ]
 
 
