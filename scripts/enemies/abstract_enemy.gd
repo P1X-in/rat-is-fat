@@ -85,7 +85,5 @@ func attack_cooled_down():
     self.is_attack_on_cooldown = false
 
 func die():
-    self.is_processing = false
     self.bag.enemies.del_enemy(self)
-    self.despawn()
-
+    .die()
