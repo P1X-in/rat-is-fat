@@ -131,5 +131,8 @@ func pick_random_room_type(difficulty, collection):
     return on_level_templates[randi() % on_level_templates.size()]
 
 func switch_to_cell(cell):
+    if self.bag.game_state.current_cell != null:
+        self.bag.game_state.current_cell.detach_persistent_objects()
     self.bag.game_state.current_cell = cell
     self.bag.room_loader.load_room(cell)
+    cell.attach_persisten_objects()

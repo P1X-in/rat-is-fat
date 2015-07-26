@@ -14,6 +14,8 @@ var hat = false
 var stun_duration = 0.15
 var stun_level = 0
 
+var tombstone_template = preload("res://scenes/particles/thumbstone.xscn")
+
 func _init(bag).(bag):
     self.bag = bag
 
@@ -86,4 +88,10 @@ func remove_stun():
     if self.stun_level == 0:
         self.is_processing = true
 
+func die():
+    self.spawn_tombstone()
+    .die()
 
+func spawn_tombstone():
+    var tombstone = self.tombstone_template.instance()
+    self.bag.game_state.current_cell.add_persistent_object(tombstone, self.get_pos())
