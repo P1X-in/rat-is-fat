@@ -10,5 +10,16 @@ func _init(bag).(bag):
     self.attack_range = 50
     self.attack_strength = 3
     self.attack_cooldown = 3
-    self.max_hp = 25
-    self.hp = 25
+    self.max_hp = 50
+    self.hp = 50
+
+    self.phase_hp_thresholds = [
+        [30, 2],
+        [15, 3],
+    ]
+
+func phase2():
+    self.bag.sample_player.play('game_over')
+
+func phase3():
+    self.bag.sample_player.play('you_can')

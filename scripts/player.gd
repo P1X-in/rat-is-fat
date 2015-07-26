@@ -79,6 +79,7 @@ func die():
     self.panel.hide()
     .die()
     if not self.bag.players.is_living_player_in_game():
+        self.bag.sample_player.play('game_over')
         self.bag.action_controller.end_game()
 
 func process(delta):
