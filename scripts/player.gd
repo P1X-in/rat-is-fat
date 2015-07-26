@@ -94,11 +94,14 @@ func modify_position(delta):
     self.handle_animations()
 
 func handle_animations():
+
     if not self.animations.is_playing():
         if abs(self.movement_vector[0]) > self.AXIS_THRESHOLD || abs(self.movement_vector[1]) > self.AXIS_THRESHOLD:
             self.animations.play('run')
+            print('run?')
         else:
             self.animations.play('idle')
+            print('idle?')
     else:
         if self.animations.get_current_animation() == 'idle' && (abs(self.movement_vector[0]) > self.AXIS_THRESHOLD || abs(self.movement_vector[1]) > self.AXIS_THRESHOLD):
             self.animations.play('run')

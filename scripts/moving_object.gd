@@ -62,6 +62,8 @@ func flip(direction):
 
 func reset_movement():
     self.movement_vector = [0, 0]
+    #self.avatar.set_opacity(1)
+    #self.animations.play('idle')
 
 func push_back(enemy):
     var enemy_position = enemy.get_pos()
