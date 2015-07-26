@@ -8,7 +8,7 @@ var z_index
 func _init_bag(bag):
     self.bag = bag
     self.tilemap = self.game_board.get_node('level/TileMap/')
-    self.z_index = self.tilemap.get_node('z_index')
+    self.z_index = self.game_board.get_node('z_index')
 
 func start_game():
     self.bag.game_state.game_in_progress = true
@@ -36,7 +36,7 @@ func next_level(next):
         self.end_game()
 
 func attach_object(object):
-    self.game_board.add_child(object)
+    self.z_index.add_child(object)
 
 func detach_object(object):
-    self.game_board.remove_child(object)
+    self.z_index.remove_child(object)

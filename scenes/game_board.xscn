@@ -8,7 +8,7 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="20">
+			<string_array  len="28">
 				<string> "game" </string>
 				<string> "Control" </string>
 				<string> "_import_path" </string>
@@ -29,13 +29,21 @@
 				<string> "size_flags/stretch_ratio" </string>
 				<string> "__meta__" </string>
 				<string> "level" </string>
+				<string> "z_index" </string>
+				<string> "YSort" </string>
+				<string> "transform/pos" </string>
+				<string> "transform/rot" </string>
+				<string> "transform/scale" </string>
+				<string> "z/z" </string>
+				<string> "z/relative" </string>
+				<string> "sort/enabled" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 2 </int>
+			<int> 3 </int>
 			<string> "nodes" </string>
-			<int_array  len="52"> 				-1, -1, 1, 0, -1, 17, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 0, 10, 0, 11, 0, 12, 0, 13, 6, 14, 1, 15, 7, 16, 7, 17, 2, 18, 8, 0, 0, 0, 1, 19, 9, 2, 2, 0, 18, 10, 0 </int_array>
+			<int_array  len="81"> 				-1, -1, 1, 0, -1, 17, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 0, 10, 0, 11, 0, 12, 0, 13, 6, 14, 1, 15, 7, 16, 7, 17, 2, 18, 8, 0, 0, 0, 1, 19, 9, 2, 2, 0, 18, 10, 0, 0, 0, 21, 20, -1, 11, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 22, 11, 23, 12, 24, 13, 25, 14, 26, 1, 27, 1, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="11" shared="false">
+			<array  len="15" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -307,6 +315,10 @@
 						<int> 0 </int>
 					</dictionary>
 				</dictionary>
+				<vector2> 0, 0 </vector2>
+				<real> 0 </real>
+				<vector2> 1, 1 </vector2>
+				<int> 0 </int>
 			</array>
 			<string> "version" </string>
 			<int> 1 </int>
