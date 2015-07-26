@@ -19,6 +19,7 @@ func _init(bag).(bag):
     self.attack_cooldown = 3
     self.max_hp = 50
     self.hp = 50
+    self.score = 200
 
     self.phase_hp_thresholds = [
         [30, 2],
