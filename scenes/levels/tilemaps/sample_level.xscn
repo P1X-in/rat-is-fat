@@ -8,7 +8,7 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="37">
+			<string_array  len="40">
 				<string> "level" </string>
 				<string> "Control" </string>
 				<string> "_import_path" </string>
@@ -46,11 +46,14 @@
 				<string> "collision/layers" </string>
 				<string> "collision/mask" </string>
 				<string> "tile_data" </string>
+				<string> "z_index" </string>
+				<string> "YSort" </string>
+				<string> "sort/enabled" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 2 </int>
+			<int> 3 </int>
 			<string> "nodes" </string>
-			<int_array  len="92"> 				-1, -1, 1, 0, -1, 15, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 0, 8, 0, 9, 0, 10, 0, 11, 4, 12, 1, 13, 5, 14, 5, 15, 2, 16, 6, 0, 0, 0, 17, 17, -1, 24, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 18, 7, 19, 8, 20, 9, 21, 10, 22, 1, 23, 10, 24, 11, 25, 12, 26, 13, 27, 14, 28, 5, 29, 10, 30, 4, 31, 4, 32, 2, 33, 8, 34, 3, 35, 3, 36, 15, 0 </int_array>
+			<int_array  len="121"> 				-1, -1, 1, 0, -1, 15, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 0, 8, 0, 9, 0, 10, 0, 11, 4, 12, 1, 13, 5, 14, 5, 15, 2, 16, 6, 0, 0, 0, 17, 17, -1, 24, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 18, 7, 19, 8, 20, 9, 21, 10, 22, 1, 23, 10, 24, 11, 25, 12, 26, 13, 27, 14, 28, 5, 29, 10, 30, 4, 31, 4, 32, 2, 33, 8, 34, 3, 35, 3, 36, 15, 0, 1, 0, 38, 37, -1, 11, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 18, 7, 19, 8, 20, 9, 21, 10, 22, 1, 39, 1, 0 </int_array>
 			<string> "variants" </string>
 			<array  len="16" shared="false">
 				<node_path> "" </node_path>
@@ -180,6 +183,15 @@
 							<real> 500 </real>
 							<string> "znear" </string>
 							<real> 0.1 </real>
+						</dictionary>
+						<string> "Script" </string>
+						<dictionary  shared="false">
+							<string> "current" </string>
+							<int> 0 </int>
+							<string> "sources" </string>
+							<array  len="1" shared="false">
+								<string> "res://scripts/map/map.gd" </string>
+							</array>
 						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>

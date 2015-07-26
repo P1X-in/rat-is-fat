@@ -3,10 +3,12 @@ var bag
 
 var game_board = preload("res://scenes/game_board.xscn").instance()
 var tilemap
+var z_index
 
 func _init_bag(bag):
     self.bag = bag
-    self.tilemap = self.game_board.get_node('level/TileMap')
+    self.tilemap = self.game_board.get_node('level/TileMap/')
+    self.z_index = self.tilemap.get_node('z_index')
 
 func start_game():
     self.bag.game_state.game_in_progress = true
