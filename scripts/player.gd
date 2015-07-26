@@ -6,6 +6,8 @@ var is_alive = true
 var attack_range = 100
 var attack_width = PI * 0.33
 var attack_strength = 1
+var attack_cooldown = 0.25
+var is_attack_on_cooldown = false
 var blast
 
 var target_cone
@@ -123,6 +125,9 @@ func adjust_attack_cone():
     self.target_cone.set_rot(self.target_cone_angle)
 
 func attack():
+    if self.is_attack_on_cooldown:
+        return
+
     var enemies
     var random_attack = 'attack'+ str(1 + randi() % 2)
 
@@ -143,6 +148,7 @@ func attack():
     for enemy in enemies:
         enemy.recieve_damage(self.attack_strength)
         enemy.push_back(self)
+    self.bag.timers.set_timeout(self.attack_cooldown, self, "attack_cooled_down")
 
 func get_power(amount):
     self.attack_strength += amount
@@ -249,3 +255,7 @@ func reset():
     self.is_alive = true
     self.movement_vector = [0, 0]
     self.score = 0
+    self.is_attack_on_cooldown = false
+
+func attack_cooled_down():
+    self.is_attack_on_cooldown = false
