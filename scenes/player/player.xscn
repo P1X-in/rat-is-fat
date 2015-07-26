@@ -7,13 +7,12 @@
 	<ext_resource path="res://scenes/player/assets/footer.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/attack.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/attack_blast.png" type="Texture"></ext_resource>
-	<resource type="CircleShape2D" path="local://0">
+	<resource type="CircleShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
 		<real name="radius"> 10 </real>
 
 	</resource>
-	<resource type="Animation" path="local://1">
-		<string name="resource/name"> "idle" </string>
+	<resource type="Animation" path="local://2">
 		<real name="length"> 3 </real>
 		<bool name="loop"> True </bool>
 		<real name="step"> 0.2 </real>
@@ -69,46 +68,6 @@
 		</dictionary>
 
 	</resource>
-	<resource type="Animation" path="local://2">
-		<real name="length"> 0.4 </real>
-		<bool name="loop"> False </bool>
-		<real name="step"> 0.2 </real>
-		<string name="tracks/0/type"> "value" </string>
-		<node_path name="tracks/0/path"> "head:frame" </node_path>
-		<int name="tracks/0/interp"> 1 </int>
-		<dictionary name="tracks/0/keys" shared="false">
-			<string> "cont" </string>
-			<bool> False </bool>
-			<string> "times" </string>
-			<real_array  len="3"> 				0, 0.2, 0.4 </real_array>
-			<string> "transitions" </string>
-			<real_array  len="3"> 				1, 1, 1 </real_array>
-			<string> "values" </string>
-			<array  len="3" shared="false">
-				<int> 1 </int>
-				<int> 0 </int>
-				<int> 0 </int>
-			</array>
-		</dictionary>
-		<string name="tracks/1/type"> "value" </string>
-		<node_path name="tracks/1/path"> "body:frame" </node_path>
-		<int name="tracks/1/interp"> 1 </int>
-		<dictionary name="tracks/1/keys" shared="false">
-			<string> "cont" </string>
-			<bool> False </bool>
-			<string> "times" </string>
-			<real_array  len="3"> 				0, 0.2, 0.4 </real_array>
-			<string> "transitions" </string>
-			<real_array  len="3"> 				1, 1, 1 </real_array>
-			<string> "values" </string>
-			<array  len="3" shared="false">
-				<int> 0 </int>
-				<int> 3 </int>
-				<int> 1 </int>
-			</array>
-		</dictionary>
-
-	</resource>
 	<resource type="Animation" path="local://3">
 		<real name="length"> 0.4 </real>
 		<bool name="loop"> False </bool>
@@ -150,6 +109,46 @@
 
 	</resource>
 	<resource type="Animation" path="local://4">
+		<real name="length"> 0.4 </real>
+		<bool name="loop"> False </bool>
+		<real name="step"> 0.2 </real>
+		<string name="tracks/0/type"> "value" </string>
+		<node_path name="tracks/0/path"> "head:frame" </node_path>
+		<int name="tracks/0/interp"> 1 </int>
+		<dictionary name="tracks/0/keys" shared="false">
+			<string> "cont" </string>
+			<bool> False </bool>
+			<string> "times" </string>
+			<real_array  len="3"> 				0, 0.2, 0.4 </real_array>
+			<string> "transitions" </string>
+			<real_array  len="3"> 				1, 1, 1 </real_array>
+			<string> "values" </string>
+			<array  len="3" shared="false">
+				<int> 1 </int>
+				<int> 0 </int>
+				<int> 0 </int>
+			</array>
+		</dictionary>
+		<string name="tracks/1/type"> "value" </string>
+		<node_path name="tracks/1/path"> "body:frame" </node_path>
+		<int name="tracks/1/interp"> 1 </int>
+		<dictionary name="tracks/1/keys" shared="false">
+			<string> "cont" </string>
+			<bool> False </bool>
+			<string> "times" </string>
+			<real_array  len="3"> 				0, 0.2, 0.4 </real_array>
+			<string> "transitions" </string>
+			<real_array  len="3"> 				1, 1, 1 </real_array>
+			<string> "values" </string>
+			<array  len="3" shared="false">
+				<int> 0 </int>
+				<int> 3 </int>
+				<int> 1 </int>
+			</array>
+		</dictionary>
+
+	</resource>
+	<resource type="Animation" path="local://5">
 		<real name="length"> 0.6 </real>
 		<bool name="loop"> True </bool>
 		<real name="step"> 0.2 </real>
@@ -224,7 +223,7 @@
 		</dictionary>
 
 	</resource>
-	<resource type="Animation" path="local://5">
+	<resource type="Animation" path="local://6">
 		<real name="length"> 0.5 </real>
 		<bool name="loop"> False </bool>
 		<real name="step"> 0.1 </real>
@@ -264,7 +263,7 @@
 		</dictionary>
 
 	</resource>
-	<resource type="Animation" path="local://6">
+	<resource type="Animation" path="local://7">
 		<real name="length"> 1.2 </real>
 		<bool name="loop"> True </bool>
 		<real name="step"> 0.2 </real>
@@ -350,8 +349,8 @@
 				<string> "playback/default_blend_time" </string>
 				<string> "root/root" </string>
 				<string> "anims/idle" </string>
-				<string> "anims/attack1" </string>
 				<string> "anims/attack2" </string>
+				<string> "anims/attack1" </string>
 				<string> "anims/run" </string>
 				<string> "playback/active" </string>
 				<string> "playback/speed" </string>
@@ -377,8 +376,8 @@
 				<vector2> 1, 1 </vector2>
 				<int> 0 </int>
 				<bool> False </bool>
-				<resource  resource_type="Shape2D" path="local://0">  </resource>
-				<matrix32> 1, -0, 0, 1, 0, 14 </matrix32>
+				<resource  resource_type="Shape2D" path="local://1">  </resource>
+				<matrix32> 1, -0, 0, 1, 0, 7.4498 </matrix32>
 				<real> 0.08 </real>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
@@ -535,7 +534,7 @@
 				<vector2> 0, 9 </vector2>
 				<resource  resource_type="Texture" path="res://scenes/player/assets/footer.png">  </resource>
 				<int> 3 </int>
-				<vector2> 0, 14 </vector2>
+				<vector2> 0, 7.4498 </vector2>
 				<vector2> 0, 4 </vector2>
 				<dictionary  shared="false">
 					<string> "_edit_lock_" </string>
@@ -547,16 +546,16 @@
 				<vector2> 0, -36 </vector2>
 				<resource  resource_type="Texture" path="res://scenes/player/assets/attack_blast.png">  </resource>
 				<node_path> ".." </node_path>
-				<resource  resource_type="Animation" path="local://1">  </resource>
 				<resource  resource_type="Animation" path="local://2">  </resource>
 				<resource  resource_type="Animation" path="local://3">  </resource>
 				<resource  resource_type="Animation" path="local://4">  </resource>
+				<resource  resource_type="Animation" path="local://5">  </resource>
 				<array  len="0" shared="false">
 				</array>
 				<string> "" </string>
-				<resource  resource_type="Animation" path="local://5">  </resource>
-				<real> 2 </real>
 				<resource  resource_type="Animation" path="local://6">  </resource>
+				<real> 2 </real>
+				<resource  resource_type="Animation" path="local://7">  </resource>
 				<string> "attack" </string>
 			</array>
 			<string> "version" </string>

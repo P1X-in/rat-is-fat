@@ -33,7 +33,7 @@ func spawn(name, map_position):
 func get_items_near_object(object):
     var results = []
     for instance_id in self.items_list:
-        if self.items_list[instance_id].calculate_distance_to_object(object) < 15:
+        if self.items_list[instance_id].calculate_distance_to_object(object) < 30:
             results.append(self.items_list[instance_id])
 
     return results
