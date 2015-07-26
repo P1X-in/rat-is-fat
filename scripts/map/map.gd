@@ -7,6 +7,13 @@ var start_cell
 
 var cell_template = preload("res://scripts/map/map_cell.gd")
 
+var tilesets = [
+    preload("res://scenes/levels/main_tileset1.res"),
+    preload("res://scenes/levels/main_tileset2.res"),
+    preload("res://scenes/levels/main_tileset3.res"),
+    preload("res://scenes/levels/main_tileset4.res"),
+]
+
 func _init_bag(bag):
     self.bag = bag
     self.reset_map()
@@ -64,12 +71,15 @@ func generate_map(level):
     var room_count = level_settings['rooms']
     var pickup_count = level_settings['pickup_rooms']
     var difficulty = level_settings['room_difficulty']
+    var tileset = level_settings['tileset']
     self.reset_map()
     for i in range(room_count):
         self.randomize_cell(difficulty, self.bag.room_loader.difficulty_templates)
     for i in range(pickup_count):
         self.randomize_cell(difficulty, self.bag.room_loader.difficulty_pickups)
     self.randomize_cell(difficulty, self.bag.room_loader.difficulty_bosses)
+
+    self.bag.room_loader.tilemap.set_tileset(self.tilesets[tileset])
 
 func randomize_cell(difficulty, room_collection):
     var free_cell

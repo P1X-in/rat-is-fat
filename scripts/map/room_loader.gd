@@ -48,16 +48,19 @@ var difficulty_templates = [
     ['start'],
     ['easy1', 'easy2', 'easy4', 'easy5', 'easy6'],
     ['easy2', 'easy3', 'easy4', 'easy6'],
+    ['easy2', 'easy3', 'easy4', 'easy6'],
 ]
 
 var difficulty_pickups = [
     [],
     ['pickup1'],
+    ['pickup1', 'pickup2'],
     ['pickup2'],
 ]
 
 var difficulty_bosses = [
     [],
+    ['boss1'],
     ['boss1'],
     ['boss2'],
 ]
