@@ -194,9 +194,13 @@ func load_previous_items(items):
         self.bag.items.add_item(items[item])
 
 func get_spawn_position(spawn_name):
+    var position = self.get_spawn_position_on_map(spawn_name)
+    return self.translate_position(position)
+
+func get_spawn_position_on_map(spawn_name):
     var position = self.bag.room_loader.spawns[spawn_name]
     position.x = position.x + self.side_offset
-    return self.translate_position(position)
+    return position
 
 func translate_position(position):
     return self.tilemap.map_to_world(position)

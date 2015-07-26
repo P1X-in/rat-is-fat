@@ -7,12 +7,12 @@
 	<ext_resource path="res://scenes/player/assets/footer.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/attack.png" type="Texture"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/attack_blast.png" type="Texture"></ext_resource>
-	<resource type="CircleShape2D" path="local://1">
+	<resource type="CircleShape2D" path="local://0">
 		<real name="custom_solver_bias"> 0 </real>
 		<real name="radius"> 10 </real>
 
 	</resource>
-	<resource type="Animation" path="local://2">
+	<resource type="Animation" path="local://1">
 		<real name="length"> 3 </real>
 		<bool name="loop"> True </bool>
 		<real name="step"> 0.2 </real>
@@ -68,7 +68,7 @@
 		</dictionary>
 
 	</resource>
-	<resource type="Animation" path="local://3">
+	<resource type="Animation" path="local://2">
 		<real name="length"> 0.4 </real>
 		<bool name="loop"> False </bool>
 		<real name="step"> 0.2 </real>
@@ -108,7 +108,7 @@
 		</dictionary>
 
 	</resource>
-	<resource type="Animation" path="local://4">
+	<resource type="Animation" path="local://3">
 		<real name="length"> 0.4 </real>
 		<bool name="loop"> False </bool>
 		<real name="step"> 0.2 </real>
@@ -148,7 +148,7 @@
 		</dictionary>
 
 	</resource>
-	<resource type="Animation" path="local://5">
+	<resource type="Animation" path="local://4">
 		<real name="length"> 0.6 </real>
 		<bool name="loop"> True </bool>
 		<real name="step"> 0.2 </real>
@@ -223,7 +223,7 @@
 		</dictionary>
 
 	</resource>
-	<resource type="Animation" path="local://6">
+	<resource type="Animation" path="local://5">
 		<real name="length"> 0.5 </real>
 		<bool name="loop"> False </bool>
 		<real name="step"> 0.1 </real>
@@ -263,7 +263,7 @@
 		</dictionary>
 
 	</resource>
-	<resource type="Animation" path="local://7">
+	<resource type="Animation" path="local://6">
 		<real name="length"> 1.2 </real>
 		<bool name="loop"> True </bool>
 		<real name="step"> 0.2 </real>
@@ -364,7 +364,7 @@
 			<string> "node_count" </string>
 			<int> 13 </int>
 			<string> "nodes" </string>
-			<int_array  len="529"> 				-1, -1, 1, 0, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 3, 14, 9, 15, 10, 16, 8, 17, 3, 18, 3, 19, 11, 20, 12, 0, 0, 0, 22, 21, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 13, 8, 5, 9, 6, 10, 7, 11, 1, 23, 14, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 34, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 17, 8, 5, 9, 6, 10, 7, 11, 1, 23, 18, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 19, 30, 3, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 35, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 20, 8, 5, 9, 6, 10, 7, 11, 1, 23, 21, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 22, 30, 7, 31, 15, 32, 8, 33, 16, 0, 3, 0, 22, 36, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 23, 8, 5, 9, 6, 10, 7, 11, 1, 23, 24, 24, 1, 25, 4, 26, 8, 27, 8, 28, 22, 29, 22, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 37, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 25, 8, 5, 9, 6, 10, 7, 11, 1, 23, 26, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 27, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 39, 38, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 28, 8, 5, 9, 6, 10, 7, 11, 1, 40, 9, 41, 8, 0, 0, 0, 43, 42, -1, 11, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 29, 8, 5, 9, 6, 10, 7, 11, 1, 20, 30, 0, 7, 0, 22, 44, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 31, 8, 5, 9, 6, 10, 7, 11, 1, 23, 32, 24, 1, 25, 4, 26, 8, 27, 8, 28, 33, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 7, 0, 22, 45, -1, 21, 2, 0, 3, 8, 4, 2, 5, 2, 6, 3, 7, 34, 8, 5, 9, 6, 10, 7, 11, 1, 23, 35, 24, 1, 25, 4, 26, 8, 27, 8, 28, 22, 29, 22, 30, 27, 31, 15, 32, 8, 33, 16, 0, 0, 0, 47, 46, -1, 12, 2, 0, 48, 3, 49, 5, 50, 36, 51, 37, 52, 38, 53, 39, 54, 40, 55, 1, 56, 2, 57, 41, 58, 42, 0, 0, 0, 47, 59, -1, 9, 2, 0, 48, 3, 49, 5, 50, 36, 60, 43, 55, 1, 56, 44, 57, 41, 58, 42, 0, 0, 0, 47, 61, -1, 9, 2, 0, 48, 3, 49, 5, 50, 36, 62, 45, 55, 1, 56, 2, 57, 41, 58, 46, 0 </int_array>
+			<int_array  len="529"> 				-1, -1, 1, 0, -1, 19, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 3, 14, 9, 15, 10, 16, 8, 17, 3, 18, 3, 19, 11, 20, 12, 0, 0, 0, 22, 21, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 13, 8, 5, 9, 6, 10, 7, 11, 1, 23, 14, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 34, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 17, 8, 5, 9, 6, 10, 7, 11, 1, 23, 18, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 19, 30, 20, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 35, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 21, 8, 5, 9, 6, 10, 7, 11, 1, 23, 22, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 20, 30, 7, 31, 15, 32, 8, 33, 16, 0, 3, 0, 22, 36, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 23, 8, 5, 9, 6, 10, 7, 11, 1, 23, 24, 24, 1, 25, 4, 26, 8, 27, 8, 28, 20, 29, 20, 30, 7, 31, 15, 32, 8, 33, 16, 0, 0, 0, 22, 37, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 25, 8, 5, 9, 6, 10, 7, 11, 1, 23, 26, 24, 1, 25, 4, 26, 8, 27, 8, 28, 3, 29, 27, 30, 20, 31, 15, 32, 8, 33, 16, 0, 0, 0, 39, 38, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 28, 8, 5, 9, 6, 10, 7, 11, 1, 40, 9, 41, 8, 0, 0, 0, 43, 42, -1, 11, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 29, 8, 5, 9, 6, 10, 7, 11, 1, 20, 30, 0, 7, 0, 22, 44, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 31, 8, 5, 9, 6, 10, 7, 11, 1, 23, 32, 24, 1, 25, 4, 26, 8, 27, 8, 28, 33, 29, 3, 30, 7, 31, 15, 32, 8, 33, 16, 0, 7, 0, 22, 45, -1, 21, 2, 0, 3, 8, 4, 2, 5, 2, 6, 3, 7, 34, 8, 5, 9, 6, 10, 7, 11, 1, 23, 35, 24, 1, 25, 4, 26, 8, 27, 8, 28, 20, 29, 20, 30, 27, 31, 15, 32, 8, 33, 16, 0, 0, 0, 47, 46, -1, 12, 2, 0, 48, 3, 49, 5, 50, 36, 51, 37, 52, 38, 53, 39, 54, 40, 55, 1, 56, 2, 57, 41, 58, 42, 0, 0, 0, 47, 59, -1, 9, 2, 0, 48, 3, 49, 5, 50, 36, 60, 43, 55, 1, 56, 44, 57, 41, 58, 42, 0, 0, 0, 47, 61, -1, 9, 2, 0, 48, 3, 49, 5, 50, 36, 62, 45, 55, 1, 56, 2, 57, 41, 58, 46, 0 </int_array>
 			<string> "variants" </string>
 			<array  len="47" shared="false">
 				<node_path> "" </node_path>
@@ -376,7 +376,7 @@
 				<vector2> 1, 1 </vector2>
 				<int> 0 </int>
 				<bool> False </bool>
-				<resource  resource_type="Shape2D" path="local://1">  </resource>
+				<resource  resource_type="Shape2D" path="local://0">  </resource>
 				<matrix32> 1, -0, 0, 1, 0, 7.4498 </matrix32>
 				<real> 0.08 </real>
 				<dictionary  shared="false">
@@ -526,9 +526,9 @@
 				<vector2> 0, -2 </vector2>
 				<resource  resource_type="Texture" path="res://scenes/player/assets/body.png">  </resource>
 				<int> 5 </int>
-				<vector2> 0, -7 </vector2>
-				<resource  resource_type="Texture" path="res://scenes/player/assets/head.png">  </resource>
 				<int> 2 </int>
+				<vector2> 0, -8 </vector2>
+				<resource  resource_type="Texture" path="res://scenes/player/assets/head.png">  </resource>
 				<vector2> 0, -5 </vector2>
 				<resource  resource_type="Texture" path="res://scenes/player/assets/hats.png">  </resource>
 				<vector2> 0, 9 </vector2>
@@ -546,16 +546,16 @@
 				<vector2> 0, -36 </vector2>
 				<resource  resource_type="Texture" path="res://scenes/player/assets/attack_blast.png">  </resource>
 				<node_path> ".." </node_path>
+				<resource  resource_type="Animation" path="local://1">  </resource>
 				<resource  resource_type="Animation" path="local://2">  </resource>
 				<resource  resource_type="Animation" path="local://3">  </resource>
 				<resource  resource_type="Animation" path="local://4">  </resource>
-				<resource  resource_type="Animation" path="local://5">  </resource>
 				<array  len="0" shared="false">
 				</array>
 				<string> "" </string>
-				<resource  resource_type="Animation" path="local://6">  </resource>
+				<resource  resource_type="Animation" path="local://5">  </resource>
 				<real> 2 </real>
-				<resource  resource_type="Animation" path="local://7">  </resource>
+				<resource  resource_type="Animation" path="local://6">  </resource>
 				<string> "attack" </string>
 			</array>
 			<string> "version" </string>

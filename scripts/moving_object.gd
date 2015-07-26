@@ -38,6 +38,8 @@ func modify_position(delta):
         motion = n.slide(motion)
         self.avatar.move(motion)
     self.flip(self.movement_vector[0])
+    self.avatar.set_opacity(1)
+    self.animations.play('run')
 
 func apply_axis_threshold(axis_value):
     if abs(axis_value) < self.AXIS_THRESHOLD:
@@ -60,6 +62,8 @@ func flip(direction):
 
 func reset_movement():
     self.movement_vector = [0, 0]
+    self.avatar.set_opacity(1)
+    self.animations.play('idle')
 
 func push_back(enemy):
     var enemy_position = enemy.get_pos()
@@ -80,10 +84,12 @@ func stun(duration=null):
     self.is_processing = false
     self.stun_level = stun_level + 1
     self.bag.timers.set_timeout(duration, self, "remove_stun")
+    self.animations.play('hit')
 
 func remove_stun():
     self.stun_level = stun_level - 1
     if self.stun_level == 0:
         self.is_processing = true
-
+    self.avatar.set_opacity(1)
+    self.animations.play('run')
 
