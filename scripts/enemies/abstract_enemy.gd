@@ -88,8 +88,8 @@ func die():
     self.bag.enemies.del_enemy(self)
     .die()
 
-func stun():
-    .stun()
+func stun(duration=null):
+    .stun(duration)
     self.avatar.set_opacity(1)
     self.animations.play('hit')
 

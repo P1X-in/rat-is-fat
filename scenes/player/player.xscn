@@ -501,6 +501,15 @@
 							<string> "znear" </string>
 							<real> 0.1 </real>
 						</dictionary>
+						<string> "Script" </string>
+						<dictionary  shared="false">
+							<string> "current" </string>
+							<int> 0 </int>
+							<string> "sources" </string>
+							<array  len="1" shared="false">
+								<string> "res://scripts/enemies/shia_prime.gd" </string>
+							</array>
+						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>
 					<dictionary  shared="false">

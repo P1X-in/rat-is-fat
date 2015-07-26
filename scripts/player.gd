@@ -150,6 +150,10 @@ func attack():
 
     enemies = self.bag.enemies.get_enemies_near_object(self, self.attack_range, self.target_cone_vector, self.attack_width)
     for enemy in enemies:
+        if enemy.will_die(self.attack_strength):
+            self.score += enemy.score
+            self.update_bars()
+
         enemy.recieve_damage(self.attack_strength)
         enemy.push_back(self)
     self.bag.timers.set_timeout(self.attack_cooldown, self, "attack_cooled_down")
