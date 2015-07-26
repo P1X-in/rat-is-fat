@@ -50,8 +50,8 @@ var difficulty_templates = [
 
 var difficulty_bosses = [
     [],
-    ['boss1']
-    ['boss2']
+    ['boss1'],
+    ['boss2'],
 ]
 
 
