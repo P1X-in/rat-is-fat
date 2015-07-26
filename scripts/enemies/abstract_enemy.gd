@@ -87,3 +87,13 @@ func attack_cooled_down():
 func die():
     self.bag.enemies.del_enemy(self)
     .die()
+
+func stun():
+    .stun()
+    self.avatar.set_opacity(1)
+    self.animations.play('hit')
+
+func remove_stun():
+    .remove_stun()
+    self.avatar.set_opacity(1)
+    self.animations.play('run')
