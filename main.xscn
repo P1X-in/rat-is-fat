@@ -11,38 +11,6 @@
 	<ext_resource path="res://scenes/enemies/assets/you_can.wav" type="Sample"></ext_resource>
 	<ext_resource path="res://scenes/dance.ogg" type="AudioStream"></ext_resource>
 	<resource type="SampleLibrary" path="local://1">
-		<dictionary name="samples/player_hit" shared="false">
-			<string> "db" </string>
-			<real> 0 </real>
-			<string> "pitch" </string>
-			<real> 1 </real>
-			<string> "sample" </string>
-			<resource  resource_type="Sample" path="res://scenes/player/assets/hit.wav">  </resource>
-		</dictionary>
-		<dictionary name="samples/player_attack1" shared="false">
-			<string> "db" </string>
-			<real> 0 </real>
-			<string> "pitch" </string>
-			<real> 1 </real>
-			<string> "sample" </string>
-			<resource  resource_type="Sample" path="res://scenes/player/assets/attack_left.wav">  </resource>
-		</dictionary>
-		<dictionary name="samples/player_attack2" shared="false">
-			<string> "db" </string>
-			<real> 0 </real>
-			<string> "pitch" </string>
-			<real> 1 </real>
-			<string> "sample" </string>
-			<resource  resource_type="Sample" path="res://scenes/player/assets/attack_right.wav">  </resource>
-		</dictionary>
-		<dictionary name="samples/player_die" shared="false">
-			<string> "db" </string>
-			<real> 0 </real>
-			<string> "pitch" </string>
-			<real> 1 </real>
-			<string> "sample" </string>
-			<resource  resource_type="Sample" path="res://scenes/player/assets/die.wav">  </resource>
-		</dictionary>
 		<dictionary name="samples/game_over" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
@@ -58,6 +26,38 @@
 			<real> 1 </real>
 			<string> "sample" </string>
 			<resource  resource_type="Sample" path="res://scenes/enemies/assets/you_can.wav">  </resource>
+		</dictionary>
+		<dictionary name="samples/player_die" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "sample" </string>
+			<resource  resource_type="Sample" path="res://scenes/player/assets/die.wav">  </resource>
+		</dictionary>
+		<dictionary name="samples/player_attack1" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "sample" </string>
+			<resource  resource_type="Sample" path="res://scenes/player/assets/attack_left.wav">  </resource>
+		</dictionary>
+		<dictionary name="samples/player_hit" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "sample" </string>
+			<resource  resource_type="Sample" path="res://scenes/player/assets/hit.wav">  </resource>
+		</dictionary>
+		<dictionary name="samples/player_attack2" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "sample" </string>
+			<resource  resource_type="Sample" path="res://scenes/player/assets/attack_right.wav">  </resource>
 		</dictionary>
 
 	</resource>
@@ -171,13 +171,13 @@
 				<resource  resource_type="Script" path="res://scripts/main.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>
 						<dictionary  shared="false">
 							<string> "ofs" </string>
-							<vector2> -782.592, -614.872 </vector2>
+							<vector2> -1077.12, -614.872 </vector2>
 							<string> "snap_grid" </string>
 							<bool> False </bool>
 							<string> "snap_offset" </string>
@@ -290,17 +290,6 @@
 							<real> 500 </real>
 							<string> "znear" </string>
 							<real> 0.1 </real>
-						</dictionary>
-						<string> "Script" </string>
-						<dictionary  shared="false">
-							<string> "current" </string>
-							<int> 0 </int>
-							<string> "sources" </string>
-							<array  len="3" shared="false">
-								<string> "res://scripts/object.gd" </string>
-								<string> "res://scripts/camera.gd" </string>
-								<string> "res://scripts/player.gd" </string>
-							</array>
 						</dictionary>
 					</dictionary>
 					<string> "__editor_run_settings__" </string>
@@ -464,7 +453,7 @@
 				<resource  resource_type="Texture" path="res://scenes/hud/assets/rat_is_fat_logo.png">  </resource>
 				<color> 1, 1, 1, 1 </color>
 				<rect2> 0, 0, 0, 0 </rect2>
-				<int> 4 </int>
+				<int> 10 </int>
 				<resource  resource_type="SampleLibrary" path="local://1">  </resource>
 				<nil>  </nil>
 				<resource  resource_type="AudioStream" path="res://scenes/dance.ogg">  </resource>

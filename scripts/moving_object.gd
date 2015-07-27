@@ -11,7 +11,7 @@ var body_part_footer
 var animations
 var hat = false
 
-var stun_duration = 0.15
+var stun_duration = 0.25
 var stun_level = 0
 
 var tombstone_template = preload("res://scenes/particles/thumbstone.xscn")
@@ -73,7 +73,7 @@ func push_back(enemy):
     var position_delta_y = object_position.y - enemy_position.y
     var force = pow(enemy.attack_strength, -1)
 
-    var scale = force / self.calculate_distance(enemy_position) * 10
+    var scale = (force / self.calculate_distance(enemy_position)) * 15
 
     self.avatar.move(Vector2(position_delta_x * scale, position_delta_y * scale))
     self.stun()

@@ -23,3 +23,6 @@ func load_basic_input():
     self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/quit_game.gd").new())
     self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/start_game_key.gd").new(self.bag))
     self.devices['pad0'].register_handler(preload("res://scripts/input/handlers/start_game_gamepad.gd").new(self.bag))
+    self.devices['pad1'].register_handler(preload("res://scripts/input/handlers/start_game_gamepad.gd").new(self.bag))
+    self.devices['pad2'].register_handler(preload("res://scripts/input/handlers/start_game_gamepad.gd").new(self.bag))
+    self.devices['pad3'].register_handler(preload("res://scripts/input/handlers/start_game_gamepad.gd").new(self.bag))

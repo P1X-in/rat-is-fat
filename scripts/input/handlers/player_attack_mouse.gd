@@ -10,5 +10,7 @@ func _init(bag, player):
     self.button_index = BUTTON_LEFT
 
 func handle(event):
-    if event.is_pressed() && self.bag.game_state.game_in_progress && self.player.is_playing && self.player.is_alive:
-        self.player.attack()
+    if self.bag.game_state.game_in_progress && self.player.is_playing && self.player.is_alive:
+        if event.is_pressed():
+            self.player.attack()
+        self.player.is_attacking = event.is_pressed()

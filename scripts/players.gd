@@ -30,3 +30,10 @@ func is_living_player_in_game():
 func reset():
     for player in self.players:
         player.reset()
+
+func get_first_free_entry_position_num(player_id):
+    var position = 0
+    for player in self.players:
+        if player.is_playing && player.is_alive && player.player_id < player_id:
+            position = position + 1
+    return position

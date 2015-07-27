@@ -5,7 +5,7 @@ var bag
 func _init(bag):
     self.bag = bag
     self.type = InputEvent.JOYSTICK_BUTTON
-    self.button_index = JOY_BUTTON_9
+    self.button_index = Globals.get("platform_input/xbox_start")
 
 func handle(event):
     if event.is_pressed() && not self.bag.game_state.game_in_progress:

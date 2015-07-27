@@ -6,8 +6,11 @@ var is_alive = true
 var attack_range = 100
 var attack_width = PI * 0.33
 var attack_strength = 1
-var attack_cooldown = 0.25
+var attack_cooldown = 0.4
 var is_attack_on_cooldown = false
+var is_attacking = false
+var is_invulnerable = false
+var invulnerability_period = 0.5
 var blast
 
 var target_cone
@@ -17,7 +20,7 @@ var target_cone_angle = 0.0
 var panel
 var hp_cap = 16
 
-var EXIT_THRESHOLD = 30
+var EXIT_THRESHOLD = 35
 
 func _init(bag, player_id).(bag):
     self.bag = bag
@@ -50,8 +53,8 @@ func bind_gamepad(id):
     gamepad.register_handler(preload("res://scripts/input/handlers/player_enter_game_gamepad.gd").new(self.bag, self))
     gamepad.register_handler(preload("res://scripts/input/handlers/player_move_axis.gd").new(self.bag, self, 0))
     gamepad.register_handler(preload("res://scripts/input/handlers/player_move_axis.gd").new(self.bag, self, 1))
-    gamepad.register_handler(preload("res://scripts/input/handlers/player_cone_gamepad.gd").new(self.bag, self, 2))
-    gamepad.register_handler(preload("res://scripts/input/handlers/player_cone_gamepad.gd").new(self.bag, self, 3))
+    gamepad.register_handler(preload("res://scripts/input/handlers/player_cone_gamepad.gd").new(self.bag, self, 0, Globals.get("platform_input/xbox_right_stick_x")))
+    gamepad.register_handler(preload("res://scripts/input/handlers/player_cone_gamepad.gd").new(self.bag, self, 1, Globals.get("platform_input/xbox_right_stick_y")))
     gamepad.register_handler(preload("res://scripts/input/handlers/player_attack_gamepad.gd").new(self.bag, self))
 
 func bind_keyboard_and_mouse():
@@ -87,6 +90,11 @@ func process(delta):
     .process(delta)
     self.check_doors()
     self.handle_items()
+    self.process_attack()
+
+func process_attack():
+    if self.is_attacking && not self.is_attack_on_cooldown:
+        self.attack()
 
 func modify_position(delta):
     .modify_position(delta)
@@ -94,14 +102,11 @@ func modify_position(delta):
     self.handle_animations()
 
 func handle_animations():
-
     if not self.animations.is_playing():
         if abs(self.movement_vector[0]) > self.AXIS_THRESHOLD || abs(self.movement_vector[1]) > self.AXIS_THRESHOLD:
             self.animations.play('run')
-            print('run?')
         else:
             self.animations.play('idle')
-            print('idle?')
     else:
         if self.animations.get_current_animation() == 'idle' && (abs(self.movement_vector[0]) > self.AXIS_THRESHOLD || abs(self.movement_vector[1]) > self.AXIS_THRESHOLD):
             self.animations.play('run')
@@ -134,6 +139,8 @@ func attack():
 
     var enemies
     var random_attack = 'attack'+ str(1 + randi() % 2)
+
+    self.is_attack_on_cooldown = true
 
     if not self.animations.get_current_animation() == 'attack1' and not self.animations.get_current_animation() == 'attack2' :
         self.animations.play(random_attack)
@@ -190,7 +197,7 @@ func check_doors():
         door_coords = self.bag.room_loader.door_definitions['north'][1]
         new_coords[0] = door_coords[0] + 7
         new_coords[1] = door_coords[1] + 0
-        if self.check_exit(new_coords, cell.north, Vector2(16, 0)):
+        if self.check_exit(new_coords, cell.north, Vector2(16, -15)):
             self.bag.players.move_to_entry_position('south')
             return
     if cell.south != null:
@@ -236,8 +243,9 @@ func check_level_exit():
             self.bag.action_controller.next_level(exit[2])
 
 func move_to_entry_position(name):
+    var entry_position_id = self.bag.players.get_first_free_entry_position_num(self.player_id)
     var entry_position
-    entry_position = self.bag.room_loader.get_spawn_position(name + str(self.player_id))
+    entry_position = self.bag.room_loader.get_spawn_position(name + str(entry_position_id))
     self.avatar.set_pos(entry_position)
 
 func update_bars():
@@ -250,8 +258,15 @@ func set_hp(hp):
     self.update_bars()
 
 func recieve_damage(damage):
+    if self.is_invulnerable:
+        return
+    self.is_invulnerable = true
     self.bag.camera.shake()
     .recieve_damage(damage)
+    self.bag.timers.set_timeout(self.invulnerability_period, self, "loose_invulnerability")
+
+func loose_invulnerability():
+    self.is_invulnerable = false
 
 func reset():
     self.attack_strength = 1
@@ -264,6 +279,7 @@ func reset():
     self.movement_vector = [0, 0]
     self.score = 0
     self.is_attack_on_cooldown = false
+    self.update_bars()
 
 func attack_cooled_down():
     self.is_attack_on_cooldown = false

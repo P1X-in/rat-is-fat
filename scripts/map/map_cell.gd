@@ -21,7 +21,7 @@ func _init(bag):
     self.bag = bag
 
 func has_free_connections():
-    return self.north == null || self.south == null || self.east == null || self.west == null
+    return (self.north == null && self.y - 1 >= 0) || (self.south == null && self.y + 1 < self.bag.map.map.size()) || (self.east == null && self.x + 1 < self.bag.map.map[0].size()) || (self.west == null && self.x - 1 >= 0)
 
 func add_item(item):
     self.items[item.get_instance_ID()] = item
