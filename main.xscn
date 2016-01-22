@@ -11,13 +11,13 @@
 	<ext_resource path="res://scenes/enemies/assets/you_can.wav" type="Sample"></ext_resource>
 	<ext_resource path="res://scenes/dance.ogg" type="AudioStream"></ext_resource>
 	<resource type="SampleLibrary" path="local://1">
-		<dictionary name="samples/game_over" shared="false">
+		<dictionary name="samples/player_attack1" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
 			<string> "pitch" </string>
 			<real> 1 </real>
 			<string> "sample" </string>
-			<resource  resource_type="Sample" path="res://scenes/over.wav">  </resource>
+			<resource  resource_type="Sample" path="res://scenes/player/assets/attack_left.wav">  </resource>
 		</dictionary>
 		<dictionary name="samples/you_can" shared="false">
 			<string> "db" </string>
@@ -27,22 +27,6 @@
 			<string> "sample" </string>
 			<resource  resource_type="Sample" path="res://scenes/enemies/assets/you_can.wav">  </resource>
 		</dictionary>
-		<dictionary name="samples/player_die" shared="false">
-			<string> "db" </string>
-			<real> 0 </real>
-			<string> "pitch" </string>
-			<real> 1 </real>
-			<string> "sample" </string>
-			<resource  resource_type="Sample" path="res://scenes/player/assets/die.wav">  </resource>
-		</dictionary>
-		<dictionary name="samples/player_attack1" shared="false">
-			<string> "db" </string>
-			<real> 0 </real>
-			<string> "pitch" </string>
-			<real> 1 </real>
-			<string> "sample" </string>
-			<resource  resource_type="Sample" path="res://scenes/player/assets/attack_left.wav">  </resource>
-		</dictionary>
 		<dictionary name="samples/player_hit" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
@@ -51,6 +35,14 @@
 			<string> "sample" </string>
 			<resource  resource_type="Sample" path="res://scenes/player/assets/hit.wav">  </resource>
 		</dictionary>
+		<dictionary name="samples/player_die" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "sample" </string>
+			<resource  resource_type="Sample" path="res://scenes/player/assets/die.wav">  </resource>
+		</dictionary>
 		<dictionary name="samples/player_attack2" shared="false">
 			<string> "db" </string>
 			<real> 0 </real>
@@ -58,6 +50,14 @@
 			<real> 1 </real>
 			<string> "sample" </string>
 			<resource  resource_type="Sample" path="res://scenes/player/assets/attack_right.wav">  </resource>
+		</dictionary>
+		<dictionary name="samples/game_over" shared="false">
+			<string> "db" </string>
+			<real> 0 </real>
+			<string> "pitch" </string>
+			<real> 1 </real>
+			<string> "sample" </string>
+			<resource  resource_type="Sample" path="res://scenes/over.wav">  </resource>
 		</dictionary>
 
 	</resource>
@@ -171,7 +171,7 @@
 				<resource  resource_type="Script" path="res://scripts/main.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "2D" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>

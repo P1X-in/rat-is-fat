@@ -38,7 +38,7 @@ func _init(bag, player_id).(bag):
     self.animations = self.avatar.get_node('body_animations')
     self.blast = self.avatar.get_node('blast_animations')
 
-    self.bind_gamepad(player_id)
+    #self.bind_gamepad(player_id)
     self.panel = self.bag.hud.bind_player_panel(player_id)
     self.hat.set_frame(player_id)
     self.update_bars()
@@ -47,6 +47,27 @@ func _init(bag, player_id).(bag):
     self.sounds['die'] = 'player_die'
     self.sounds['attack1'] = 'player_attack1'
     self.sounds['attack2'] = 'player_attack2'
+
+func bind_arcade(player):
+    var arcade = self.bag.input.devices['arcade']
+    if player == 0:
+        arcade.register_handler(preload("res://scripts/input/handlers/player_enter_game_arcade.gd").new(self.bag, self, 14))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_move_arcade.gd").new(self.bag, self, 1, 13, -1))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_move_arcade.gd").new(self.bag, self, 1, 12, 1))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_move_arcade.gd").new(self.bag, self, 0, 11, -1))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_move_arcade.gd").new(self.bag, self, 0, 10, 1))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_cone_arcade.gd").new(self.bag, self, 1, 13, -1))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_cone_arcade.gd").new(self.bag, self, 1, 12, 1))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_cone_arcade.gd").new(self.bag, self, 0, 11, -1))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_cone_arcade.gd").new(self.bag, self, 0, 10, 1))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_attack_arcade.gd").new(self.bag, self, 15))
+    else:
+        arcade.register_handler(preload("res://scripts/input/handlers/player_enter_game_arcade.gd").new(self.bag, self, 0))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_move_axis_arcade.gd").new(self.bag, self, 0, 0))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_move_axis_arcade.gd").new(self.bag, self, 1, 1))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_cone_axis_arcade.gd").new(self.bag, self, 0, 0))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_cone_axis_arcade.gd").new(self.bag, self, 1, 1))
+        arcade.register_handler(preload("res://scripts/input/handlers/player_attack_arcade.gd").new(self.bag, self, 1))
 
 func bind_gamepad(id):
     var gamepad = self.bag.input.devices['pad' + str(id)]
@@ -97,7 +118,8 @@ func process_attack():
         self.attack()
 
 func modify_position(delta):
-    .modify_position(delta)
+    if not self.is_attack_on_cooldown:
+        .modify_position(delta)
     self.flip(self.target_cone_vector[0])
     self.handle_animations()
 
@@ -113,6 +135,13 @@ func handle_animations():
         elif self.animations.get_current_animation() == 'run' && abs(self.movement_vector[0]) < self.AXIS_THRESHOLD && abs(self.movement_vector[1]) < self.AXIS_THRESHOLD:
             self.animations.play('idle')
 
+func respawn():
+    if self.is_alive || not self.is_playing:
+        return
+    self.panel.reset()
+    self.reset()
+    self.enter_game()
+
 
 func handle_items():
     var items = self.bag.items.get_items_near_object(self)
@@ -127,7 +156,9 @@ func handle_items():
 
 
 func adjust_attack_cone():
-    if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:
+    #if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:
+    #    return
+    if self.target_cone_vector[0] == 0 && self.target_cone_vector[1] == 0:
         return
 
     self.target_cone_angle = -atan2(self.target_cone_vector[1], self.target_cone_vector[0]) - PI/2
@@ -279,6 +310,7 @@ func reset():
     self.movement_vector = [0, 0]
     self.score = 0
     self.is_attack_on_cooldown = false
+    self.is_attacking = false
     self.update_bars()
 
 func attack_cooled_down():

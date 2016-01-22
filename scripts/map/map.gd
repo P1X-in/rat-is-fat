@@ -136,3 +136,4 @@ func switch_to_cell(cell):
     self.bag.game_state.current_cell = cell
     self.bag.room_loader.load_room(cell)
     cell.attach_persisten_objects()
+    self.bag.players.respawn()
