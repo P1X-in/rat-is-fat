@@ -14,6 +14,8 @@ func _init(bag, player, axis, direction):
 func handle(event):
     if self.bag.game_state.game_in_progress && self.player.is_playing && self.player.is_alive:
         var value = event.value
+        if self.axis == 1:
+            value = -value
         if value < -1:
             value = -1
         if value > 1:

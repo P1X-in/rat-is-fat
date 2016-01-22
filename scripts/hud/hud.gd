@@ -7,8 +7,6 @@ var player_panel_template = preload("res://scripts/hud/player_panel.gd")
 var player_panels = [
     null,
     null,
-    null,
-    null,
 ]
 
 func _init_bag(bag):

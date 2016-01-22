@@ -20,6 +20,7 @@ func start_game():
 func end_game():
     self.bag.game_state.current_cell.detach_persistent_objects()
     self.bag.game_state.game_in_progress = false
+    self.bag.players.remove_remaining_players()
     self.bag.root.remove_child(self.game_board)
     self.bag.hud.hide()
     self.bag.reset()
