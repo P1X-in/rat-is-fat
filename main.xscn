@@ -1,30 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="16" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
 	<ext_resource path="res://scripts/main.gd" type="Script" index="0"></ext_resource>
-	<ext_resource path="res://scenes/hud/hud.xscn" type="PackedScene" index="1"></ext_resource>
-	<ext_resource path="res://scenes/over.wav" type="Sample" index="5"></ext_resource>
+	<ext_resource path="res://scenes/over.wav" type="Sample" index="6"></ext_resource>
 	<ext_resource path="res://scenes/hud/assets/rat_is_fat_logo.png" type="Texture" index="2"></ext_resource>
-	<ext_resource path="res://scenes/enemies/assets/you_can.wav" type="Sample" index="10"></ext_resource>
-	<ext_resource path="res://scenes/player/assets/attack_right.wav" type="Sample" index="7"></ext_resource>
-	<ext_resource path="res://scenes/player/assets/attack_left.wav" type="Sample" index="6"></ext_resource>
-	<ext_resource path="res://scenes/player/assets/die.wav" type="Sample" index="8"></ext_resource>
-	<ext_resource path="res://scenes/player/assets/hit.wav" type="Sample" index="9"></ext_resource>
-	<ext_resource path="res://scenes/dance.ogg" type="AudioStream" index="11"></ext_resource>
+	<ext_resource path="res://scenes/enemies/assets/you_can.wav" type="Sample" index="11"></ext_resource>
+	<ext_resource path="res://scenes/player/assets/attack_right.wav" type="Sample" index="8"></ext_resource>
+	<ext_resource path="res://scenes/player/assets/attack_left.wav" type="Sample" index="7"></ext_resource>
+	<ext_resource path="res://scenes/player/assets/die.wav" type="Sample" index="9"></ext_resource>
+	<ext_resource path="res://scenes/player/assets/hit.wav" type="Sample" index="10"></ext_resource>
+	<ext_resource path="res://scenes/dance.ogg" type="AudioStream" index="12"></ext_resource>
+	<ext_resource path="res://scenes/hud/buttons_animation.tres" type="Animation" index="5"></ext_resource>
 	<ext_resource path="res://scenes/hud/button.png" type="Texture" index="4"></ext_resource>
 	<ext_resource path="res://fonts/04B_03__.TTF" type="DynamicFontData" index="3"></ext_resource>
+	<ext_resource path="res://scenes/hud/hud.xscn" type="PackedScene" index="1"></ext_resource>
 	<resource type="DynamicFont" path="local://3">
 		<int name="font/size"> 16 </int>
 		<bool name="font/use_mipmaps"> False </bool>
 		<bool name="font/use_filter"> False </bool>
 		<resource name="font/font" external="3">  </resource>
 		<resource name="fallback/0"></resource>
-	</resource>
-	<resource type="Animation" path="local://2">
-		<string name="resource/name"> "idle" </string>
-		<real name="length"> 1 </real>
-		<bool name="loop"> True </bool>
-		<real name="step"> 0.1 </real>
-
 	</resource>
 	<resource type="SampleLibrary" path="local://1">
 		<dictionary name="samples/game_over" shared="false">
@@ -35,7 +29,7 @@
 			<string> "priority" </string>
 			<int> 0 </int>
 			<string> "sample" </string>
-			<resource  external="5">  </resource>
+			<resource  external="6">  </resource>
 		</dictionary>
 		<dictionary name="samples/player_attack1" shared="false">
 			<string> "db" </string>
@@ -45,7 +39,7 @@
 			<string> "priority" </string>
 			<int> 0 </int>
 			<string> "sample" </string>
-			<resource  external="6">  </resource>
+			<resource  external="7">  </resource>
 		</dictionary>
 		<dictionary name="samples/player_attack2" shared="false">
 			<string> "db" </string>
@@ -55,7 +49,7 @@
 			<string> "priority" </string>
 			<int> 0 </int>
 			<string> "sample" </string>
-			<resource  external="7">  </resource>
+			<resource  external="8">  </resource>
 		</dictionary>
 		<dictionary name="samples/player_die" shared="false">
 			<string> "db" </string>
@@ -65,7 +59,7 @@
 			<string> "priority" </string>
 			<int> 0 </int>
 			<string> "sample" </string>
-			<resource  external="8">  </resource>
+			<resource  external="9">  </resource>
 		</dictionary>
 		<dictionary name="samples/player_hit" shared="false">
 			<string> "db" </string>
@@ -75,7 +69,7 @@
 			<string> "priority" </string>
 			<int> 0 </int>
 			<string> "sample" </string>
-			<resource  external="9">  </resource>
+			<resource  external="10">  </resource>
 		</dictionary>
 		<dictionary name="samples/you_can" shared="false">
 			<string> "db" </string>
@@ -85,7 +79,7 @@
 			<string> "priority" </string>
 			<int> 0 </int>
 			<string> "sample" </string>
-			<resource  external="10">  </resource>
+			<resource  external="11">  </resource>
 		</dictionary>
 
 	</resource>
@@ -150,7 +144,6 @@
 				<string> "max_lines_visible" </string>
 				<string> "Label" </string>
 				<string> "p1" </string>
-				<string> "editor/display_folded" </string>
 				<string> "button" </string>
 				<string> "transform/pos" </string>
 				<string> "hframes" </string>
@@ -170,6 +163,7 @@
 				<string> "p2" </string>
 				<string> "Label1" </string>
 				<string> "game_over" </string>
+				<string> "editor/display_folded" </string>
 				<string> "rect/scale" </string>
 				<string> "win" </string>
 				<string> "_win" </string>
@@ -207,9 +201,9 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="622"> 				-1, -1, 11, 0, -1, 10, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 0, 0, 0, 12, 12, -1, 16, 13, 8, 14, 0, 15, 1, 16, 9, 17, 10, 18, 10, 19, 11, 20, 11, 21, 1, 22, 1, 23, 1, 24, 12, 25, 13, 26, 13, 27, 13, 28, 13, 0, 0, 0, 2147483647, 29, 14, 5, 30, 0, 5, 3, 6, 3, 7, 3, 8, 3, 0, 0, 0, 35, 31, -1, 11, 32, 15, 33, 15, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 3, 7, 16, 8, 17, 34, 0, 0, 3, 0, 11, 36, -1, 8, 1, 0, 2, 1, 3, 2, 4, 2, 5, 18, 6, 19, 7, 18, 8, 19, 0, 4, 0, 40, 37, -1, 2, 38, 20, 39, 21, 0, 4, 0, 48, 41, -1, 14, 1, 1, 2, 1, 3, 2, 4, 8, 5, 22, 6, 23, 7, 24, 8, 25, 42, 26, 43, 27, 44, 15, 45, 28, 46, 8, 47, 29, 0, 4, 0, 11, 49, -1, 9, 50, 1, 1, 0, 2, 1, 3, 2, 4, 2, 5, 30, 6, 31, 7, 30, 8, 31, 0, 7, 0, 40, 51, -1, 5, 52, 32, 38, 20, 39, 33, 53, 34, 54, 35, 0, 7, 0, 40, 55, -1, 5, 52, 36, 38, 20, 39, 33, 56, 1, 54, 37, 0, 7, 0, 66, 57, -1, 8, 58, 15, 59, 3, 60, 38, 61, 39, 62, 1, 63, 28, 64, 40, 65, 41, 0, 7, 0, 48, 48, -1, 13, 1, 1, 2, 1, 3, 2, 4, 8, 5, 42, 6, 43, 7, 44, 8, 45, 42, 26, 43, 46, 45, 28, 46, 8, 47, 29, 0, 4, 0, 11, 67, -1, 9, 50, 1, 1, 0, 2, 1, 3, 2, 4, 2, 5, 47, 6, 31, 7, 47, 8, 31, 0, 12, 0, 48, 68, -1, 13, 1, 1, 2, 1, 3, 2, 4, 8, 5, 42, 6, 43, 7, 44, 8, 45, 42, 26, 43, 48, 45, 28, 46, 8, 47, 29, 0, 12, 0, 40, 51, -1, 5, 52, 32, 38, 20, 39, 33, 53, 34, 54, 35, 0, 12, 0, 40, 55, -1, 5, 52, 36, 38, 20, 39, 33, 56, 1, 54, 37, 0, 12, 0, 66, 57, -1, 8, 58, 15, 59, 3, 60, 38, 61, 39, 62, 1, 63, 28, 64, 40, 65, 41, 0, 4, 0, 11, 69, -1, 11, 50, 1, 30, 0, 70, 20, 1, 0, 2, 1, 3, 2, 4, 2, 5, 49, 6, 25, 7, 49, 8, 25, 0, 17, 0, 11, 71, -1, 9, 50, 1, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 50, 7, 3, 8, 50, 0, 18, 0, 48, 72, -1, 14, 1, 1, 2, 1, 3, 2, 4, 8, 5, 51, 6, 52, 7, 53, 8, 54, 42, 26, 43, 55, 44, 15, 45, 28, 46, 8, 47, 29, 0, 17, 0, 11, 73, -1, 10, 50, 1, 30, 0, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 50, 7, 3, 8, 50, 0, 20, 0, 48, 74, -1, 15, 1, 1, 2, 1, 3, 2, 4, 8, 5, 56, 6, 52, 7, 57, 8, 54, 42, 26, 43, 58, 44, 15, 75, 15, 45, 28, 46, 8, 47, 29, 0, 0, 0, 76, 76, -1, 14, 77, 15, 78, 59, 79, 3, 80, 28, 81, 3, 82, 3, 83, 3, 84, 8, 85, 3, 86, 3, 87, 3, 88, 2, 89, 3, 90, 3, 0, 0, 0, 91, 91, -1, 8, 92, 60, 93, 1, 94, 1, 95, 3, 96, 1, 97, 0, 98, 3, 99, 61, 0 </int_array>
+			<int_array  len="618"> 				-1, -1, 11, 0, -1, 10, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 0, 0, 0, 12, 12, -1, 16, 13, 8, 14, 0, 15, 1, 16, 9, 17, 10, 18, 10, 19, 11, 20, 11, 21, 1, 22, 1, 23, 1, 24, 12, 25, 13, 26, 13, 27, 13, 28, 13, 0, 0, 0, 2147483647, 29, 14, 5, 30, 0, 5, 3, 6, 3, 7, 3, 8, 3, 0, 0, 0, 35, 31, -1, 11, 32, 15, 33, 15, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 3, 7, 16, 8, 17, 34, 0, 0, 3, 0, 11, 36, -1, 8, 1, 0, 2, 1, 3, 2, 4, 2, 5, 18, 6, 19, 7, 18, 8, 19, 0, 4, 0, 40, 37, -1, 2, 38, 20, 39, 21, 0, 4, 0, 48, 41, -1, 14, 1, 1, 2, 1, 3, 2, 4, 8, 5, 22, 6, 23, 7, 24, 8, 25, 42, 26, 43, 27, 44, 15, 45, 28, 46, 8, 47, 29, 0, 4, 0, 11, 49, -1, 8, 1, 0, 2, 1, 3, 2, 4, 2, 5, 30, 6, 31, 7, 30, 8, 31, 0, 7, 0, 40, 50, -1, 5, 51, 32, 38, 20, 39, 33, 52, 34, 53, 35, 0, 7, 0, 40, 54, -1, 5, 51, 36, 38, 20, 39, 33, 55, 1, 53, 37, 0, 7, 0, 65, 56, -1, 8, 57, 15, 58, 3, 59, 38, 60, 39, 61, 1, 62, 28, 63, 40, 64, 41, 0, 7, 0, 48, 48, -1, 13, 1, 1, 2, 1, 3, 2, 4, 8, 5, 42, 6, 43, 7, 44, 8, 45, 42, 26, 43, 46, 45, 28, 46, 8, 47, 29, 0, 4, 0, 11, 66, -1, 8, 1, 0, 2, 1, 3, 2, 4, 2, 5, 47, 6, 31, 7, 47, 8, 31, 0, 12, 0, 48, 67, -1, 13, 1, 1, 2, 1, 3, 2, 4, 8, 5, 42, 6, 43, 7, 44, 8, 45, 42, 26, 43, 48, 45, 28, 46, 8, 47, 29, 0, 12, 0, 40, 50, -1, 5, 51, 32, 38, 20, 39, 33, 52, 34, 53, 35, 0, 12, 0, 40, 54, -1, 5, 51, 49, 38, 20, 39, 33, 55, 1, 53, 37, 0, 12, 0, 65, 56, -1, 8, 57, 15, 58, 3, 59, 38, 60, 39, 61, 1, 62, 28, 63, 40, 64, 41, 0, 4, 0, 11, 68, -1, 11, 69, 1, 30, 0, 70, 20, 1, 0, 2, 1, 3, 2, 4, 2, 5, 50, 6, 25, 7, 50, 8, 25, 0, 17, 0, 11, 71, -1, 9, 69, 1, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 51, 7, 3, 8, 51, 0, 18, 0, 48, 72, -1, 14, 1, 1, 2, 1, 3, 2, 4, 8, 5, 52, 6, 53, 7, 54, 8, 55, 42, 26, 43, 56, 44, 15, 45, 28, 46, 8, 47, 29, 0, 17, 0, 11, 73, -1, 10, 69, 1, 30, 0, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 51, 7, 3, 8, 51, 0, 20, 0, 48, 74, -1, 15, 1, 1, 2, 1, 3, 2, 4, 8, 5, 57, 6, 53, 7, 58, 8, 55, 42, 26, 43, 59, 44, 15, 75, 15, 45, 28, 46, 8, 47, 29, 0, 0, 0, 76, 76, -1, 14, 77, 15, 78, 60, 79, 3, 80, 28, 81, 3, 82, 3, 83, 3, 84, 8, 85, 3, 86, 3, 87, 3, 88, 2, 89, 3, 90, 3, 0, 0, 0, 91, 91, -1, 8, 92, 61, 93, 1, 94, 1, 95, 3, 96, 1, 97, 0, 98, 3, 99, 62, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="62" shared="false">
+			<array  len="63" shared="false">
 				<bool> False </bool>
 				<bool> True </bool>
 				<int> 2 </int>
@@ -249,10 +243,10 @@
 				<resource  external="4">  </resource>
 				<int> 3 </int>
 				<rect2> 0, 0, 32, 32 </rect2>
-				<vector2> -16, -32 </vector2>
+				<vector2> -16, -27.0554 </vector2>
 				<rect2> 64, 0, 32, 32 </rect2>
 				<node_path> ".." </node_path>
-				<resource  resource_type="Animation" path="local://2">  </resource>
+				<resource  external="5">  </resource>
 				<array  len="0" shared="false">
 				</array>
 				<string> "idle" </string>
@@ -263,6 +257,7 @@
 				<string> "PLAYER 1" </string>
 				<real> 241 </real>
 				<string> "PLAYER 2" </string>
+				<vector2> -16, -26.1896 </vector2>
 				<real> 11 </real>
 				<real> -138 </real>
 				<real> -81 </real>
@@ -274,7 +269,7 @@
 				<real> 80 </real>
 				<string> "YOU LOSE..." </string>
 				<resource  resource_type="SampleLibrary" path="local://1">  </resource>
-				<resource  external="11">  </resource>
+				<resource  external="12">  </resource>
 				<int> 500 </int>
 			</array>
 			<string> "version" </string>
