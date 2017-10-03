@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="16" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
 	<ext_resource path="res://scripts/main.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://scenes/hud/hud.xscn" type="PackedScene" index="1"></ext_resource>
 	<ext_resource path="res://scenes/over.wav" type="Sample" index="5"></ext_resource>
 	<ext_resource path="res://scenes/hud/assets/rat_is_fat_logo.png" type="Texture" index="2"></ext_resource>
 	<ext_resource path="res://scenes/enemies/assets/you_can.wav" type="Sample" index="10"></ext_resource>
@@ -9,59 +10,21 @@
 	<ext_resource path="res://scenes/player/assets/die.wav" type="Sample" index="8"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/hit.wav" type="Sample" index="9"></ext_resource>
 	<ext_resource path="res://scenes/dance.ogg" type="AudioStream" index="11"></ext_resource>
-	<ext_resource path="res://scenes/hud/button.png" type="Texture" index="3"></ext_resource>
-	<ext_resource path="res://scenes/hud/hud.xscn" type="PackedScene" index="1"></ext_resource>
-	<ext_resource path="res://fonts/04B_03__.TTF" type="DynamicFontData" index="4"></ext_resource>
+	<ext_resource path="res://scenes/hud/button.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://fonts/04B_03__.TTF" type="DynamicFontData" index="3"></ext_resource>
+	<resource type="DynamicFont" path="local://3">
+		<int name="font/size"> 16 </int>
+		<bool name="font/use_mipmaps"> False </bool>
+		<bool name="font/use_filter"> False </bool>
+		<resource name="font/font" external="3">  </resource>
+		<resource name="fallback/0"></resource>
+	</resource>
 	<resource type="Animation" path="local://2">
 		<string name="resource/name"> "idle" </string>
 		<real name="length"> 1 </real>
 		<bool name="loop"> True </bool>
 		<real name="step"> 0.1 </real>
-		<string name="tracks/0/type"> "value" </string>
-		<node_path name="tracks/0/path"> "button:frame" </node_path>
-		<int name="tracks/0/interp"> 1 </int>
-		<bool name="tracks/0/imported"> False </bool>
-		<dictionary name="tracks/0/keys" shared="false">
-			<string> "times" </string>
-			<real_array  len="3"> 				0, 0.5, 1 </real_array>
-			<string> "transitions" </string>
-			<real_array  len="3"> 				1, 1, 1 </real_array>
-			<string> "update" </string>
-			<int> 1 </int>
-			<string> "values" </string>
-			<array  len="3" shared="false">
-				<int> 0 </int>
-				<int> 1 </int>
-				<int> 0 </int>
-			</array>
-		</dictionary>
-		<string name="tracks/1/type"> "value" </string>
-		<node_path name="tracks/1/path"> "arrow:transform/pos" </node_path>
-		<int name="tracks/1/interp"> 1 </int>
-		<bool name="tracks/1/imported"> False </bool>
-		<dictionary name="tracks/1/keys" shared="false">
-			<string> "times" </string>
-			<real_array  len="4"> 				0, 0.2, 0.5, 0.7 </real_array>
-			<string> "transitions" </string>
-			<real_array  len="4"> 				1, 1, 1, 1 </real_array>
-			<string> "update" </string>
-			<int> 0 </int>
-			<string> "values" </string>
-			<array  len="4" shared="false">
-				<vector2> -16, -32 </vector2>
-				<vector2> -16, -42 </vector2>
-				<vector2> -16, -24 </vector2>
-				<vector2> -16, -32 </vector2>
-			</array>
-		</dictionary>
 
-	</resource>
-	<resource type="DynamicFont" path="local://3">
-		<int name="font/size"> 16 </int>
-		<bool name="font/use_mipmaps"> False </bool>
-		<bool name="font/use_filter"> False </bool>
-		<resource name="font/font" external="4">  </resource>
-		<resource name="fallback/0"></resource>
 	</resource>
 	<resource type="SampleLibrary" path="local://1">
 		<dictionary name="samples/game_over" shared="false">
@@ -136,7 +99,7 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="90">
+			<string_array  len="100">
 				<string> "root" </string>
 				<string> "focus/ignore_mouse" </string>
 				<string> "focus/stop_mouse" </string>
@@ -178,7 +141,16 @@
 				<string> "transform/scale" </string>
 				<string> "texture" </string>
 				<string> "Sprite" </string>
+				<string> "_start" </string>
+				<string> "custom_fonts/font" </string>
+				<string> "text" </string>
+				<string> "align" </string>
+				<string> "percent_visible" </string>
+				<string> "lines_skipped" </string>
+				<string> "max_lines_visible" </string>
+				<string> "Label" </string>
 				<string> "p1" </string>
+				<string> "editor/display_folded" </string>
 				<string> "button" </string>
 				<string> "transform/pos" </string>
 				<string> "hframes" </string>
@@ -195,14 +167,15 @@
 				<string> "blend_times" </string>
 				<string> "autoplay" </string>
 				<string> "AnimationPlayer" </string>
-				<string> "Label" </string>
-				<string> "custom_fonts/font" </string>
-				<string> "text" </string>
-				<string> "percent_visible" </string>
-				<string> "lines_skipped" </string>
-				<string> "max_lines_visible" </string>
 				<string> "p2" </string>
 				<string> "Label1" </string>
+				<string> "game_over" </string>
+				<string> "rect/scale" </string>
+				<string> "win" </string>
+				<string> "_win" </string>
+				<string> "lose" </string>
+				<string> "_lose" </string>
+				<string> "valign" </string>
 				<string> "SamplePlayer" </string>
 				<string> "config/polyphony" </string>
 				<string> "config/samples" </string>
@@ -229,14 +202,14 @@
 				<string> "stream/buffering_ms" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 18 </int>
+			<int> 24 </int>
 			<string> "node_paths" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="430"> 				-1, -1, 11, 0, -1, 10, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 0, 0, 0, 12, 12, -1, 16, 13, 8, 14, 0, 15, 1, 16, 9, 17, 10, 18, 10, 19, 11, 20, 11, 21, 1, 22, 1, 23, 1, 24, 12, 25, 13, 26, 13, 27, 13, 28, 13, 0, 0, 0, 2147483647, 29, 14, 5, 30, 0, 5, 3, 6, 3, 7, 3, 8, 3, 0, 0, 0, 35, 31, -1, 11, 32, 15, 33, 15, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 3, 7, 16, 8, 17, 34, 0, 0, 3, 0, 11, 36, -1, 8, 1, 0, 2, 1, 3, 2, 4, 2, 5, 18, 6, 19, 7, 18, 8, 19, 0, 4, 0, 40, 37, -1, 2, 38, 20, 39, 21, 0, 4, 0, 11, 41, -1, 8, 1, 0, 2, 1, 3, 2, 4, 2, 5, 22, 6, 23, 7, 22, 8, 23, 0, 6, 0, 40, 42, -1, 5, 43, 24, 38, 20, 39, 25, 44, 26, 45, 27, 0, 6, 0, 40, 46, -1, 5, 43, 28, 38, 20, 39, 25, 47, 1, 45, 29, 0, 6, 0, 57, 48, -1, 8, 49, 15, 50, 3, 51, 30, 52, 31, 53, 1, 54, 32, 55, 33, 56, 34, 0, 6, 0, 58, 58, -1, 13, 1, 1, 2, 1, 3, 2, 4, 8, 5, 35, 6, 36, 7, 37, 8, 38, 59, 39, 60, 40, 61, 32, 62, 8, 63, 41, 0, 4, 0, 11, 64, -1, 8, 1, 0, 2, 1, 3, 2, 4, 2, 5, 42, 6, 23, 7, 42, 8, 23, 0, 11, 0, 58, 65, -1, 13, 1, 1, 2, 1, 3, 2, 4, 8, 5, 35, 6, 36, 7, 37, 8, 38, 59, 39, 60, 43, 61, 32, 62, 8, 63, 41, 0, 11, 0, 40, 42, -1, 5, 43, 24, 38, 20, 39, 25, 44, 26, 45, 27, 0, 11, 0, 40, 46, -1, 5, 43, 28, 38, 20, 39, 25, 47, 1, 45, 29, 0, 11, 0, 57, 48, -1, 8, 49, 15, 50, 3, 51, 30, 52, 31, 53, 1, 54, 32, 55, 33, 56, 34, 0, 0, 0, 66, 66, -1, 14, 67, 15, 68, 44, 69, 3, 70, 32, 71, 3, 72, 3, 73, 3, 74, 8, 75, 3, 76, 3, 77, 3, 78, 2, 79, 3, 80, 3, 0, 0, 0, 81, 81, -1, 8, 82, 45, 83, 1, 84, 1, 85, 3, 86, 1, 87, 0, 88, 3, 89, 46, 0 </int_array>
+			<int_array  len="622"> 				-1, -1, 11, 0, -1, 10, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 0, 0, 0, 12, 12, -1, 16, 13, 8, 14, 0, 15, 1, 16, 9, 17, 10, 18, 10, 19, 11, 20, 11, 21, 1, 22, 1, 23, 1, 24, 12, 25, 13, 26, 13, 27, 13, 28, 13, 0, 0, 0, 2147483647, 29, 14, 5, 30, 0, 5, 3, 6, 3, 7, 3, 8, 3, 0, 0, 0, 35, 31, -1, 11, 32, 15, 33, 15, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 3, 7, 16, 8, 17, 34, 0, 0, 3, 0, 11, 36, -1, 8, 1, 0, 2, 1, 3, 2, 4, 2, 5, 18, 6, 19, 7, 18, 8, 19, 0, 4, 0, 40, 37, -1, 2, 38, 20, 39, 21, 0, 4, 0, 48, 41, -1, 14, 1, 1, 2, 1, 3, 2, 4, 8, 5, 22, 6, 23, 7, 24, 8, 25, 42, 26, 43, 27, 44, 15, 45, 28, 46, 8, 47, 29, 0, 4, 0, 11, 49, -1, 9, 50, 1, 1, 0, 2, 1, 3, 2, 4, 2, 5, 30, 6, 31, 7, 30, 8, 31, 0, 7, 0, 40, 51, -1, 5, 52, 32, 38, 20, 39, 33, 53, 34, 54, 35, 0, 7, 0, 40, 55, -1, 5, 52, 36, 38, 20, 39, 33, 56, 1, 54, 37, 0, 7, 0, 66, 57, -1, 8, 58, 15, 59, 3, 60, 38, 61, 39, 62, 1, 63, 28, 64, 40, 65, 41, 0, 7, 0, 48, 48, -1, 13, 1, 1, 2, 1, 3, 2, 4, 8, 5, 42, 6, 43, 7, 44, 8, 45, 42, 26, 43, 46, 45, 28, 46, 8, 47, 29, 0, 4, 0, 11, 67, -1, 9, 50, 1, 1, 0, 2, 1, 3, 2, 4, 2, 5, 47, 6, 31, 7, 47, 8, 31, 0, 12, 0, 48, 68, -1, 13, 1, 1, 2, 1, 3, 2, 4, 8, 5, 42, 6, 43, 7, 44, 8, 45, 42, 26, 43, 48, 45, 28, 46, 8, 47, 29, 0, 12, 0, 40, 51, -1, 5, 52, 32, 38, 20, 39, 33, 53, 34, 54, 35, 0, 12, 0, 40, 55, -1, 5, 52, 36, 38, 20, 39, 33, 56, 1, 54, 37, 0, 12, 0, 66, 57, -1, 8, 58, 15, 59, 3, 60, 38, 61, 39, 62, 1, 63, 28, 64, 40, 65, 41, 0, 4, 0, 11, 69, -1, 11, 50, 1, 30, 0, 70, 20, 1, 0, 2, 1, 3, 2, 4, 2, 5, 49, 6, 25, 7, 49, 8, 25, 0, 17, 0, 11, 71, -1, 9, 50, 1, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 50, 7, 3, 8, 50, 0, 18, 0, 48, 72, -1, 14, 1, 1, 2, 1, 3, 2, 4, 8, 5, 51, 6, 52, 7, 53, 8, 54, 42, 26, 43, 55, 44, 15, 45, 28, 46, 8, 47, 29, 0, 17, 0, 11, 73, -1, 10, 50, 1, 30, 0, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 50, 7, 3, 8, 50, 0, 20, 0, 48, 74, -1, 15, 1, 1, 2, 1, 3, 2, 4, 8, 5, 56, 6, 52, 7, 57, 8, 54, 42, 26, 43, 58, 44, 15, 75, 15, 45, 28, 46, 8, 47, 29, 0, 0, 0, 76, 76, -1, 14, 77, 15, 78, 59, 79, 3, 80, 28, 81, 3, 82, 3, 83, 3, 84, 8, 85, 3, 86, 3, 87, 3, 88, 2, 89, 3, 90, 3, 0, 0, 0, 91, 91, -1, 8, 92, 60, 93, 1, 94, 1, 95, 3, 96, 1, 97, 0, 98, 3, 99, 61, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="47" shared="false">
+			<array  len="62" shared="false">
 				<bool> False </bool>
 				<bool> True </bool>
 				<int> 2 </int>
@@ -262,17 +235,24 @@
 				<real> 180 </real>
 				<vector2> 2, 2 </vector2>
 				<resource  external="2">  </resource>
+				<real> -89 </real>
+				<real> 106 </real>
+				<real> 105 </real>
+				<real> 122 </real>
+				<resource  resource_type="DynamicFont" path="local://3">  </resource>
+				<string> "SELECT PLAYER TO START" </string>
+				<real> 1 </real>
+				<int> -1 </int>
 				<real> -209 </real>
 				<real> 112 </real>
 				<vector2> -16, 0 </vector2>
-				<resource  external="3">  </resource>
+				<resource  external="4">  </resource>
 				<int> 3 </int>
 				<rect2> 0, 0, 32, 32 </rect2>
 				<vector2> -16, -32 </vector2>
 				<rect2> 64, 0, 32, 32 </rect2>
 				<node_path> ".." </node_path>
 				<resource  resource_type="Animation" path="local://2">  </resource>
-				<real> 1 </real>
 				<array  len="0" shared="false">
 				</array>
 				<string> "idle" </string>
@@ -280,11 +260,19 @@
 				<real> -101 </real>
 				<real> 18 </real>
 				<real> -85 </real>
-				<resource  resource_type="DynamicFont" path="local://3">  </resource>
 				<string> "PLAYER 1" </string>
-				<int> -1 </int>
 				<real> 241 </real>
 				<string> "PLAYER 2" </string>
+				<real> 11 </real>
+				<real> -138 </real>
+				<real> -81 </real>
+				<real> 2 </real>
+				<real> 79 </real>
+				<real> 37 </real>
+				<string> "CONGRATULATIONS!&#000a;YOU BEAT THE GAME" </string>
+				<real> -80 </real>
+				<real> 80 </real>
+				<string> "YOU LOSE..." </string>
 				<resource  resource_type="SampleLibrary" path="local://1">  </resource>
 				<resource  external="11">  </resource>
 				<int> 500 </int>
