@@ -55,9 +55,17 @@ func is_enemy_in_cone(enemy, object, attack_range, attack_direction, attack_widt
     var position_delta_x
     var position_delta_y
     var angle
-    if enemy.calculate_distance_to_object(object) < attack_range:
+    var back_offset = 3
+    var melee_range = 3
+
+    var distance = enemy.calculate_distance_to_object(object)
+
+    if distance < melee_range:
+        return true
+
+    if distance < attack_range:
         enemy_position = enemy.get_pos()
-        object_position = object.get_pos()
+        object_position = object.get_pos() - Vector2(attack_direction[0], attack_direction[1]) * back_offset
         position_delta_x = enemy_position.x - object_position.x
         position_delta_y = enemy_position.y - object_position.y
         angle = atan2(position_delta_x * attack_direction[1] - position_delta_y * attack_direction[0], position_delta_x * attack_direction[0] + position_delta_y * attack_direction[1] )
