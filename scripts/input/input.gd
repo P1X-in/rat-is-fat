@@ -16,6 +16,7 @@ func _init_bag(bag):
     self.load_basic_input()
 
 func handle_event(event):
+    self.bag.action_controller.idle_counter = 0
     for device in self.devices:
         if self.devices[device].can_handle(event):
             self.devices[device].handle_event(event)
