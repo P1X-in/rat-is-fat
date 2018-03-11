@@ -27,6 +27,7 @@ func load_basic_input():
     self.devices['arcade'].register_handler(preload("res://scripts/input/handlers/start_game_arcade.gd").new(self.bag, 14))
     self.devices['arcade'].register_handler(preload("res://scripts/input/handlers/start_game_arcade.gd").new(self.bag, 0))
     self.devices['arcade'].register_handler(preload("res://scripts/input/handlers/end_game_arcade.gd").new(self.bag))
+    self.devices['arcade'].register_handler(preload("res://scripts/input/handlers/quit_game_arcade.gd").new(self.bag))
     #self.devices['pad0'].register_handler(preload("res://scripts/input/handlers/start_game_gamepad.gd").new(self.bag))
     #self.devices['pad1'].register_handler(preload("res://scripts/input/handlers/start_game_gamepad.gd").new(self.bag))
     #self.devices['pad2'].register_handler(preload("res://scripts/input/handlers/start_game_gamepad.gd").new(self.bag))
