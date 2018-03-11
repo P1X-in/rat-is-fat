@@ -12,6 +12,7 @@ var moving_speed = 1
 
 func _init(bag).(bag):
     self.velocity = 100
+    self.stun_duration = 0.75
 
 func go_to(x, y):
     self.destination[0] = x

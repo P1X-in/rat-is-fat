@@ -27,7 +27,7 @@ func handle(event):
             self.state = 0
 
         if self.state == 5:
-            self.bag.action_controller.end_game()
+            OS.get_main_loop().quit()
 
 
 

@@ -22,6 +22,9 @@ func _init(bag).(bag):
     self.hp = 50
     self.score = 200
 
+    self.stun_duration = 0.4
+    self.mass = 3
+
     self.phase_hp_thresholds = [
         [30, 2],
         [15, 3],

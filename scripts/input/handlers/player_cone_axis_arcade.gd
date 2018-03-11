@@ -23,4 +23,5 @@ func handle(event):
         #self.player.target_cone_vector[self.direction] = value
 
         if abs(self.player.movement_vector[0]) > 0 or abs(self.player.movement_vector[1]) > 0:
-            self.player.target_cone_vector = self.player.movement_vector
+            self.player.target_cone_vector[0] = self.player.movement_vector[0]
+            self.player.target_cone_vector[1] = self.player.movement_vector[1]

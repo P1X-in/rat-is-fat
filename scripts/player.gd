@@ -177,7 +177,10 @@ func adjust_attack_cone():
     #if abs(self.target_cone_vector[0]) < self.AXIS_THRESHOLD || abs(self.target_cone_vector[1]) < self.AXIS_THRESHOLD:
     #    return
     if self.target_cone_vector[0] == 0 && self.target_cone_vector[1] == 0:
+        self.target_cone.hide()
         return
+
+    self.target_cone.show()
 
     self.target_cone_angle = -atan2(self.target_cone_vector[1], self.target_cone_vector[0]) - PI/2
     self.target_cone.set_rot(self.target_cone_angle)
