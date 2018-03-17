@@ -13,7 +13,7 @@ func _init(bag, player, axis, key, direction):
     self.button_index = key
 
 func handle(event):
-    if event.is_pressed() && self.bag.game_state.game_in_progress && self.player.is_playing && self.player.is_alive:
+    if self.bag.game_state.game_in_progress && self.player.is_playing && self.player.is_alive:
         #self.player.target_cone_vector[0] = 0
         #self.player.target_cone_vector[1] = 0
         #self.player.target_cone_vector[self.axis] = self.direction
