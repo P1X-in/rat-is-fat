@@ -1,6 +1,7 @@
 extends "res://scripts/enemies/abstract_enemy.gd"
 
 var phase = 1
+var difficulty = 2
 
 var phase_hp_thresholds = []
 

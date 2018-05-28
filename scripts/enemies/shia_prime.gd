@@ -44,6 +44,6 @@ func spawn_enemies(amount):
     var type
     var position
     for i in range(0, amount):
-        type = self.bag.enemies.get_random_enemy_name(1)
+        type = self.bag.enemies.get_random_enemy_name(self.difficulty)
         position = self.bag.room_loader.get_spawn_position_on_map(self.ads_positions[i])
         self.bag.enemies.spawn(type, position)
