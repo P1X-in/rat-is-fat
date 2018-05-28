@@ -38,7 +38,10 @@ func _init(bag, player_id).(bag):
     self.animations = self.avatar.get_node('body_animations')
     self.blast = self.avatar.get_node('blast_animations')
 
-    #self.bind_gamepad(player_id)
+    if not self.bag.input.arcade:
+        self.bind_gamepad(player_id)
+    else:
+        self.bind_arcade(player_id)
     self.panel = self.bag.hud.bind_player_panel(player_id)
     self.hat.set_frame(player_id)
     self.update_bars()
@@ -85,8 +88,8 @@ func bind_gamepad(id):
     gamepad.register_handler(preload("res://scripts/input/handlers/player_enter_game_gamepad.gd").new(self.bag, self))
     gamepad.register_handler(preload("res://scripts/input/handlers/player_move_axis.gd").new(self.bag, self, 0))
     gamepad.register_handler(preload("res://scripts/input/handlers/player_move_axis.gd").new(self.bag, self, 1))
-    gamepad.register_handler(preload("res://scripts/input/handlers/player_cone_gamepad.gd").new(self.bag, self, 0, Globals.get("platform_input/xbox_right_stick_x")))
-    gamepad.register_handler(preload("res://scripts/input/handlers/player_cone_gamepad.gd").new(self.bag, self, 1, Globals.get("platform_input/xbox_right_stick_y")))
+    gamepad.register_handler(preload("res://scripts/input/handlers/player_cone_gamepad.gd").new(self.bag, self, Globals.get("platform_input/xbox_right_stick_x"), 0))
+    gamepad.register_handler(preload("res://scripts/input/handlers/player_cone_gamepad.gd").new(self.bag, self, Globals.get("platform_input/xbox_right_stick_y"), 1))
     gamepad.register_handler(preload("res://scripts/input/handlers/player_attack_gamepad.gd").new(self.bag, self))
 
 func bind_keyboard_and_mouse():
