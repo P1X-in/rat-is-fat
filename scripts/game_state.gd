@@ -15,19 +15,19 @@ var levels = [
         'tileset' : 0,
     },
     {
-        'room_difficulty' : 1,
+        'room_difficulty' : 2,
         'rooms' : 10,
         'pickup_rooms' : 2,
         'tileset' : 1,
     },
     {
-        'room_difficulty' : 2,
+        'room_difficulty' : 3,
         'rooms' : 10,
         'pickup_rooms' : 2,
         'tileset' : 2,
     },
     {
-        'room_difficulty' : 3,
+        'room_difficulty' : 4,
         'rooms' : 12,
         'pickup_rooms' : 2,
         'tileset' : 3,
