@@ -15,7 +15,7 @@ func bind_players():
         #self.player_template.new(self.bag, 2),
         #self.player_template.new(self.bag, 3),
     ]
-    #self.players[0].bind_keyboard_and_mouse()
+    self.players[0].bind_keyboard_and_mouse()
 
 func move_to_entry_position(name):
     for player in self.players:

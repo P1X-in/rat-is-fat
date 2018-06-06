@@ -7,6 +7,8 @@ var side_offset = 3
 var DOORS_CLOSED = 3
 var DOORS_OPEN = 2
 
+const INITIAL_STUN = 1
+
 var spawns = {
     'initial0' : Vector2(8, 5),
     'initial1' : Vector2(9, 5),
@@ -171,6 +173,8 @@ func apply_room_data(data):
 func spawn_enemies(enemies):
     var position = Vector2(0, 0)
     var enemy_name
+    var new_enemy
+
     self.bag.enemies.reset()
     for enemy_data in enemies:
         position.x = enemy_data[0] + self.side_offset
@@ -179,7 +183,8 @@ func spawn_enemies(enemies):
             enemy_name = self.bag.enemies.get_random_enemy_name(enemy_data[3])
         else:
             enemy_name = enemy_data[2]
-        self.bag.enemies.spawn(enemy_name, position)
+        new_enemy = self.bag.enemies.spawn(enemy_name, position)
+        new_enemy.stun(self.INITIAL_STUN)
 
 func spawn_items(items, cell):
     var position = Vector2(0, 0)

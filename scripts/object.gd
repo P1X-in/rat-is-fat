@@ -3,6 +3,10 @@ var bag
 var hp
 var max_hp
 
+var hit_protection = false
+var is_invulnerable = false
+var invulnerability_period = 0.5
+
 var avatar
 var is_processing = false
 var initial_position = Vector2(0, 0)
@@ -74,8 +78,19 @@ func calculate_distance(their_position):
     return sqrt(delta_x * delta_x + delta_y * delta_y)
 
 func recieve_damage(damage):
+    if self.is_invulnerable:
+        return
+
     self.play_sound('hit')
     self.set_hp(self.hp - damage)
+
+    if self.hit_protection:
+        self.is_invulnerable = true
+        self.bag.timers.set_timeout(self.invulnerability_period, self, "loose_invulnerability")
+
+
+func loose_invulnerability():
+    self.is_invulnerable = false
 
 func will_die(damage):
     return damage >= self.hp

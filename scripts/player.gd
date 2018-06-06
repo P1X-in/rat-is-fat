@@ -9,8 +9,6 @@ var attack_strength = 1
 var attack_cooldown = 0.4
 var is_attack_on_cooldown = false
 var is_attacking = false
-var is_invulnerable = false
-var invulnerability_period = 0.5
 var blast
 
 var target_cone
@@ -29,6 +27,7 @@ func _init(bag, player_id).(bag):
     self.hp = 10
     self.max_hp = 10
     self.score = 0
+    self.hit_protection = true
     self.avatar = preload("res://scenes/player/player.xscn").instance()
     self.body_part_head = self.avatar.get_node('head')
     self.hat = self.body_part_head.get_node('hat')
@@ -315,13 +314,9 @@ func set_hp(hp):
 func recieve_damage(damage):
     if self.is_invulnerable:
         return
-    self.is_invulnerable = true
+
     self.bag.camera.shake()
     .recieve_damage(damage)
-    self.bag.timers.set_timeout(self.invulnerability_period, self, "loose_invulnerability")
-
-func loose_invulnerability():
-    self.is_invulnerable = false
 
 func reset():
     self.attack_strength = 1
