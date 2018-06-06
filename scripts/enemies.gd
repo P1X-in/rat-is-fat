@@ -2,12 +2,16 @@
 var bag
 
 var enemy_templates = {
+    #easy
     'shia' : preload("res://scripts/enemies/shia.gd"),
     'retarded_rat' : preload("res://scripts/enemies/retarded_rat.gd"),
     'fat_rat' : preload("res://scripts/enemies/fat_rat.gd"),
     'jumping_rat' : preload("res://scripts/enemies/jumping_rat.gd"),
     'spider' : preload("res://scripts/enemies/spider.gd"),
+
+    #boss
     'shia_prime' : preload("res://scripts/enemies/shia_prime.gd"),
+    'doge_prime' : preload("res://scripts/enemies/doge_prime.gd"),
 }
 
 var enemy_difficulties = [
@@ -78,5 +82,4 @@ func get_random_enemy_name(difficulty):
     randomize()
     var apropriate_enemies = self.enemy_difficulties[difficulty]
     return apropriate_enemies[randi() % apropriate_enemies.size()]
-
 

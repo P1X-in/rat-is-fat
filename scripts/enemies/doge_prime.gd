@@ -8,7 +8,7 @@ var ads_positions = [
 ]
 
 func _init(bag).(bag):
-    self.avatar = preload("res://scenes/enemies/shia_prime.xscn").instance()
+    self.avatar = preload("res://scenes/enemies/doge_prime.xscn").instance()
     self.body_part_head = self.avatar.get_node('body')
     self.body_part_body = self.avatar.get_node('body')
     self.body_part_footer = self.avatar.get_node('body')
