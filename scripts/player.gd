@@ -17,6 +17,8 @@ var target_cone_angle = 0.0
 
 var panel
 var hp_cap = 16
+var attack_move_velocity = 20
+var normal_velocity = 200
 
 var EXIT_THRESHOLD = 35
 
@@ -24,6 +26,8 @@ func _init(bag, player_id).(bag):
     self.bag = bag
     self.player_id = player_id
     self.velocity = 200
+    self.attack_move_velocity = 20
+    self.normal_velocity = 200
     self.hp = 10
     self.max_hp = 10
     self.score = 0
@@ -135,11 +139,11 @@ func process(delta):
 
 func process_attack():
     if self.is_attacking && not self.is_attack_on_cooldown:
+        self.velocity = self.attack_move_velocity
         self.attack()
 
 func modify_position(delta):
-    if not self.is_attack_on_cooldown:
-        .modify_position(delta)
+    .modify_position(delta)
     self.flip(self.target_cone_vector[0])
     self.handle_animations()
 
@@ -334,3 +338,4 @@ func reset():
 
 func attack_cooled_down():
     self.is_attack_on_cooldown = false
+    self.velocity = self.normal_velocity

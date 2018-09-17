@@ -16,7 +16,7 @@ func _init():
     ]
 
     self.enemies = [
-        [7, 5, 'shia_prime'],
+        [14, 2, 'doge_prime'],
     ]
 
     self.doors = [

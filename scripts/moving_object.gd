@@ -77,7 +77,7 @@ func push_back(enemy):
     var scale = (force / self.calculate_distance(enemy_position)) * (25 / self.mass)
 
     self.avatar.move(Vector2(position_delta_x * scale, position_delta_y * scale))
-    self.stun()
+    self.external_stun()
 
 func stun(duration=null):
     if duration == null:
@@ -85,6 +85,9 @@ func stun(duration=null):
     self.is_processing = false
     self.stun_level = stun_level + 1
     self.bag.timers.set_timeout(duration, self, "remove_stun")
+
+func external_stun(duration=null):
+    self.stun(duration)
 
 func remove_stun():
     self.stun_level = stun_level - 1
