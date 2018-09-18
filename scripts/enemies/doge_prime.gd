@@ -120,3 +120,8 @@ func push_back(enemy):
         self.body_angry.show()
         self.body_moving.hide()
         self.bag.timers.set_timeout(self.IRRITATED_TIMER, self, 'enrage')
+
+func flip_body_parts(flip_flag):
+    .flip_body_parts(flip_flag)
+    self.body_angry.set_flip_h(flip_flag)
+    self.body_moving.set_flip_h(flip_flag)

@@ -55,11 +55,14 @@ func flip(direction):
     if direction > 0:
         flip_sprite = true
 
-    self.body_part_head.set_flip_h(flip_sprite)
-    self.body_part_body.set_flip_h(flip_sprite)
-    self.body_part_footer.set_flip_h(flip_sprite)
+    self.flip_body_parts(flip_sprite)
+
+func flip_body_parts(flip_flag):
+    self.body_part_head.set_flip_h(flip_flag)
+    self.body_part_body.set_flip_h(flip_flag)
+    self.body_part_footer.set_flip_h(flip_flag)
     if self.hat:
-        self.hat.set_flip_h(flip_sprite)
+        self.hat.set_flip_h(flip_flag)
 
 func reset_movement():
     self.movement_vector = [0, 0]
