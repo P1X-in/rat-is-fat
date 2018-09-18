@@ -42,6 +42,7 @@ var room_templates = {
     'easy6' : preload("res://scripts/map/rooms/easy6_room.gd"),
     'boss1' : preload("res://scripts/map/rooms/boss1_room.gd"),
     'boss2' : preload("res://scripts/map/rooms/boss2_room.gd"),
+    'boss3' : preload("res://scripts/map/rooms/boss2_room.gd"),
     'boss_end' : preload("res://scripts/map/rooms/boss_end_room.gd"),
     'pickup1' : preload("res://scripts/map/rooms/pickup1_room.gd"),
     'pickup2' : preload("res://scripts/map/rooms/pickup2_room.gd"),
@@ -67,7 +68,7 @@ var difficulty_bosses = [
     [],
     ['boss1'],
     ['boss2'],
-    ['boss2'],
+    ['boss3'],
     ['boss_end'],
 ]
 
