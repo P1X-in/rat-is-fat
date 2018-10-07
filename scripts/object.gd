@@ -52,7 +52,6 @@ func spawn(position):
 
 func despawn():
     self.detach()
-    self.avatar.queue_free()
 
 func attach():
     self.is_processing = true
