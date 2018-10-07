@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="9" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
 	<ext_resource path="res://scenes/player/hit.xanm" type="Animation" index="3"></ext_resource>
-	<ext_resource path="res://scenes/enemies/doge1.png" type="Texture" index="0"></ext_resource>
-	<ext_resource path="res://scenes/enemies/assets/doge3.png" type="Texture" index="2"></ext_resource>
 	<ext_resource path="res://scenes/enemies/assets/doge2.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://scenes/enemies/assets/doge3.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://scenes/enemies/assets/doge1.png" type="Texture" index="0"></ext_resource>
 	<resource type="CapsuleShape2D" path="local://4">
 		<real name="custom_solver_bias"> 0 </real>
 		<real name="radius"> 30 </real>

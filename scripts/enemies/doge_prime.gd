@@ -32,8 +32,8 @@ func _init(bag).(bag):
     self.aggro_range = 75
     self.attack_strength = 3
     self.attack_cooldown = 3
-    self.max_hp = 25
-    self.hp = 25
+    self.max_hp = 40
+    self.hp = 40
     self.score = 200
 
     self.stun_duration = 0.4
@@ -64,6 +64,14 @@ func process_ai():
                             self.target = player
                     else:
                         self.target = player
+                    break
+
+    if self.calm and not self.irritated:
+        for player in self.bag.players.players:
+            if player.is_playing && player.is_alive:
+                distance = self.calculate_distance_to_object(player)
+                if distance < self.aggro_range:
+                    self.irritate()
                     break
 
     if self.target != null:
@@ -100,6 +108,21 @@ func calm_down():
     self.body_moving.hide()
     self.body_part_body.show()
 
+    var timer = randi() % 3
+    timer += 2
+
+    self.bag.timers.set_timeout(timer, self, 'irritate')
+
+func irritate():
+    if self.irritated:
+        return
+
+    self.irritated = true
+    self.body_part_body.hide()
+    self.body_angry.show()
+    self.body_moving.hide()
+    self.bag.timers.set_timeout(self.IRRITATED_TIMER, self, 'enrage')
+
 func phase2():
     return
 
@@ -115,11 +138,7 @@ func pick_next_point():
 
 func push_back(enemy):
     if not self.irritated:
-        self.irritated = true
-        self.body_part_body.hide()
-        self.body_angry.show()
-        self.body_moving.hide()
-        self.bag.timers.set_timeout(self.IRRITATED_TIMER, self, 'enrage')
+        self.irritate()
 
 func flip_body_parts(flip_flag):
     .flip_body_parts(flip_flag)
