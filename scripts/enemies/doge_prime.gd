@@ -4,6 +4,7 @@ const IRRITATED_TIMER = 2
 
 var irritated = false
 var calm = true
+var rampage_hp_threshold = 10
 
 var body_angry
 var body_moving
@@ -34,6 +35,7 @@ func _init(bag).(bag):
     self.attack_cooldown = 3
     self.max_hp = 25
     self.hp = 25
+    self.rampage_hp_threshold = 10
     self.score = 200
 
     self.stun_duration = 0.4
@@ -111,7 +113,10 @@ func calm_down():
     var timer = randi() % 3
     timer += 2
 
-    self.bag.timers.set_timeout(timer, self, 'irritate')
+    if self.hp > self.rampage_hp_threshold:
+        self.bag.timers.set_timeout(timer, self, 'irritate')
+    else:
+        self.irritate()
 
 func irritate():
     if self.irritated:
