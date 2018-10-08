@@ -12,7 +12,8 @@ var enemy_templates = {
     #boss
     'shia_prime' : preload("res://scripts/enemies/shia_prime.gd"),
     'doge_prime' : preload("res://scripts/enemies/doge_prime.gd"),
-    'noser_prime' : preload("res://scripts/enemies/doge_prime.gd"),
+    'noser_prime' : preload("res://scripts/enemies/noser_prime.gd"),
+    'noser_prime_medium' : preload("res://scripts/enemies/noser_prime_medium.gd"),
 }
 
 var enemy_difficulties = [
@@ -27,8 +28,11 @@ func _init_bag(bag):
     self.bag = bag
 
 func spawn(name, map_position):
-    var new_enemy = self.enemy_templates[name].new(self.bag)
     var global_position = self.bag.room_loader.translate_position(map_position)
+    return self.spawn_global(name, global_position)
+
+func spawn_global(name, global_position):
+    var new_enemy = self.enemy_templates[name].new(self.bag)
     new_enemy.spawn(global_position)
     self.add_enemy(new_enemy)
     return new_enemy

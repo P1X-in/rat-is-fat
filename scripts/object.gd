@@ -97,3 +97,12 @@ func will_die(damage):
 func play_sound(name):
     if self.sounds[name] != null:
         self.bag.sample_player.play(self.sounds[name])
+
+func make_invulnerable(duration=null):
+    if duration == null:
+        return
+    self.is_invulnerable = true
+    self.bag.timers.set_timeout(duration, self, "remove_invulnerable")
+
+func remove_invulnerable():
+    self.is_invulnerable = false
