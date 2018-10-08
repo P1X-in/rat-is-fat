@@ -12,6 +12,7 @@ var enemy_templates = {
     #boss
     'shia_prime' : preload("res://scripts/enemies/shia_prime.gd"),
     'doge_prime' : preload("res://scripts/enemies/doge_prime.gd"),
+    'noser_prime' : preload("res://scripts/enemies/doge_prime.gd"),
 }
 
 var enemy_difficulties = [

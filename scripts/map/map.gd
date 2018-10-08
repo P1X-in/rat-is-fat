@@ -88,7 +88,7 @@ func randomize_cell(difficulty, room_collection):
     var new_cell
     free_cell = self.pick_random_free_cell()
     if free_cell != null:
-        free_spot = self.pick_random_free_neighbout_spot(free_cell)
+        free_spot = self.pick_random_free_neighbour_spot(free_cell)
         room_type = self.pick_random_room_type(difficulty, room_collection)
         self.add_cell(room_type, free_spot.x, free_spot.y)
 
@@ -103,7 +103,7 @@ func pick_random_free_cell():
         return null
     return available_cells[randi() % available_cells.size()]
 
-func pick_random_free_neighbout_spot(cell):
+func pick_random_free_neighbour_spot(cell):
     var directions = []
     var randomed
     if cell.north == null && cell.y - 1 >= 0:
