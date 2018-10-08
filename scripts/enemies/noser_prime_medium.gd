@@ -8,7 +8,7 @@ func _init(bag).(bag):
     self.animations = self.avatar.get_node('body_animations')
 
     self.velocity = 100
-    self.attack_strength = 3
+    self.attack_strength = 2
     self.max_hp = 30
     self.hp = 30
     self.split_template = 'noser_prime_small'

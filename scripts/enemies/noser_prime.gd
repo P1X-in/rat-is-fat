@@ -13,7 +13,7 @@ func _init(bag).(bag):
 
     self.velocity = 50
     self.attack_range = 50
-    self.attack_strength = 4
+    self.attack_strength = 2
     self.attack_cooldown = 3
     self.max_hp = 40
     self.hp = 40
@@ -47,7 +47,8 @@ func spawn_splits():
     for i in range(0, self.splits_amount):
         position.x += pow(-1, i) * (i + 1) * 10
         new_guy = self.bag.enemies.spawn_global(self.split_template, position)
-        new_guy.stun(1)
+        new_guy.is_attack_on_cooldown = true
+        self.bag.timers.set_timeout(self.attack_cooldown, new_guy, "attack_cooled_down")
         new_guy.make_invulnerable(1)
 
 func process_ai():
