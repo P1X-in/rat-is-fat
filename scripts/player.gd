@@ -32,6 +32,7 @@ func _init(bag, player_id).(bag):
     self.max_hp = 10
     self.score = 0
     self.hit_protection = true
+    self.invulnerability_period = 1
     self.avatar = preload("res://scenes/player/player.xscn").instance()
     self.body_part_head = self.avatar.get_node('head')
     self.hat = self.body_part_head.get_node('hat')
@@ -224,12 +225,18 @@ func attack():
     self.bag.timers.set_timeout(self.attack_cooldown, self, "attack_cooled_down")
 
 func get_power(amount):
-    self.attack_strength += amount
-    if self.attack_strength >= 16:
-        self.die();
+    self.get_pure_power(amount)
 
     self.hp -= amount
     self.max_hp -= amount
+    self.update_bars()
+    if self.hp <= 0:
+        self.die()
+
+func get_pure_power(amount):
+    self.attack_strength += amount
+    if self.attack_strength >= 16:
+        self.attack_strength = 16
     self.update_bars()
 
 func get_fat(amount):

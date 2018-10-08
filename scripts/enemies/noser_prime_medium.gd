@@ -9,6 +9,6 @@ func _init(bag).(bag):
 
     self.velocity = 100
     self.attack_strength = 3
-    self.max_hp = 50
-    self.hp = 50
+    self.max_hp = 30
+    self.hp = 30
     self.split_template = 'noser_prime_small'

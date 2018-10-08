@@ -46,3 +46,7 @@ func get_first_free_entry_position_num(player_id):
         if player.is_playing && player.is_alive && player.player_id < player_id:
             position = position + 1
     return position
+
+func empower(amount):
+    for player in self.players:
+        player.get_pure_power(amount)
