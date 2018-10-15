@@ -18,8 +18,11 @@ var path_points_global = []
 var target_point = null
 var current_point = 0
 
+var target_icon
+
 func _init(bag).(bag):
     self.avatar = preload("res://scenes/enemies/doge_prime.xscn").instance()
+    self.target_icon = preload("res://scenes/enemies/doge_prime_target.tscn").instance()
     self.body_part_head = self.avatar.get_node('body')
     self.body_part_body = self.avatar.get_node('body')
     self.body_part_footer = self.avatar.get_node('body')
@@ -83,7 +86,7 @@ func process_ai():
         elif distance < self.attack_range and not self.is_attack_on_cooldown:
             self.attack()
 
-    if self.target_point != null:
+    if self.target_point != null and not self.calm:
         distance = self.calculate_distance(self.target_point)
         if distance < 5:
             self.target_point = null
@@ -97,7 +100,6 @@ func process_ai():
 func enrage():
     self.is_invulnerable = true
     self.calm = false
-    self.pick_next_point()
     self.body_angry.hide()
     self.body_moving.show()
     self.body_part_body.hide()
@@ -109,6 +111,7 @@ func calm_down():
     self.body_angry.hide()
     self.body_moving.hide()
     self.body_part_body.show()
+    self.target_icon.hide()
 
     var timer = randi() % 3
     timer += 2
@@ -123,6 +126,7 @@ func irritate():
         return
 
     self.irritated = true
+    self.pick_next_point()
     self.body_part_body.hide()
     self.body_angry.show()
     self.body_moving.hide()
@@ -140,6 +144,9 @@ func pick_next_point():
     self.current_point = next_point
     self.target_point = self.path_points_global[next_point]
 
+    self.target_icon.show()
+    self.target_icon.set_pos(self.target_point)
+
 
 func push_back(enemy):
     if not self.irritated:
@@ -149,3 +156,12 @@ func flip_body_parts(flip_flag):
     .flip_body_parts(flip_flag)
     self.body_angry.set_flip_h(flip_flag)
     self.body_moving.set_flip_h(flip_flag)
+
+func attach():
+    .attach()
+    self.bag.action_controller.attach_object(self.target_icon)
+    self.target_icon.hide()
+
+func detach():
+    .detach()
+    self.bag.action_controller.detach_object(self.target_icon)
