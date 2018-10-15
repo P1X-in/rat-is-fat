@@ -32,6 +32,8 @@ var spawns = {
     'west3' : Vector2(2, 6),
 }
 
+var skull_warning = preload("res://scenes/levels/skull_warning.tscn").instance()
+
 var room_templates = {
     'start' : preload("res://scripts/map/rooms/start_room.gd"),
     'easy1' : preload("res://scripts/map/rooms/easy1_room.gd"),
@@ -104,6 +106,8 @@ func load_room(cell):
     var template_name = cell.template_name
     var data
     self.clear_space()
+    self.bag.action_controller.attach_object(self.skull_warning)
+    self.skull_warning.hide()
     self.bag.game_state.current_room = self.room_templates[template_name].new()
     data = self.create_passages(self.bag.game_state.current_room.room, cell)
     self.apply_room_data(data)
@@ -121,18 +125,22 @@ func load_room(cell):
 
 func create_passages(data, cell):
     if cell.north != null:
-        data = self.open_passage(data, self.door_definitions['north'], 7, 0)
+        data = self.open_passage(data, self.door_definitions['north'], 7, 0, cell.north, 8, 0)
     if cell.south != null:
-        data = self.open_passage(data, self.door_definitions['south'], 7, 10)
+        data = self.open_passage(data, self.door_definitions['south'], 7, 10, cell.south, 8, 10)
     if cell.east != null:
-        data = self.open_passage(data, self.door_definitions['east'], 16, 4)
+        data = self.open_passage(data, self.door_definitions['east'], 16, 4, cell.east, 16, 5)
     if cell.west != null:
-        data = self.open_passage(data, self.door_definitions['west'], 0, 4)
+        data = self.open_passage(data, self.door_definitions['west'], 0, 4, cell.west, 0, 5)
     return data
 
-func open_passage(data, passage, x, y):
+func open_passage(data, passage, x, y, cell, b_x, b_y):
     for tile in passage:
         data[tile[1] + y][tile[0] + x] = tile[2]
+
+    if self.is_boss_room(cell):
+        self.mark_boss_room(b_x, b_y)
+
     return data
 
 func close_doors():
@@ -142,6 +150,17 @@ func close_doors():
 func open_doors():
     self.bag.game_state.doors_open = true
     self.switch_doors(self.DOORS_OPEN)
+
+func is_boss_room(cell):
+    if cell.template_name in ['boss1', 'boss2', 'boss3', 'boss_end']:
+        return true
+    return false
+
+func mark_boss_room(x, y):
+    var global_position = self.bag.room_loader.translate_position(Vector2(x + 3, y))
+    global_position += Vector2(15, 15)
+    self.skull_warning.set_pos(global_position)
+    self.skull_warning.show()
 
 func switch_custom_doors(tile_index):
     for custom_door in self.bag.game_state.current_room.doors:
@@ -167,6 +186,8 @@ func clear_space():
     for x in range(self.room_max_size.x):
         for y in range(self.room_max_size.y):
             self.tilemap.set_cell(x, y, -1)
+
+    self.bag.action_controller.detach_object(self.skull_warning)
 
 func apply_room_data(data):
     var row
