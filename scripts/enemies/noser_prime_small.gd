@@ -8,6 +8,7 @@ func _init(bag).(bag):
     self.animations = self.avatar.get_node('body_animations')
 
     self.velocity = 150
+    self.attack_range = 30
     self.attack_strength = 1
     self.max_hp = 10
     self.hp = 10
