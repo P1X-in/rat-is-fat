@@ -9,6 +9,6 @@ func _init(bag).(bag):
 
     self.velocity = 200
     self.attack_strength = 1
-    self.max_hp = 10
-    self.hp = 10
+    self.max_hp = 5
+    self.hp = 5
     self.split = false

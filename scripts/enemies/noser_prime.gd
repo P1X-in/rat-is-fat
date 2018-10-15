@@ -15,8 +15,8 @@ func _init(bag).(bag):
     self.attack_range = 50
     self.attack_strength = 2
     self.attack_cooldown = 3
-    self.max_hp = 40
-    self.hp = 40
+    self.max_hp = 20
+    self.hp = 20
     self.score = 200
 
     self.stun_duration = 0.4
