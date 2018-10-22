@@ -16,6 +16,7 @@ var stun_level = 0
 var mass = 1
 
 var tombstone_template = preload("res://scenes/particles/thumbstone.xscn")
+var has_tombstone = true
 
 func _init(bag).(bag):
     self.bag = bag
@@ -102,5 +103,6 @@ func die():
     .die()
 
 func spawn_tombstone():
-    var tombstone = self.tombstone_template.instance()
-    self.bag.game_state.current_cell.add_persistent_object(tombstone, self.get_pos())
+    if self.has_tombstone:
+        var tombstone = self.tombstone_template.instance()
+        self.bag.game_state.current_cell.add_persistent_object(tombstone, self.get_pos())
