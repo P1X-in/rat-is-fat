@@ -16,6 +16,7 @@ var enemy_templates = {
     'noser_prime_medium' : preload("res://scripts/enemies/noser_prime_medium.gd"),
     'noser_prime_small' : preload("res://scripts/enemies/noser_prime_small.gd"),
     'noser_prime_tiny' : preload("res://scripts/enemies/noser_prime_tiny.gd"),
+    'grumpy_prime' : preload("res://scripts/enemies/grumpy_prime.gd"),
 }
 
 var enemy_difficulties = [
