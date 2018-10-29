@@ -18,6 +18,8 @@ var enemy_templates = {
     'noser_prime_tiny' : preload("res://scripts/enemies/noser_prime_tiny.gd"),
     'grumpy_prime_pile' : preload("res://scripts/enemies/grumpy_prime_pile.gd"),
     'grumpy_prime' : preload("res://scripts/enemies/grumpy_prime.gd"),
+    'rainbow' : preload("res://scripts/enemies/grumpy_prime_rainbow.gd"),
+    'nyan' : preload("res://scripts/enemies/grumpy_prime_nyan.gd"),
 }
 
 var enemy_difficulties = [
@@ -92,3 +94,9 @@ func get_random_enemy_name(difficulty):
     var apropriate_enemies = self.enemy_difficulties[difficulty]
     return apropriate_enemies[randi() % apropriate_enemies.size()]
 
+func get_enemy(type):
+    for enemy in self.enemies_list:
+        if self.enemies_list[enemy] extends self.enemy_templates[type]:
+            return self.enemies_list[enemy]
+
+    return null
