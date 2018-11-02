@@ -2,9 +2,9 @@ extends "res://scripts/enemies/abstract_boss.gd"
 
 
 const THRASH_AMOUNT = 2
-const THRASH_SPAWN_TIME = 5
-const VULNERABLE_TIME = 3.5
-const RAINBOW_DELAY = 5
+var THRASH_SPAWN_TIME = 5
+var VULNERABLE_TIME = 3.5
+var RAINBOW_DELAY = 5
 var thrash_template = 'fat_rat'
 
 
@@ -57,6 +57,10 @@ func spawn(position):
 func phase2():
     self.body_part_body.hide()
     self.angry_body.show()
+    self.THRASH_SPAWN_TIME = 2.5
+    self.VULNERABLE_TIME = 2
+    self.RAINBOW_DELAY = 2.5
+    self.velocity = 50
 
 func process_ai():
     var distance
