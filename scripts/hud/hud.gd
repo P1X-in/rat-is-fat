@@ -21,6 +21,7 @@ func bind_player_panel(player_num):
 
 func show():
     self.hud.show()
+    self.hud.raise()
 
 func hide():
     self.hud.hide()

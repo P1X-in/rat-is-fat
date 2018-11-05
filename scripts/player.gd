@@ -260,29 +260,29 @@ func check_doors():
     var cell = self.bag.game_state.current_cell
     if cell.north != null:
         door_coords = self.bag.room_loader.door_definitions['north'][1]
-        new_coords[0] = door_coords[0] + 7
-        new_coords[1] = door_coords[1] + 0
+        new_coords[0] = door_coords[0] + 8 + self.bag.room_loader.side_offset
+        new_coords[1] = door_coords[1] + 0 + self.bag.room_loader.top_offset
         if self.check_exit(new_coords, cell.north, Vector2(16, -15)):
             self.bag.players.move_to_entry_position('south')
             return
     if cell.south != null:
         door_coords = self.bag.room_loader.door_definitions['south'][1]
-        new_coords[0] = door_coords[0] + 7
-        new_coords[1] = door_coords[1] + 10
+        new_coords[0] = door_coords[0] + 8 + self.bag.room_loader.side_offset
+        new_coords[1] = door_coords[1] + 9 + self.bag.room_loader.top_offset
         if self.check_exit(new_coords, cell.south, Vector2(16, 40)):
             self.bag.players.move_to_entry_position('north')
             return
     if cell.east != null:
         door_coords = self.bag.room_loader.door_definitions['east'][1]
-        new_coords[0] = door_coords[0] + 16
-        new_coords[1] = door_coords[1] + 4
+        new_coords[0] = door_coords[0] + 19 + self.bag.room_loader.side_offset
+        new_coords[1] = door_coords[1] + 4 + self.bag.room_loader.top_offset
         if self.check_exit(new_coords, cell.east, Vector2(40, 0)):
             self.bag.players.move_to_entry_position('west')
             return
     if cell.west != null:
         door_coords = self.bag.room_loader.door_definitions['west'][1]
-        new_coords[0] = door_coords[0] + 0
-        new_coords[1] = door_coords[1] + 4
+        new_coords[0] = door_coords[0] + 0 + self.bag.room_loader.side_offset
+        new_coords[1] = door_coords[1] + 4 + self.bag.room_loader.top_offset
         if self.check_exit(new_coords, cell.west, Vector2(-10, 0)):
             self.bag.players.move_to_entry_position('east')
             return
@@ -302,7 +302,7 @@ func check_level_exit():
     var exit_area
     var distance
     for exit in self.bag.game_state.current_room.exits:
-        exit_area = self.bag.room_loader.translate_position(Vector2(exit[0] + self.bag.room_loader.side_offset, exit[1]))
+        exit_area = self.bag.room_loader.translate_position(Vector2(exit[0] + self.bag.room_loader.side_offset, exit[1]  + self.bag.room_loader.top_offset))
         distance = self.calculate_distance(exit_area)
         if distance < self.EXIT_THRESHOLD:
             self.bag.action_controller.next_level(exit[2])

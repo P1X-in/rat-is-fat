@@ -10,9 +10,9 @@ var body_angry
 var body_moving
 
 var path_points = [
-    Vector2(17, 2),
+    Vector2(17, 3),
     Vector2(17, 8),
-    Vector2(5, 8),
+    Vector2(2, 8),
 ]
 var path_points_global = []
 var target_point = null

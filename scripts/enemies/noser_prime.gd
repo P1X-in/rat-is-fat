@@ -75,8 +75,8 @@ func randomize_movement():
 
     var direction
 
-    var x = randi() % 15 + 1
-    var y = randi() % 9 + 1
+    var x = randi() % 18 + 1
+    var y = randi() % 8 + 1
 
     direction = self.bag.room_loader.translate_position(Vector2(x, y))
     direction = self.cast_movement_vector(direction)

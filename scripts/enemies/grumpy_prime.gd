@@ -9,9 +9,9 @@ var thrash_template = 'fat_rat'
 
 
 var shield_points = [
-    Vector2(17, 2),
+    Vector2(17, 3),
     Vector2(17, 8),
-    Vector2(5, 8),
+    Vector2(2, 8),
 ]
 var shield_points_global = []
 
@@ -90,8 +90,8 @@ func randomize_movement():
 
     var direction
 
-    var x = randi() % 15 + 1
-    var y = randi() % 9 + 1
+    var x = randi() % 18 + 1
+    var y = randi() % 8 + 1
 
     direction = self.bag.room_loader.translate_position(Vector2(x, y))
     direction = self.cast_movement_vector(direction)

@@ -3,33 +3,34 @@
 var bag
 var tilemap
 var room_max_size = Vector2(20, 12)
-var side_offset = 3
+var side_offset = 0
+var top_offset = 1
 var DOORS_CLOSED = 3
 var DOORS_OPEN = 2
 
 const INITIAL_STUN = 1
 
 var spawns = {
-    'initial0' : Vector2(8, 5),
-    'initial1' : Vector2(9, 5),
-    'initial2' : Vector2(8, 6),
-    'initial3' : Vector2(9, 6),
-    'north0' : Vector2(8, 1),
-    'north1' : Vector2(9, 1),
-    'north2' : Vector2(8, 2),
-    'north3' : Vector2(9, 2),
-    'south0' : Vector2(8, 9),
-    'south1' : Vector2(9, 9),
-    'south2' : Vector2(8, 8),
-    'south3' : Vector2(9, 8),
-    'east0' : Vector2(15, 5),
-    'east1' : Vector2(14, 5),
-    'east2' : Vector2(15, 6),
-    'east3' : Vector2(14, 6),
-    'west0' : Vector2(1, 5),
-    'west1' : Vector2(2, 5),
-    'west2' : Vector2(1, 6),
-    'west3' : Vector2(2, 6),
+    'initial0' : Vector2(9, 6),
+    'initial1' : Vector2(10, 6),
+    'initial2' : Vector2(9, 7),
+    'initial3' : Vector2(10, 7),
+    'north0' : Vector2(9, 2),
+    'north1' : Vector2(10, 2),
+    'north2' : Vector2(10, 3),
+    'north3' : Vector2(10, 3),
+    'south0' : Vector2(9, 10),
+    'south1' : Vector2(10, 10),
+    'south2' : Vector2(9, 9),
+    'south3' : Vector2(10, 9),
+    'east0' : Vector2(19, 6),
+    'east1' : Vector2(18, 6),
+    'east2' : Vector2(19, 7),
+    'east3' : Vector2(18, 8),
+    'west0' : Vector2(1, 6),
+    'west1' : Vector2(2, 6),
+    'west2' : Vector2(1, 7),
+    'west3' : Vector2(2, 7),
 }
 
 var skull_warning = preload("res://scenes/levels/skull_warning.tscn").instance()
@@ -125,11 +126,11 @@ func load_room(cell):
 
 func create_passages(data, cell):
     if cell.north != null:
-        data = self.open_passage(data, self.door_definitions['north'], 7, 0, cell.north, 8, 0)
+        data = self.open_passage(data, self.door_definitions['north'], 8, 0, cell.north, 9, 0)
     if cell.south != null:
-        data = self.open_passage(data, self.door_definitions['south'], 7, 10, cell.south, 8, 10)
+        data = self.open_passage(data, self.door_definitions['south'], 8, 9, cell.south, 9, 9)
     if cell.east != null:
-        data = self.open_passage(data, self.door_definitions['east'], 16, 4, cell.east, 16, 5)
+        data = self.open_passage(data, self.door_definitions['east'], 19, 4, cell.east, 19, 5)
     if cell.west != null:
         data = self.open_passage(data, self.door_definitions['west'], 0, 4, cell.west, 0, 5)
     return data
@@ -157,7 +158,7 @@ func is_boss_room(cell):
     return false
 
 func mark_boss_room(x, y):
-    var global_position = self.bag.room_loader.translate_position(Vector2(x + 3, y))
+    var global_position = self.bag.room_loader.translate_position(Vector2(x + self.side_offset, y + self.top_offset))
     global_position += Vector2(15, 15)
     self.skull_warning.set_pos(global_position)
     self.skull_warning.show()
@@ -169,18 +170,18 @@ func switch_custom_doors(tile_index):
 func switch_doors(tile_index):
     var cell = self.bag.game_state.current_cell
     if cell.north != null:
-        self.apply_door(self.door_definitions['north'], tile_index, 7, 0)
+        self.apply_door(self.door_definitions['north'], tile_index, 8, 0)
     if cell.south != null:
-        self.apply_door(self.door_definitions['south'], tile_index, 7, 10)
+        self.apply_door(self.door_definitions['south'], tile_index, 8, 9)
     if cell.east != null:
-        self.apply_door(self.door_definitions['east'], tile_index, 16, 4)
+        self.apply_door(self.door_definitions['east'], tile_index, 19, 4)
     if cell.west != null:
         self.apply_door(self.door_definitions['west'], tile_index, 0, 4)
     self.switch_custom_doors(tile_index)
 
 func apply_door(definition, tile_index, x, y):
     for tile in definition:
-        self.tilemap.set_cell(tile[0] + self.side_offset + x, tile[1] + y, tile[tile_index])
+        self.tilemap.set_cell(tile[0] + self.side_offset + x, tile[1] + self.top_offset + y, tile[tile_index])
 
 func clear_space():
     for x in range(self.room_max_size.x):
@@ -194,7 +195,7 @@ func apply_room_data(data):
     for y in range(0, data.size()):
         row = data[y]
         for x in range(0, row.size()):
-            self.tilemap.set_cell(x + self.side_offset, y, data[y][x])
+            self.tilemap.set_cell(x + self.side_offset, y + self.top_offset, data[y][x])
 
 func spawn_enemies(enemies):
     var position = Vector2(0, 0)
