@@ -139,7 +139,7 @@ func open_passage(data, passage, x, y, cell, b_x, b_y):
     for tile in passage:
         data[tile[1] + y][tile[0] + x] = tile[2]
 
-    if self.is_boss_room(cell):
+    if cell.is_boss_room():
         self.mark_boss_room(b_x, b_y)
 
     return data
@@ -151,11 +151,6 @@ func close_doors():
 func open_doors():
     self.bag.game_state.doors_open = true
     self.switch_doors(self.DOORS_OPEN)
-
-func is_boss_room(cell):
-    if cell.template_name in ['boss1', 'boss2', 'boss3', 'boss_end']:
-        return true
-    return false
 
 func mark_boss_room(x, y):
     var global_position = self.bag.room_loader.translate_position(Vector2(x + self.side_offset, y + self.top_offset))
@@ -217,7 +212,7 @@ func spawn_items(items, cell):
     var position = Vector2(0, 0)
     for item_data in items:
         position.x = item_data[0] + self.side_offset
-        position.y = item_data[1]
+        position.y = item_data[1] + self.top_offset
         cell.add_item(self.bag.items.spawn(item_data[2], position))
 
 func load_previous_items(items):

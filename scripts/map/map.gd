@@ -137,3 +137,6 @@ func switch_to_cell(cell):
     self.bag.room_loader.load_room(cell)
     cell.attach_persisten_objects()
     self.bag.players.respawn()
+
+    self.bag.minimap.mark_minimap(cell)
+    self.bag.minimap.redraw(self.map)

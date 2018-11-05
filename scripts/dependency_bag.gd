@@ -14,6 +14,7 @@ var processing = preload("res://scripts/processing.gd").new()
 var camera = preload("res://scripts/camera.gd").new()
 var map = preload("res://scripts/map/map.gd").new()
 var room_loader = preload("res://scripts/map/room_loader.gd").new()
+var minimap = preload("res://scripts/map/minimap.gd").new()
 var sample_player
 var stream_player
 
@@ -29,6 +30,7 @@ func _init(root_node):
     self.items._init_bag(self)
     self.processing._init_bag(self)
     self.action_controller._init_bag(self)
+    self.minimap._init_bag(self)
     self.room_loader._init_bag(self)
     self.map._init_bag(self)
     self.sample_player = self.root.get_node('SamplePlayer')

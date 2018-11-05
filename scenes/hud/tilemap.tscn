@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://scenes/hud/assets/minimap_room.png" type="Texture" id=1]
+
+[node name="room" type="Node2D"]
+
+[node name="generic" type="Sprite" parent="."]
+
+texture = ExtResource( 1 )
+vframes = 2
+hframes = 2
+
+[node name="seen" type="Sprite" parent="."]
+
+transform/pos = Vector2( 46, 0 )
+texture = ExtResource( 1 )
+vframes = 2
+hframes = 2
+frame = 1
+
+[node name="current" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 28 )
+texture = ExtResource( 1 )
+vframes = 2
+hframes = 2
+frame = 3
+
+[node name="boss" type="Sprite" parent="."]
+
+transform/pos = Vector2( 40, 22 )
+texture = ExtResource( 1 )
+vframes = 2
+hframes = 2
+frame = 2
+
+

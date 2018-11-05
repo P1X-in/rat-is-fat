@@ -71,6 +71,15 @@ func process(delta):
     self.reset_movement()
     self.process_ai()
     .process(delta)
+    self.check_out_of_bound()
+
+func check_out_of_bound():
+    var lower_bounds = Vector2(-5, 21)
+    var upper_bounds = Vector2(645, 360)
+    var position = self.avatar.get_global_pos()
+
+    if position.x < lower_bounds.x or position.y < lower_bounds.y or position.x > upper_bounds.x or position.y > upper_bounds.y:
+        self.die()
 
 func apply_axis_threshold(axis_value):
     return axis_value

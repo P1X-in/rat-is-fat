@@ -13,6 +13,8 @@ var west = null
 
 var clear = false
 var items_loaded = false
+var known = false
+var visited = false
 var items = {}
 
 var persistent_objects = []
@@ -42,3 +44,8 @@ func add_persistent_object(object, position):
     self.persistent_objects.append([object, position])
     self.bag.action_controller.attach_object(object)
     object.set_pos(position)
+
+func is_boss_room():
+    if self.template_name in ['boss1', 'boss2', 'boss3', 'boss_end']:
+        return true
+    return false

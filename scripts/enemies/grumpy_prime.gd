@@ -51,8 +51,8 @@ func _init(bag).(bag):
 func spawn(position):
     .spawn(position)
     self.randomize_movement()
-    self.schedule_thrash_spawn()
     self.raise_shield()
+    self.spawn_thrash()
 
 func phase2():
     self.body_part_body.hide()
@@ -130,7 +130,7 @@ func schedule_thrash_spawn():
     self.bag.timers.set_timeout(self.THRASH_SPAWN_TIME, self, 'spawn_thrash')
 
 func spawn_thrash():
-    if self.hp < 1:
+    if self.hp < 1 or not self.is_processing:
         return
 
     var position = self.avatar.get_global_pos()
