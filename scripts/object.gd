@@ -29,6 +29,7 @@ func get_hp():
 
 func set_hp(hp):
     if hp <= 0:
+        self.hp = 0
         self.die()
     else:
         if hp <= self.max_hp:
