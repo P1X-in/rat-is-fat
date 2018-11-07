@@ -130,7 +130,7 @@ func schedule_thrash_spawn():
     self.bag.timers.set_timeout(self.THRASH_SPAWN_TIME, self, 'spawn_thrash')
 
 func spawn_thrash():
-    if self.hp < 1 or not self.is_processing:
+    if self.hp < 1:
         return
 
     var position = self.avatar.get_global_pos()
