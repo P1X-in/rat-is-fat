@@ -24,12 +24,12 @@ var spawns = {
     'south2' : Vector2(9, 9),
     'south3' : Vector2(10, 9),
     'east0' : Vector2(19, 6),
-    'east1' : Vector2(18, 6),
-    'east2' : Vector2(19, 7),
-    'east3' : Vector2(18, 8),
+    'east1' : Vector2(19, 7),
+    'east2' : Vector2(18, 6),
+    'east3' : Vector2(18, 7),
     'west0' : Vector2(1, 6),
-    'west1' : Vector2(2, 6),
-    'west2' : Vector2(1, 7),
+    'west1' : Vector2(1, 7),
+    'west2' : Vector2(2, 6),
     'west3' : Vector2(2, 7),
 }
 
