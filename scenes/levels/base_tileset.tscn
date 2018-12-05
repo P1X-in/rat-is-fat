@@ -1,118 +1,118 @@
-[gd_scene load_steps=32 format=1]
+[gd_scene load_steps=30 format=1]
 
 [ext_resource path="res://scenes/levels/assets/theme1.png" type="Texture" id=1]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=32]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 0, 16, -16, 16, -16, -16, 0, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=33]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, -16, 16, -16, 16, 0, 0, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=34]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 0, -16, -16, 16, -16, 16, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=35]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 0, -16, -16, 16, -16, 0, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=36]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 0, 16, 0, 0, 16, -16, 16, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=37]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 16, -16, -16, 0, -16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=7]
+[sub_resource type="ConvexPolygonShape2D" id=55]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 0, 16, 0, -16, 16, -16, 16, 16 )
+points = Vector2Array( 0, -16, 16, -16, 16, 16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
+[sub_resource type="ConvexPolygonShape2D" id=39]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 0, 16, 0, 16, 16, -16, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=9]
+[sub_resource type="ConvexPolygonShape2D" id=40]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 0, 0, 0, 16, 16, -16, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=10]
+[sub_resource type="ConvexPolygonShape2D" id=41]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 16, 16, 0, 0, 0, -16, 16, -16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=11]
+[sub_resource type="ConvexPolygonShape2D" id=42]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 16, 0, 16, 16, -16, 16, 0, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=12]
+[sub_resource type="ConvexPolygonShape2D" id=43]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 16, -16, -16, 0, -16, 0, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=13]
+[sub_resource type="ConvexPolygonShape2D" id=44]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 0, 0, 0, -16, 16, -16, 16, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=14]
+[sub_resource type="ConvexPolygonShape2D" id=45]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, -16, 0, -16, 0, 0, -16, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=15]
+[sub_resource type="ConvexPolygonShape2D" id=46]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 0, 16, 0, 0, 16, 0, 16, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=16]
+[sub_resource type="ConvexPolygonShape2D" id=47]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 16, -16, 0, 0, 0, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=17]
+[sub_resource type="ConvexPolygonShape2D" id=56]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 0, 16, 0, -16, 16, -16, 16, 16 )
+points = Vector2Array( 0, -16, 16, -16, 16, 16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=18]
+[sub_resource type="ConvexPolygonShape2D" id=49]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 16, -16, -16, 0, -16, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=19]
+[sub_resource type="ConvexPolygonShape2D" id=50]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 0, -16, -16, 16, -16, 16, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=20]
+[sub_resource type="ConvexPolygonShape2D" id=51]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 0, -16, -16, 16, -16, 16, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=21]
+[sub_resource type="ConvexPolygonShape2D" id=52]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, -16, 16, -16, 16, 0, -16, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=22]
+[sub_resource type="ConvexPolygonShape2D" id=53]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 0, 16, 0, -16, 16, -16, 16, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=23]
+[sub_resource type="ConvexPolygonShape2D" id=54]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 16, -16, -16, 0, -16, 0, 16 )
@@ -142,62 +142,6 @@ points = Vector2Array( -16, 16, -16, 0, 16, 0, 16, 16 )
 custom_solver_bias = 0.0
 points = Vector2Array( -16, 16, -16, 0, 16, 0, 16, 16 )
 
-[sub_resource type="CanvasItemShaderGraph" id=29]
-
-_code = {
-"fragment": "",
-"fragment_ofs": 0,
-"light": "",
-"light_ofs": 0,
-"vertex": "vec3 nd1sl2=SRC_COLOR.rgb;
-vec3 SRC_UV=vec3(UV,0);
-vec3 nd1sl1=SRC_UV;
-vec3 nd1sl0=vec3(SRC_VERTEX,0);
-vec3 nd2sl0=vec3(0.915602,0.712341,0.613163);
-float nd2sl1=1;
-vec3 nd3sl0;
-{
-	float base=nd1sl2.x;
-	float blend=nd2sl0.x;
-	if (base < 0.5) {
-		nd3sl0.x = (base * (blend+0.5));
-	} else {
-		nd3sl0.x = (1 - (1-base) * (1-(blend-0.5)));
-	}
-}
-{
-	float base=nd1sl2.y;
-	float blend=nd2sl0.y;
-	if (base < 0.5) {
-		nd3sl0.y = (base * (blend+0.5));
-	} else {
-		nd3sl0.y = (1 - (1-base) * (1-(blend-0.5)));
-	}
-}
-{
-	float base=nd1sl2.z;
-	float blend=nd2sl0.z;
-	if (base < 0.5) {
-		nd3sl0.z = (base * (blend+0.5));
-	} else {
-		nd3sl0.z = (1 - (1-base) * (1-(blend-0.5)));
-	}
-}
-VERTEX=nd1sl0.xy;
-UV=nd1sl1.xy;
-COLOR.rgb=nd3sl0;
-",
-"vertex_ofs": 0
-}
-_data = {
-"shaders": [ [ 0, 33, Vector2( 522, -8 ), null, null, [ 0, 1, 0, 1, 1, 1, 2, 3, 0 ], 1, 0, Vector2( 20, 20 ), null, null, [  ], 2, 3, Vector2( 208, 130 ), Color( 0.915602, 0.712341, 0.613163, 1 ), null, [  ], 3, 10, Vector2( 334, 92 ), 7, null, [ 0, 1, 2, 1, 2, 0 ] ], [ 0, 33, Vector2( 250, 20 ), null, null, [  ] ], [ 0, 33, Vector2( 250, 20 ), null, null, [  ] ] ]
-}
-
-[sub_resource type="CanvasItemMaterial" id=30]
-
-shader/shader = SubResource( 29 )
-shader/shading_mode = 0
-
 [node name="floor_sprites" type="Control"]
 
 anchor/right = 1
@@ -219,45 +163,49 @@ __meta__ = {
 
 transform/pos = Vector2( 32, 48 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 0, 0, 32, 32 )
+vframes = 16
+hframes = 8
 
 [node name="floor_dirty2" type="Sprite" parent="."]
 
 transform/pos = Vector2( 80, 48 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 32, 0, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 1
 
 [node name="floor_clean1" type="Sprite" parent="."]
 
 transform/pos = Vector2( 32, 96 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 0, 32, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 8
 
-[node name="floor_clean_1_dup" type="Sprite" parent="."]
+[node name="floor_clean1_dup" type="Sprite" parent="."]
 
 transform/pos = Vector2( 80, 96 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 32, 32, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 9
 
 [node name="wall_half_corner1" type="Sprite" parent="."]
 
 editor/display_folded = true
 transform/pos = Vector2( 128, 48 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 64, 0, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_half_corner1"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 32 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 2 )
+shapes/1/shape = SubResource( 33 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 1
@@ -279,13 +227,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 176, 48 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 96, 0, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 3
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_half_top"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 34 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -307,16 +256,17 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 224, 48 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 128, 0, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 4
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_half_corner2"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 35 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 5 )
+shapes/1/shape = SubResource( 36 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 1
@@ -338,13 +288,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 128, 96 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 64, 32, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 10
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_half_left"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 37 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -365,21 +316,23 @@ trigger = false
 
 transform/pos = Vector2( 176, 96 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 96, 32, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 11
 
 [node name="wall_half_right" type="Sprite" parent="."]
 
 editor/display_folded = true
 transform/pos = Vector2( 224, 96 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 128, 32, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 12
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_half_right"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 55 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -393,7 +346,7 @@ bounce = 0.0
 
 build_mode = 0
 polygon = Vector2Array( 0, -16, 16, -16, 16, 16, 0, 16 )
-shape_range = Vector2( -1, -1 )
+shape_range = Vector2( 0, 0 )
 trigger = false
 
 [node name="wall_half_bottom" type="Sprite" parent="."]
@@ -401,13 +354,15 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 176, 144 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 96, 64, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 19
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_half_bottom"]
 
+editor/display_folded = true
 input/pickable = false
-shapes/0/shape = SubResource( 8 )
+shapes/0/shape = SubResource( 39 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -424,21 +379,22 @@ polygon = Vector2Array( -16, 0, 16, 0, 16, 16, -16, 16, -16, 0 )
 shape_range = Vector2( -1, -1 )
 trigger = false
 
-[node name="wall_corner4" type="Sprite" parent="."]
+[node name="wall_half_corner4" type="Sprite" parent="."]
 
 editor/display_folded = true
 transform/pos = Vector2( 224, 144 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 128, 64, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 20
 
-[node name="StaticBody2D" type="StaticBody2D" parent="wall_corner4"]
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_half_corner4"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 9 )
+shapes/0/shape = SubResource( 40 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 10 )
+shapes/1/shape = SubResource( 41 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 1
@@ -448,28 +404,29 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall_corner4/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall_half_corner4/StaticBody2D"]
 
 build_mode = 0
 polygon = Vector2Array( 0, -16, 16, -16, 16, 16, -16, 16, -16, 0, 0, 0 )
 shape_range = Vector2( -1, -1 )
 trigger = false
 
-[node name="wall_corner3" type="Sprite" parent="."]
+[node name="wall_half_corner3" type="Sprite" parent="."]
 
 editor/display_folded = true
 transform/pos = Vector2( 128, 144 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 64, 64, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 18
 
-[node name="StaticBody2D" type="StaticBody2D" parent="wall_corner3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="wall_half_corner3"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 11 )
+shapes/0/shape = SubResource( 42 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 12 )
+shapes/1/shape = SubResource( 43 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 1
@@ -479,7 +436,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall_corner3/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall_half_corner3/StaticBody2D"]
 
 build_mode = 0
 polygon = Vector2Array( 0, -16, 0, 0, 16, 0, 16, 16, -16, 16, -16, -16 )
@@ -491,13 +448,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 272, 48 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 160, 0, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 5
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_quarter_corner1"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 13 )
+shapes/0/shape = SubResource( 44 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -519,13 +477,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 320, 48 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 192, 0, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 6
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_quarter_corner2"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 14 )
+shapes/0/shape = SubResource( 45 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -547,13 +506,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 272, 96 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 160, 32, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 13
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_quarter_corner3"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 15 )
+shapes/0/shape = SubResource( 46 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -575,13 +535,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 320, 96 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 192, 32, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 14
 
 [node name="StaticBody2D" type="StaticBody2D" parent="wall_quarter_corner4"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 16 )
+shapes/0/shape = SubResource( 47 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -603,13 +564,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 80, 144 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 32, 64, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 17
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_right_top"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 17 )
+shapes/0/shape = SubResource( 56 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -623,7 +585,7 @@ bounce = 0.0
 
 build_mode = 0
 polygon = Vector2Array( 0, -16, 16, -16, 16, 16, 0, 16 )
-shape_range = Vector2( -1, -1 )
+shape_range = Vector2( 0, 0 )
 trigger = false
 
 [node name="door_left_top" type="Sprite" parent="."]
@@ -631,13 +593,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 32, 144 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 0, 64, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 16
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_left_top"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 18 )
+shapes/0/shape = SubResource( 49 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -659,13 +622,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 176, 192 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 96, 96, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 27
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_top_middle"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 19 )
+shapes/0/shape = SubResource( 50 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -687,13 +651,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 224, 192 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 128, 96, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 28
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_top_left"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 20 )
+shapes/0/shape = SubResource( 51 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -715,13 +680,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 128, 192 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 64, 96, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 26
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_top_right"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 21 )
+shapes/0/shape = SubResource( 52 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -743,13 +709,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 80, 192 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 32, 96, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 25
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_right_middle"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 22 )
+shapes/0/shape = SubResource( 53 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -771,13 +738,14 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 32, 192 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 0, 96, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 24
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_left_middle"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 23 )
+shapes/0/shape = SubResource( 54 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -799,8 +767,9 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 80, 240 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 32, 128, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 33
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_right_bottom"]
 
@@ -827,8 +796,9 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 32, 240 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 0, 128, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 32
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_left_bottom"]
 
@@ -855,8 +825,9 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 128, 240 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 64, 128, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 34
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_bottom_left"]
 
@@ -883,8 +854,9 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 176, 240 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 96, 128, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 35
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_bottom_middle"]
 
@@ -911,8 +883,9 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 224, 240 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 128, 128, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 36
 
 [node name="StaticBody2D" type="StaticBody2D" parent="door_bottom_right"]
 
@@ -936,17 +909,18 @@ trigger = false
 
 [node name="stairs_left" type="Sprite" parent="."]
 
-material/material = SubResource( 30 )
 transform/pos = Vector2( 272, 144 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 160, 64, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 21
 
 [node name="stairs_right" type="Sprite" parent="."]
 
 transform/pos = Vector2( 320, 144 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 192, 64, 32, 32 )
+vframes = 16
+hframes = 8
+frame = 22
 
 

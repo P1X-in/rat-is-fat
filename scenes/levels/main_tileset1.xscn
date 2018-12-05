@@ -15,39 +15,39 @@
 			<string> "names" </string>
 			<string_array  len="34">
 				<string> "floor_sprites" </string>
-				<string> "floor_dirty1" </string>
-				<string> "floor_dirty2" </string>
-				<string> "floor_clean1" </string>
-				<string> "floor_clean_1_dup" </string>
-				<string> "wall_half_corner1" </string>
+				<string> "new_floor_dirty1" </string>
+				<string> "new_floor_dirty2" </string>
+				<string> "new_floor_clean1" </string>
+				<string> "new_floor_clean1_dup" </string>
+				<string> "new_wall_half_corner1" </string>
 				<string> "StaticBody2D" </string>
 				<string> "CollisionPolygon2D" </string>
-				<string> "wall_half_top" </string>
-				<string> "wall_half_corner2" </string>
-				<string> "wall_half_left" </string>
-				<string> "floor_drain" </string>
-				<string> "wall_half_right" </string>
-				<string> "wall_half_bottom" </string>
-				<string> "wall_corner4" </string>
-				<string> "wall_corner3" </string>
-				<string> "wall_quarter_corner1" </string>
-				<string> "wall_quarter_corner2" </string>
-				<string> "wall_quarter_corner3" </string>
-				<string> "wall_quarter_corner4" </string>
-				<string> "door_right_top" </string>
-				<string> "door_left_top" </string>
-				<string> "door_top_middle" </string>
-				<string> "door_top_left" </string>
-				<string> "door_top_right" </string>
-				<string> "door_right_middle" </string>
-				<string> "door_left_middle" </string>
-				<string> "door_right_bottom" </string>
-				<string> "door_left_bottom" </string>
-				<string> "door_bottom_left" </string>
-				<string> "door_bottom_middle" </string>
-				<string> "door_bottom_right" </string>
-				<string> "stairs_left" </string>
-				<string> "stairs_right" </string>
+				<string> "new_wall_half_top" </string>
+				<string> "new_wall_half_corner2" </string>
+				<string> "new_wall_half_left" </string>
+				<string> "new_floor_drain" </string>
+				<string> "new_wall_half_right" </string>
+				<string> "new_wall_half_bottom" </string>
+				<string> "new_wall_half_corner4" </string>
+				<string> "new_wall_half_corner3" </string>
+				<string> "new_wall_quarter_corner1" </string>
+				<string> "new_wall_quarter_corner2" </string>
+				<string> "new_wall_quarter_corner3" </string>
+				<string> "new_wall_quarter_corner4" </string>
+				<string> "new_door_right_top" </string>
+				<string> "new_door_left_top" </string>
+				<string> "new_door_top_middle" </string>
+				<string> "new_door_top_left" </string>
+				<string> "new_door_top_right" </string>
+				<string> "new_door_right_middle" </string>
+				<string> "new_door_left_middle" </string>
+				<string> "new_door_right_bottom" </string>
+				<string> "new_door_left_bottom" </string>
+				<string> "new_door_bottom_left" </string>
+				<string> "new_door_bottom_middle" </string>
+				<string> "new_door_bottom_right" </string>
+				<string> "new_stairs_left" </string>
+				<string> "new_stairs_right" </string>
 			</string_array>
 			<string> "node_count" </string>
 			<int> 1 </int>
