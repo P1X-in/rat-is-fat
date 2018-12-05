@@ -1,148 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="30" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
-	<ext_resource path="res://scenes/levels/assets/theme3.png" type="Texture" index="0"></ext_resource>
-	<resource type="ConvexPolygonShape2D" path="local://28">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			0, 16, -16, 16, -16, -16, 0, 0 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://1">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 0, 0, 0 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://2">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 0, -16, -16, 16, -16, 16, 0 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://3">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 0, -16, -16, 16, -16, 0, 0 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://4">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			0, 16, 0, 0, 16, -16, 16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://5">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 16, -16, -16, 0, -16, 0, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://6">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			0, 16, 0, -16, 16, -16, 16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://7">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 0, 16, 0, 16, 16, -16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://8">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 0, 0, 0, 16, 16, -16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://9">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			16, 16, 0, 0, 0, -16, 16, -16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://10">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			16, 0, 16, 16, -16, 16, 0, 0 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://11">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 16, -16, -16, 0, -16, 0, 0 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://12">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			0, 0, 0, -16, 16, -16, 16, 0 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://13">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, -16, 0, -16, 0, 0, -16, 0 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://14">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			0, 16, 0, 0, 16, 0, 16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://15">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 16, -16, 0, 0, 0, 0, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://16">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			0, 16, 0, -16, 16, -16, 16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://17">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 16, -16, -16, 0, -16, 0, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://18">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 0, -16, -16, 16, -16, 16, 0 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://19">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 0, -16, -16, 16, -16, 16, 0 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://20">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, -16, 16, -16, 16, 0, -16, 0 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://21">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			0, 16, 0, -16, 16, -16, 16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://22">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 16, -16, -16, 0, -16, 0, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://23">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			0, 16, 0, -16, 16, -16, 16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://24">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 16, -16, -16, 0, -16, 0, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://25">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 16, -16, 0, 16, 0, 16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://26">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 16, -16, 0, 16, 0, 16, 16 </vector2_array>
-
-	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://27">
-		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			-16, 16, -16, 0, 16, 0, 16, 16 </vector2_array>
-
-	</resource>
+<resource_file type="PackedScene" subresource_count="2" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
+	<ext_resource path="res://scenes/levels/base_tileset.tscn" type="PackedScene" index="0"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
+			<string> "base_scene" </string>
+			<int> 0 </int>
 			<string> "conn_count" </string>
 			<int> 0 </int>
 			<string> "conns" </string>
@@ -151,206 +13,128 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="68">
+			<string_array  len="110">
 				<string> "floor_sprites" </string>
-				<string> "anchor/right" </string>
-				<string> "anchor/bottom" </string>
-				<string> "focus/ignore_mouse" </string>
-				<string> "focus/stop_mouse" </string>
-				<string> "size_flags/horizontal" </string>
-				<string> "size_flags/vertical" </string>
-				<string> "margin/left" </string>
-				<string> "margin/top" </string>
-				<string> "margin/right" </string>
-				<string> "margin/bottom" </string>
-				<string> "__meta__" </string>
-				<string> "Control" </string>
-				<string> "Sprite" </string>
-				<string> "transform/pos" </string>
-				<string> "texture" </string>
-				<string> "region" </string>
-				<string> "region_rect" </string>
-				<string> "Sprite1" </string>
-				<string> "Sprite5" </string>
-				<string> "Sprite5 2" </string>
-				<string> "Sprite2" </string>
-				<string> "editor/display_folded" </string>
+				<string> "floor_dirty1" </string>
+				<string> "floor_dirty2" </string>
+				<string> "floor_clean1" </string>
+				<string> "floor_clean1_dup" </string>
+				<string> "wall_half_corner1" </string>
 				<string> "StaticBody2D" </string>
-				<string> "input/pickable" </string>
-				<string> "shapes/0/shape" </string>
-				<string> "shapes/0/transform" </string>
-				<string> "shapes/0/trigger" </string>
-				<string> "shapes/1/shape" </string>
-				<string> "shapes/1/transform" </string>
-				<string> "shapes/1/trigger" </string>
-				<string> "collision/layers" </string>
-				<string> "collision/mask" </string>
-				<string> "constant_linear_velocity" </string>
-				<string> "constant_angular_velocity" </string>
-				<string> "friction" </string>
-				<string> "bounce" </string>
 				<string> "CollisionPolygon2D" </string>
-				<string> "build_mode" </string>
-				<string> "polygon" </string>
-				<string> "shape_range" </string>
-				<string> "trigger" </string>
-				<string> "Sprite3" </string>
-				<string> "Sprite4" </string>
-				<string> "Sprite7 2" </string>
-				<string> "Sprite7 3" </string>
-				<string> "Sprite7 4" </string>
-				<string> "Sprite74" </string>
-				<string> "Sprite75" </string>
-				<string> "Sprite73" </string>
-				<string> "Sprite6" </string>
-				<string> "Sprite7" </string>
-				<string> "Sprite8" </string>
-				<string> "Sprite8 2" </string>
-				<string> "Sprite53" </string>
-				<string> "Sprite9" </string>
-				<string> "Sprite10" </string>
-				<string> "Sprite83" </string>
-				<string> "Sprite11" </string>
-				<string> "Sprite54" </string>
-				<string> "Sprite12" </string>
-				<string> "Sprite55" </string>
-				<string> "Sprite13" </string>
-				<string> "Sprite14" </string>
-				<string> "Sprite14 2" </string>
-				<string> "Sprite84" </string>
-				<string> "Sprite15" </string>
-				<string> "Sprite85" </string>
+				<string> "wall_half_top" </string>
+				<string> "wall_half_corner2" </string>
+				<string> "wall_half_left" </string>
+				<string> "floor_drain" </string>
+				<string> "wall_half_right" </string>
+				<string> "wall_half_bottom" </string>
+				<string> "wall_half_corner4" </string>
+				<string> "wall_half_corner3" </string>
+				<string> "wall_quarter_corner1" </string>
+				<string> "wall_quarter_corner2" </string>
+				<string> "wall_quarter_corner3" </string>
+				<string> "wall_quarter_corner4" </string>
+				<string> "door_right_top" </string>
+				<string> "door_left_top" </string>
+				<string> "door_top_middle" </string>
+				<string> "door_top_left" </string>
+				<string> "door_top_right" </string>
+				<string> "door_right_middle" </string>
+				<string> "door_left_middle" </string>
+				<string> "door_right_bottom" </string>
+				<string> "door_left_bottom" </string>
+				<string> "door_bottom_left" </string>
+				<string> "door_bottom_middle" </string>
+				<string> "door_bottom_right" </string>
+				<string> "stairs_left" </string>
+				<string> "stairs_right" </string>
+				<string> "wall_top_half_end" </string>
+				<string> "StaticBody2D1" </string>
+				<string> "wall_T1" </string>
+				<string> "wall_horizontal" </string>
+				<string> "wall_T_end1" </string>
+				<string> "wall_vertical" </string>
+				<string> "wall_T_end2" </string>
+				<string> "wall_T2" </string>
+				<string> "wall_vertical_end1" </string>
+				<string> "wall_horizontal_end1" </string>
+				<string> "wall_T3" </string>
+				<string> "wall_left_half_end" </string>
+				<string> "wall_T_end3" </string>
+				<string> "wall_horizontal_end2" </string>
+				<string> "door_horizontal" </string>
+				<string> "door_vertical" </string>
+				<string> "wall_T_narrow1" </string>
+				<string> "wall_right_half_end" </string>
+				<string> "wall_T4" </string>
+				<string> "wall_T_end4" </string>
+				<string> "wall_vertical_end2" </string>
+				<string> "wall_bottom_half_end" </string>
+				<string> "wall_T_narrow_end1" </string>
+				<string> "wall_narrow_half_end1" </string>
+				<string> "wall_horizontal_narrow" </string>
+				<string> "wall_horizontal_narrow_end1" </string>
+				<string> "wall_T_narrow2" </string>
+				<string> "wall_vertical_narrow" </string>
+				<string> "wall_vertical_narrow_end1" </string>
+				<string> "wall_narrow_half_end2" </string>
+				<string> "wall_T_narrow3" </string>
+				<string> "wall_vertical_narrow_end2" </string>
+				<string> "wall_T_narrow_end2" </string>
+				<string> "wall_narrow_half_end3" </string>
+				<string> "wall_T_narrow_end3" </string>
+				<string> "wall_horizontal_narrow_end2" </string>
+				<string> "wall_T_narrow4" </string>
+				<string> "wall_narrow_half_end4" </string>
+				<string> "door_horizontal_narrow" </string>
+				<string> "wall_T_narrow_end4" </string>
+				<string> "door_top1" </string>
+				<string> "door_top2" </string>
+				<string> "door_bottom1" </string>
+				<string> "door_bottom2" </string>
+				<string> "wall_narrow_corner1" </string>
+				<string> "wall_narrow_corner2" </string>
+				<string> "wall_T_narrow5" </string>
+				<string> "wall_T_narrow6" </string>
+				<string> "wall_narrow_corner3" </string>
+				<string> "wall_narrow_corner4" </string>
+				<string> "wall_narrow_corner5" </string>
+				<string> "wall_narrow_corner6" </string>
+				<string> "wall_narrow_corner7" </string>
+				<string> "wall_narrow_corner8" </string>
+				<string> "wall_T_narrow7" </string>
+				<string> "wall_T_narrow8" </string>
+				<string> "wall_narrow_corner9" </string>
+				<string> "wall_narrow_corner10" </string>
+				<string> "wall_narrow_corner11" </string>
+				<string> "wall_narrow_corner12" </string>
+				<string> "wall_narrow_corner13" </string>
+				<string> "wall_narrow_corner14" </string>
+				<string> "door_vertical_narrow1" </string>
+				<string> "door_left1" </string>
+				<string> "door_right1" </string>
+				<string> "wall_half_top_end1" </string>
+				<string> "wall_half_top_end2" </string>
+				<string> "wall_narrow_corner15" </string>
+				<string> "wall_narrow_corner16" </string>
+				<string> "door_vertical_narrow2" </string>
+				<string> "door_left2" </string>
+				<string> "door_right2" </string>
+				<string> "wall_half_bottom_end1" </string>
+				<string> "wall_half_bottom_end2" </string>
+				<string> "wall_half_left_end" </string>
+				<string> "wall_half_right_end" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 80 </int>
+			<int> 1 </int>
 			<string> "node_paths" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="1534"> 				-1, -1, 12, 0, -1, 11, 1, 0, 2, 0, 3, 1, 4, 2, 5, 3, 6, 3, 7, 4, 8, 4, 9, 4, 10, 4, 11, 5, 0, 0, 0, 13, 13, -1, 4, 14, 6, 15, 7, 16, 2, 17, 8, 0, 0, 0, 13, 18, -1, 4, 14, 9, 15, 7, 16, 2, 17, 10, 0, 0, 0, 13, 19, -1, 4, 14, 11, 15, 7, 16, 2, 17, 12, 0, 0, 0, 13, 20, -1, 4, 14, 13, 15, 7, 16, 2, 17, 14, 0, 0, 0, 13, 21, -1, 5, 22, 2, 14, 15, 15, 7, 16, 2, 17, 16, 0, 5, 0, 23, 23, -1, 13, 24, 1, 25, 17, 26, 18, 27, 1, 28, 19, 29, 18, 30, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 6, 0, 37, 37, -1, 4, 38, 22, 39, 23, 40, 24, 41, 1, 0, 0, 0, 13, 42, -1, 5, 22, 2, 14, 25, 15, 7, 16, 2, 17, 26, 0, 8, 0, 23, 23, -1, 10, 24, 1, 25, 27, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 9, 0, 37, 37, -1, 4, 38, 22, 39, 28, 40, 24, 41, 1, 0, 0, 0, 13, 43, -1, 5, 22, 2, 14, 29, 15, 7, 16, 2, 17, 30, 0, 11, 0, 23, 23, -1, 13, 24, 1, 25, 31, 26, 18, 27, 1, 28, 32, 29, 18, 30, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 12, 0, 37, 37, -1, 4, 38, 22, 39, 33, 40, 24, 41, 1, 0, 0, 0, 13, 44, -1, 5, 22, 2, 14, 34, 15, 7, 16, 2, 17, 35, 0, 14, 0, 23, 23, -1, 10, 24, 1, 25, 36, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 15, 0, 37, 37, -1, 4, 38, 22, 39, 37, 40, 24, 41, 1, 0, 0, 0, 13, 45, -1, 4, 14, 38, 15, 7, 16, 2, 17, 39, 0, 0, 0, 13, 46, -1, 4, 14, 40, 15, 7, 16, 2, 17, 41, 0, 18, 0, 23, 23, -1, 10, 24, 1, 25, 42, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 19, 0, 37, 37, -1, 4, 38, 22, 39, 43, 40, 24, 41, 1, 0, 0, 0, 13, 47, -1, 4, 14, 44, 15, 7, 16, 2, 17, 45, 0, 21, 0, 23, 23, -1, 10, 24, 1, 25, 46, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 22, 0, 37, 37, -1, 4, 38, 22, 39, 47, 40, 24, 41, 1, 0, 0, 0, 13, 48, -1, 4, 14, 48, 15, 7, 16, 2, 17, 49, 0, 24, 0, 23, 23, -1, 13, 24, 1, 25, 50, 26, 18, 27, 1, 28, 51, 29, 18, 30, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 25, 0, 37, 37, -1, 4, 38, 22, 39, 52, 40, 24, 41, 1, 0, 0, 0, 13, 49, -1, 4, 14, 53, 15, 7, 16, 2, 17, 54, 0, 27, 0, 23, 23, -1, 13, 24, 1, 25, 55, 26, 18, 27, 1, 28, 56, 29, 18, 30, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 28, 0, 37, 37, -1, 4, 38, 22, 39, 57, 40, 24, 41, 1, 0, 0, 0, 13, 50, -1, 4, 14, 58, 15, 7, 16, 2, 17, 59, 0, 30, 0, 23, 23, -1, 10, 24, 1, 25, 60, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 31, 0, 37, 37, -1, 4, 38, 22, 39, 61, 40, 24, 41, 1, 0, 0, 0, 13, 51, -1, 4, 14, 62, 15, 7, 16, 2, 17, 63, 0, 33, 0, 23, 23, -1, 10, 24, 1, 25, 64, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 34, 0, 37, 37, -1, 4, 38, 22, 39, 65, 40, 24, 41, 1, 0, 0, 0, 13, 52, -1, 4, 14, 66, 15, 7, 16, 2, 17, 67, 0, 36, 0, 23, 23, -1, 10, 24, 1, 25, 68, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 37, 0, 37, 37, -1, 4, 38, 22, 39, 69, 40, 24, 41, 1, 0, 0, 0, 13, 53, -1, 4, 14, 70, 15, 7, 16, 2, 17, 71, 0, 39, 0, 23, 23, -1, 10, 24, 1, 25, 72, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 40, 0, 37, 37, -1, 4, 38, 22, 39, 73, 40, 24, 41, 1, 0, 0, 0, 13, 54, -1, 4, 14, 74, 15, 7, 16, 2, 17, 75, 0, 42, 0, 23, 23, -1, 10, 24, 1, 25, 76, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 43, 0, 37, 37, -1, 4, 38, 22, 39, 43, 40, 24, 41, 1, 0, 0, 0, 13, 55, -1, 4, 14, 77, 15, 7, 16, 2, 17, 78, 0, 45, 0, 23, 23, -1, 10, 24, 1, 25, 79, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 46, 0, 37, 37, -1, 4, 38, 22, 39, 37, 40, 24, 41, 1, 0, 0, 0, 13, 56, -1, 4, 14, 80, 15, 7, 16, 2, 17, 81, 0, 48, 0, 23, 23, -1, 10, 24, 1, 25, 82, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 49, 0, 37, 37, -1, 4, 38, 22, 39, 28, 40, 24, 41, 1, 0, 0, 0, 13, 57, -1, 4, 14, 83, 15, 7, 16, 2, 17, 84, 0, 51, 0, 23, 23, -1, 10, 24, 1, 25, 85, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 52, 0, 37, 37, -1, 4, 38, 22, 39, 28, 40, 24, 41, 1, 0, 0, 0, 13, 58, -1, 4, 14, 86, 15, 7, 16, 2, 17, 87, 0, 54, 0, 23, 23, -1, 10, 24, 1, 25, 88, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 55, 0, 37, 37, -1, 4, 38, 22, 39, 89, 40, 24, 41, 1, 0, 0, 0, 13, 59, -1, 4, 14, 90, 15, 7, 16, 2, 17, 91, 0, 57, 0, 23, 23, -1, 10, 24, 1, 25, 92, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 58, 0, 37, 37, -1, 4, 38, 22, 39, 43, 40, 24, 41, 1, 0, 0, 0, 13, 60, -1, 4, 14, 93, 15, 7, 16, 2, 17, 94, 0, 60, 0, 23, 23, -1, 10, 24, 1, 25, 95, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 61, 0, 37, 37, -1, 4, 38, 22, 39, 37, 40, 24, 41, 1, 0, 0, 0, 13, 61, -1, 4, 14, 96, 15, 7, 16, 2, 17, 97, 0, 63, 0, 23, 23, -1, 10, 24, 1, 25, 98, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 64, 0, 37, 37, -1, 4, 38, 22, 39, 43, 40, 24, 41, 1, 0, 0, 0, 13, 62, -1, 4, 14, 99, 15, 7, 16, 2, 17, 100, 0, 66, 0, 23, 23, -1, 10, 24, 1, 25, 101, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 67, 0, 37, 37, -1, 4, 38, 22, 39, 37, 40, 24, 41, 1, 0, 0, 0, 13, 63, -1, 4, 14, 102, 15, 7, 16, 2, 17, 103, 0, 69, 0, 23, 23, -1, 10, 24, 1, 25, 104, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 70, 0, 37, 37, -1, 4, 38, 22, 39, 105, 40, 24, 41, 1, 0, 0, 0, 13, 64, -1, 4, 14, 106, 15, 7, 16, 2, 17, 107, 0, 72, 0, 23, 23, -1, 10, 24, 1, 25, 108, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 73, 0, 37, 37, -1, 4, 38, 22, 39, 105, 40, 24, 41, 1, 0, 0, 0, 13, 65, -1, 4, 14, 109, 15, 7, 16, 2, 17, 110, 0, 75, 0, 23, 23, -1, 10, 24, 1, 25, 111, 26, 18, 27, 1, 31, 0, 32, 0, 33, 20, 34, 4, 35, 21, 36, 4, 0, 76, 0, 37, 37, -1, 4, 38, 22, 39, 105, 40, 24, 41, 1, 0, 0, 0, 13, 66, -1, 4, 14, 112, 15, 7, 16, 2, 17, 113, 0, 0, 0, 13, 67, -1, 4, 14, 114, 15, 7, 16, 2, 17, 115, 0 </int_array>
+			<int_array  len="7"> 				-1, -1, 2147483647, 0, -1, 0, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="116" shared="false">
-				<int> 1 </int>
-				<bool> False </bool>
-				<bool> True </bool>
-				<int> 2 </int>
-				<real> 0 </real>
-				<dictionary  shared="false">
-					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
-					<string> "_edit_lock_" </string>
-					<bool> True </bool>
-				</dictionary>
-				<vector2> 32, 48 </vector2>
+			<array  len="1" shared="false">
 				<resource  external="0">  </resource>
-				<rect2> 0, 0, 32, 32 </rect2>
-				<vector2> 80, 48 </vector2>
-				<rect2> 32, 0, 32, 32 </rect2>
-				<vector2> 32, 96 </vector2>
-				<rect2> 0, 32, 32, 32 </rect2>
-				<vector2> 80, 96 </vector2>
-				<rect2> 32, 32, 32, 32 </rect2>
-				<vector2> 128, 48 </vector2>
-				<rect2> 64, 0, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://28">  </resource>
-				<matrix32> 1, -0, 0, 1, 0, 0 </matrix32>
-				<resource  resource_type="Shape2D" path="local://1">  </resource>
-				<vector2> 0, 0 </vector2>
-				<real> 1 </real>
-				<int> 0 </int>
-				<vector2_array  len="7"> 					-16, -16, 16, -16, 16, 0, 0, 0, 0, 16, -16, 16, -16, -16 </vector2_array>
-				<vector2> -1, -1 </vector2>
-				<vector2> 176, 48 </vector2>
-				<rect2> 96, 0, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://2">  </resource>
-				<vector2_array  len="4"> 					-16, -16, 16, -16, 16, 0, -16, 0 </vector2_array>
-				<vector2> 224, 48 </vector2>
-				<rect2> 128, 0, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://3">  </resource>
-				<resource  resource_type="Shape2D" path="local://4">  </resource>
-				<vector2_array  len="6"> 					-16, -16, 16, -16, 16, 16, 0, 16, 0, 0, -16, 0 </vector2_array>
-				<vector2> 128, 96 </vector2>
-				<rect2> 64, 32, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://5">  </resource>
-				<vector2_array  len="4"> 					-16, -16, 0, -16, 0, 16, -16, 16 </vector2_array>
-				<vector2> 176, 96 </vector2>
-				<rect2> 96, 32, 32, 32 </rect2>
-				<vector2> 224, 96 </vector2>
-				<rect2> 128, 32, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://6">  </resource>
-				<vector2_array  len="4"> 					0, -16, 16, -16, 16, 16, 0, 16 </vector2_array>
-				<vector2> 176, 144 </vector2>
-				<rect2> 96, 64, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://7">  </resource>
-				<vector2_array  len="5"> 					-16, 0, 16, 0, 16, 16, -16, 16, -16, 0 </vector2_array>
-				<vector2> 224, 144 </vector2>
-				<rect2> 128, 64, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://8">  </resource>
-				<resource  resource_type="Shape2D" path="local://9">  </resource>
-				<vector2_array  len="6"> 					0, -16, 16, -16, 16, 16, -16, 16, -16, 0, 0, 0 </vector2_array>
-				<vector2> 128, 144 </vector2>
-				<rect2> 64, 64, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://10">  </resource>
-				<resource  resource_type="Shape2D" path="local://11">  </resource>
-				<vector2_array  len="6"> 					0, -16, 0, 0, 16, 0, 16, 16, -16, 16, -16, -16 </vector2_array>
-				<vector2> 272, 48 </vector2>
-				<rect2> 160, 0, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://12">  </resource>
-				<vector2_array  len="4"> 					0, -16, 16, -16, 16, 0, 0, 0 </vector2_array>
-				<vector2> 320, 48 </vector2>
-				<rect2> 192, 0, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://13">  </resource>
-				<vector2_array  len="4"> 					0, -16, 0, 0, -16, 0, -16, -16 </vector2_array>
-				<vector2> 272, 96 </vector2>
-				<rect2> 160, 32, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://14">  </resource>
-				<vector2_array  len="4"> 					0, 0, 16, 0, 16, 16, 0, 16 </vector2_array>
-				<vector2> 320, 96 </vector2>
-				<rect2> 192, 32, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://15">  </resource>
-				<vector2_array  len="4"> 					-16, 0, 0, 0, 0, 16, -16, 16 </vector2_array>
-				<vector2> 80, 144 </vector2>
-				<rect2> 32, 64, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://16">  </resource>
-				<vector2> 32, 144 </vector2>
-				<rect2> 0, 64, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://17">  </resource>
-				<vector2> 176, 192 </vector2>
-				<rect2> 96, 96, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://18">  </resource>
-				<vector2> 224, 192 </vector2>
-				<rect2> 128, 96, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://19">  </resource>
-				<vector2> 128, 192 </vector2>
-				<rect2> 64, 96, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://20">  </resource>
-				<vector2_array  len="5"> 					-16, -16, 16, -16, 16, 0, -16, 0, -16, -16 </vector2_array>
-				<vector2> 80, 192 </vector2>
-				<rect2> 32, 96, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://21">  </resource>
-				<vector2> 32, 192 </vector2>
-				<rect2> 0, 96, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://22">  </resource>
-				<vector2> 80, 240 </vector2>
-				<rect2> 32, 128, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://23">  </resource>
-				<vector2> 32, 240 </vector2>
-				<rect2> 0, 128, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://24">  </resource>
-				<vector2> 128, 240 </vector2>
-				<rect2> 64, 128, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://25">  </resource>
-				<vector2_array  len="4"> 					-16, 0, 16, 0, 16, 16, -16, 16 </vector2_array>
-				<vector2> 176, 240 </vector2>
-				<rect2> 96, 128, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://26">  </resource>
-				<vector2> 224, 240 </vector2>
-				<rect2> 128, 128, 32, 32 </rect2>
-				<resource  resource_type="Shape2D" path="local://27">  </resource>
-				<vector2> 272, 144 </vector2>
-				<rect2> 160, 64, 32, 32 </rect2>
-				<vector2> 320, 144 </vector2>
-				<rect2> 192, 64, 32, 32 </rect2>
 			</array>
 			<string> "version" </string>
 			<int> 2 </int>
