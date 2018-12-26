@@ -3535,4 +3535,12 @@ vframes = 16
 hframes = 8
 frame = 68
 
+[node name="floor_trapdoor" type="Sprite" parent="."]
+
+transform/pos = Vector2( 368, 576 )
+texture = ExtResource( 1 )
+vframes = 16
+hframes = 8
+frame = 95
+
 
