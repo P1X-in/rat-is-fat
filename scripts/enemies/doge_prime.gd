@@ -13,6 +13,7 @@ var path_points = [
     Vector2(17, 3),
     Vector2(17, 8),
     Vector2(2, 8),
+    Vector2(2, 3),
 ]
 var path_points_global = []
 var target_point = null

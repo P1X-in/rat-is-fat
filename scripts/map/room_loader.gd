@@ -76,28 +76,8 @@ var difficulty_bosses = [
 ]
 
 
-var door_definitions = {
-    'north' : [
-        [0, 0, 14, 21],
-        [1, 0, 2, 19],
-        [2, 0, 13, 20],
-    ],
-    'south' : [
-        [0, 0, 16, 26],
-        [1, 0, 2, 27],
-        [2, 0, 15, 28],
-    ],
-    'east' : [
-        [0, 0, 13, 17],
-        [0, 1, 2, 22],
-        [0, 2, 15, 24],
-    ],
-    'west' : [
-        [0, 0, 14, 18],
-        [0, 1, 2, 23],
-        [0, 2, 16, 25],
-    ],
-}
+var door_definitions_sub = preload("res://scripts/map/door_definitions.gd").new()
+var door_definitions = self.door_definitions_sub.door_definitions
 
 func _init_bag(bag):
     self.bag = bag
@@ -126,21 +106,21 @@ func load_room(cell):
 
 func create_passages(data, cell):
     if cell.north != null:
-        data = self.open_passage(data, self.door_definitions['north'], 8, 0, cell.north, 9, 0)
+        data = self.open_passage(data, self.door_definitions['north'], 8, 0, cell.north, 10, 0, 0, 15)
     if cell.south != null:
-        data = self.open_passage(data, self.door_definitions['south'], 8, 9, cell.south, 9, 9)
+        data = self.open_passage(data, self.door_definitions['south'], 8, 9, cell.south, 10, 9, 0, 15)
     if cell.east != null:
-        data = self.open_passage(data, self.door_definitions['east'], 19, 4, cell.east, 19, 5)
+        data = self.open_passage(data, self.door_definitions['east'], 19, 4, cell.east, 19, 5, 15, 8)
     if cell.west != null:
-        data = self.open_passage(data, self.door_definitions['west'], 0, 4, cell.west, 0, 5)
+        data = self.open_passage(data, self.door_definitions['west'], 0, 4, cell.west, 0, 5, 15, 8)
     return data
 
-func open_passage(data, passage, x, y, cell, b_x, b_y):
+func open_passage(data, passage, x, y, cell, b_x, b_y, b_x_offset = 0, b_y_offset = 0):
     for tile in passage:
         data[tile[1] + y][tile[0] + x] = tile[2]
 
-    if cell.is_boss_room():
-        self.mark_boss_room(b_x, b_y)
+    if cell != null and cell.is_boss_room():
+        self.mark_boss_room(b_x, b_y, b_x_offset, b_y_offset)
 
     return data
 
@@ -152,9 +132,9 @@ func open_doors():
     self.bag.game_state.doors_open = true
     self.switch_doors(self.DOORS_OPEN)
 
-func mark_boss_room(x, y):
+func mark_boss_room(x, y, b_x_offset, b_y_offset):
     var global_position = self.bag.room_loader.translate_position(Vector2(x + self.side_offset, y + self.top_offset))
-    global_position += Vector2(15, 15)
+    global_position += Vector2(b_x_offset, b_y_offset)
     self.skull_warning.set_pos(global_position)
     self.skull_warning.show()
 
