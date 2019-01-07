@@ -13,4 +13,5 @@ func _init(bag).(bag):
     self.attack_strength = 1
     self.max_hp = 5
     self.hp = 5
+    self.drop_chance = 0
     self.split = false

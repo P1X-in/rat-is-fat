@@ -143,6 +143,7 @@ func spawn_thrash():
         position.y += 30
         new_guy = self.bag.enemies.spawn_global(self.thrash_template, position)
         new_guy.is_attack_on_cooldown = true
+        new_guy.drop_chance = 0
         self.bag.timers.set_timeout(self.attack_cooldown, new_guy, "attack_cooled_down")
         new_guy.make_invulnerable(1)
 

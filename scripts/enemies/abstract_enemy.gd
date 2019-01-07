@@ -10,6 +10,9 @@ var is_attack_on_cooldown = false
 var id = 0
 var moving_speed = 1
 
+var drop_chance = 0.3
+var power_up_chance = 0.1
+
 func _init(bag).(bag):
     self.velocity = 100
     self.stun_duration = 0.75
@@ -96,7 +99,9 @@ func attack_cooled_down():
 
 func die():
     self.bag.enemies.del_enemy(self)
+    self.roll_loot()
     .die()
+
 
 func stun(duration=null):
     .stun(duration)
@@ -107,3 +112,12 @@ func remove_stun():
     .remove_stun()
     self.avatar.set_opacity(1)
     self.animations.play('run')
+
+func roll_loot():
+    var global_position = self.get_pos()
+    global_position.y += 10
+    if randf() <= self.drop_chance:
+        if randf() <= self.power_up_chance:
+            self.bag.items.spawn_global('medicals', global_position)
+        else:
+            self.bag.items.spawn_global('cheese', global_position)

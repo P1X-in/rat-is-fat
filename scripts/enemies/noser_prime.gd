@@ -24,6 +24,7 @@ func _init(bag).(bag):
     self.mass = 3
     self.is_pushable = false
     self.is_stunable = false
+    self.drop_chance = 0
 
     self.phase_hp_thresholds = [
         [1, 2],

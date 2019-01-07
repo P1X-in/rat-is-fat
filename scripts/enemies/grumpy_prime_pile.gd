@@ -26,6 +26,7 @@ func _init(bag).(bag):
     self.is_invulnerable = true
     self.hit_protection = true
     self.has_tombstone = false
+    self.drop_chance = 0
 
     self.irritated = false
 

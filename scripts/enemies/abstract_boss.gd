@@ -8,6 +8,9 @@ var phase_hp_thresholds = []
 func _init(bag).(bag):
     self.bag = bag
 
+    self.drop_chance = 1
+    self.power_up_chance = 1
+
 func process(delta):
     .process(delta)
     self.check_change_phase()

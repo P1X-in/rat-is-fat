@@ -23,8 +23,11 @@ func del_item(item):
     self.items_list.erase(item.get_instance_ID())
 
 func spawn(name, map_position):
-    var new_item = self.item_templates[name].new(self.bag)
     var global_position = self.bag.room_loader.translate_position(map_position)
+    return self.spawn_global(name, global_position)
+
+func spawn_global(name, global_position):
+    var new_item = self.item_templates[name].new(self.bag)
     new_item.spawn(global_position)
     self.add_item(new_item)
 

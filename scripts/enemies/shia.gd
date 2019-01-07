@@ -8,3 +8,4 @@ func _init(bag).(bag):
     self.animations = self.avatar.get_node('body_animations')
     self.hit_particles = self.avatar.get_node('hitparticles')
     self.score = 120
+    self.drop_chance = 0
