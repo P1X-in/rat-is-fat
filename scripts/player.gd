@@ -40,6 +40,7 @@ func _init(bag, player_id).(bag):
     self.body_part_footer = self.avatar.get_node('footer')
     self.target_cone = self.avatar.get_node('attack_cone')
     self.animations = self.avatar.get_node('body_animations')
+    self.hit_particles = self.avatar.get_node('hitparticles')
     self.blast = self.avatar.get_node('blast_animations')
 
     if not self.bag.input.arcade:
@@ -262,14 +263,14 @@ func check_doors():
         door_coords = self.bag.room_loader.door_definitions['north'][1]
         new_coords[0] = door_coords[0] + 8 + self.bag.room_loader.side_offset
         new_coords[1] = door_coords[1] + 0 + self.bag.room_loader.top_offset
-        if self.check_exit(new_coords, cell.north, Vector2(16, -15)):
+        if self.check_exit(new_coords, cell.north, Vector2(26, -15)):
             self.bag.players.move_to_entry_position('south')
             return
     if cell.south != null:
         door_coords = self.bag.room_loader.door_definitions['south'][1]
         new_coords[0] = door_coords[0] + 8 + self.bag.room_loader.side_offset
         new_coords[1] = door_coords[1] + 9 + self.bag.room_loader.top_offset
-        if self.check_exit(new_coords, cell.south, Vector2(16, 40)):
+        if self.check_exit(new_coords, cell.south, Vector2(26, 40)):
             self.bag.players.move_to_entry_position('north')
             return
     if cell.east != null:

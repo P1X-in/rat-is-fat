@@ -28,6 +28,7 @@ func _init(bag).(bag):
     self.body_part_body = self.avatar.get_node('body')
     self.body_part_footer = self.avatar.get_node('body')
     self.animations = self.avatar.get_node('body_animations')
+    self.hit_particles = self.avatar.get_node('hitparticles')
 
     self.body_angry = self.avatar.get_node('body2')
     self.body_moving = self.avatar.get_node('body3')
@@ -44,6 +45,8 @@ func _init(bag).(bag):
 
     self.stun_duration = 0.4
     self.mass = 30
+    self.is_pushable = false
+    self.is_stunable = false
 
     self.calm = true
     self.irritated = false
@@ -150,6 +153,7 @@ func pick_next_point():
 
 
 func push_back(enemy):
+    .push_back(enemy)
     if not self.irritated:
         self.irritate()
 

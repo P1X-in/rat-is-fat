@@ -9,6 +9,7 @@ var body_part_head
 var body_part_body
 var body_part_footer
 var animations
+var hit_particles
 var hat = false
 
 var stun_duration = 0.25
@@ -17,6 +18,8 @@ var mass = 1
 
 var tombstone_template = preload("res://scenes/particles/thumbstone.xscn")
 var has_tombstone = true
+var is_pushable = true
+var is_stunable = true
 
 func _init(bag).(bag):
     self.bag = bag
@@ -79,9 +82,21 @@ func push_back(enemy):
     var force = pow(enemy.attack_strength, -1)
 
     var scale = (force / self.calculate_distance(enemy_position)) * (25 / self.mass)
+    var push_vector = Vector2(position_delta_x, position_delta_y)
 
-    self.avatar.move(Vector2(position_delta_x * scale, position_delta_y * scale))
-    self.external_stun()
+    self.show_hit_particles(push_vector)
+
+    push_vector = push_vector * scale
+
+    if self.is_pushable:
+        self.avatar.move(push_vector)
+        self.external_stun()
+
+func show_hit_particles(hit_vector):
+    var angle = hit_vector.angle() * 180 / 3.14
+    print(angle)
+    self.hit_particles.set_param(self.hit_particles.PARAM_DIRECTION, angle)
+    self.hit_particles.set_emitting(true)
 
 func stun(duration=null):
     if duration == null:
@@ -91,7 +106,8 @@ func stun(duration=null):
     self.bag.timers.set_timeout(duration, self, "remove_stun")
 
 func external_stun(duration=null):
-    self.stun(duration)
+    if self.is_stunable:
+        self.stun(duration)
 
 func remove_stun():
     self.stun_level = stun_level - 1

@@ -10,6 +10,7 @@ func _init(bag).(bag):
     self.body_part_body = self.avatar.get_node('body')
     self.body_part_footer = self.avatar.get_node('body')
     self.animations = self.avatar.get_node('body_animations')
+    self.hit_particles = self.avatar.get_node('hitparticles')
 
     self.velocity = 50
     self.attack_range = 40
@@ -21,6 +22,8 @@ func _init(bag).(bag):
 
     self.stun_duration = 0.4
     self.mass = 3
+    self.is_pushable = false
+    self.is_stunable = false
 
     self.phase_hp_thresholds = [
         [1, 2],
@@ -98,6 +101,3 @@ func modify_position(delta):
         motion = n.slide(motion)
         self.avatar.move(motion)
         self.randomize_movement()
-
-func external_stun(duration=null):
-    return

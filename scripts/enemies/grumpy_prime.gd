@@ -28,6 +28,7 @@ func _init(bag).(bag):
     self.animations = self.avatar.get_node('body_animations')
     self.angry_body = self.avatar.get_node('angry')
     self.shield = self.avatar.get_node('shield')
+    self.hit_particles = self.avatar.get_node('hitparticles')
 
     self.velocity = 25
     self.attack_range = 50

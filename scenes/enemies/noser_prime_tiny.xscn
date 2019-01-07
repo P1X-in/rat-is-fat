@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="7" version="2.1" version_name="Godot Engine v2.1.4.stable.official">
+<resource_file type="PackedScene" subresource_count="7" version="2.1" version_name="Godot Engine v2.1.5.stable.official">
 	<ext_resource path="res://scenes/player/hit.xanm" type="Animation" index="1"></ext_resource>
 	<ext_resource path="res://scenes/enemies/assets/noser4.png" type="Texture" index="0"></ext_resource>
 	<resource type="CircleShape2D" path="local://4">
@@ -36,7 +36,7 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="32">
+			<string_array  len="58">
 				<string> "noser" </string>
 				<string> "transform/scale" </string>
 				<string> "input/pickable" </string>
@@ -69,16 +69,42 @@
 				<string> "blend_times" </string>
 				<string> "autoplay" </string>
 				<string> "AnimationPlayer" </string>
+				<string> "hitparticles" </string>
+				<string> "config/amount" </string>
+				<string> "config/lifetime" </string>
+				<string> "config/time_scale" </string>
+				<string> "config/emit_timeout" </string>
+				<string> "config/emitting" </string>
+				<string> "config/process_mode" </string>
+				<string> "config/explosiveness" </string>
+				<string> "params/direction" </string>
+				<string> "params/spread" </string>
+				<string> "params/linear_velocity" </string>
+				<string> "params/spin_velocity" </string>
+				<string> "params/orbit_velocity" </string>
+				<string> "params/gravity_direction" </string>
+				<string> "params/gravity_strength" </string>
+				<string> "params/radial_accel" </string>
+				<string> "params/tangential_accel" </string>
+				<string> "params/damping" </string>
+				<string> "params/initial_angle" </string>
+				<string> "params/initial_size" </string>
+				<string> "params/final_size" </string>
+				<string> "params/hue_variation" </string>
+				<string> "params/anim_speed_scale" </string>
+				<string> "params/anim_initial_pos" </string>
+				<string> "randomness/linear_velocity" </string>
+				<string> "Particles2D" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 4 </int>
+			<int> 5 </int>
 			<string> "node_paths" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="82"> 				-1, -1, 10, 0, -1, 9, 1, 0, 2, 1, 3, 2, 4, 3, 5, 1, 6, 4, 7, 5, 8, 6, 9, 7, 0, 0, 0, 14, 11, -1, 2, 12, 8, 13, 9, 0, 0, 0, 15, 15, -1, 5, 12, 10, 1, 11, 16, 2, 17, 1, 18, 4, 0, 0, 0, 31, 19, -1, 11, 20, 5, 21, 12, 22, 13, 23, 14, 24, 15, 25, 16, 26, 17, 27, 18, 28, 19, 29, 20, 30, 21, 0 </int_array>
+			<int_array  len="139"> 				-1, -1, 10, 0, -1, 9, 1, 0, 2, 1, 3, 2, 4, 3, 5, 1, 6, 4, 7, 5, 8, 6, 9, 7, 0, 0, 0, 14, 11, -1, 2, 12, 8, 13, 9, 0, 0, 0, 15, 15, -1, 5, 12, 10, 1, 11, 16, 2, 17, 1, 18, 4, 0, 0, 0, 31, 19, -1, 11, 20, 5, 21, 12, 22, 13, 23, 14, 24, 15, 25, 16, 26, 17, 27, 18, 28, 19, 29, 20, 30, 21, 0, 0, 0, 57, 32, -1, 25, 12, 22, 33, 23, 34, 24, 35, 25, 36, 19, 37, 1, 38, 5, 39, 12, 40, 26, 41, 27, 42, 28, 43, 12, 44, 12, 45, 12, 46, 12, 47, 12, 48, 12, 49, 12, 50, 12, 51, 19, 52, 25, 53, 12, 54, 19, 55, 12, 56, 29, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="22" shared="false">
+			<array  len="30" shared="false">
 				<vector2> 0.4, 0.4 </vector2>
 				<bool> False </bool>
 				<resource  resource_type="Shape2D" path="local://4">  </resource>
@@ -105,6 +131,14 @@
 				<array  len="0" shared="false">
 				</array>
 				<string> "" </string>
+				<vector2> 0, 2 </vector2>
+				<int> 16 </int>
+				<real> 0.5 </real>
+				<real> 2 </real>
+				<real> 90 </real>
+				<real> 30 </real>
+				<real> 100 </real>
+				<real> 0.2 </real>
 			</array>
 			<string> "version" </string>
 			<int> 2 </int>
