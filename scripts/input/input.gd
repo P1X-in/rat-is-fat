@@ -27,6 +27,7 @@ func load_basic_input():
     self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/quit_game.gd").new())
     self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/start_game_key.gd").new(self.bag))
     self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/empower_players_key.gd").new(self.bag, KEY_P))
+    self.devices['keyboard'].register_handler(preload("res://scripts/input/handlers/skip_level_key.gd").new(self.bag, KEY_O))
     if self.arcade:
         self.devices['arcade'].register_handler(preload("res://scripts/input/handlers/start_game_arcade.gd").new(self.bag, 14))
         self.devices['arcade'].register_handler(preload("res://scripts/input/handlers/start_game_arcade.gd").new(self.bag, 0))
