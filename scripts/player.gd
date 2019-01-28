@@ -21,7 +21,7 @@ var attack_move_velocity = 20
 var normal_velocity = 200
 
 var EXIT_THRESHOLD = 35
-var LEVEL_EXIT_THRESHOLD = 8
+var LEVEL_EXIT_THRESHOLD = 5
 
 func _init(bag, player_id).(bag):
     self.bag = bag
@@ -304,7 +304,7 @@ func check_level_exit():
     var exit_area
     var distance
     for exit in self.bag.game_state.current_room.exits:
-        exit_area = self.bag.room_loader.translate_position(Vector2(exit[0] + self.bag.room_loader.side_offset, exit[1]  + self.bag.room_loader.top_offset))
+        exit_area = self.bag.room_loader.translate_position(Vector2(exit[0] + self.bag.room_loader.side_offset, exit[1]  + self.bag.room_loader.top_offset)) + Vector2(16, 8)
         distance = self.calculate_distance(exit_area)
         if distance < self.LEVEL_EXIT_THRESHOLD:
             self.bag.action_controller.next_level(exit[2])

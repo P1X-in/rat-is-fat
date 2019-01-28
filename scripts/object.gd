@@ -71,11 +71,7 @@ func calculate_distance_to_object(moving_object):
     return self.calculate_distance(moving_object.get_pos())
 
 func calculate_distance(their_position):
-    var my_position = self.get_pos()
-    var delta_x = abs(my_position.x - their_position.x)
-    var delta_y = abs(my_position.y - their_position.y)
-
-    return sqrt(delta_x * delta_x + delta_y * delta_y)
+    return self.get_pos().distance_to(their_position)
 
 func recieve_damage(damage):
     if self.is_invulnerable:
