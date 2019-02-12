@@ -21,6 +21,8 @@ var has_tombstone = true
 var is_pushable = true
 var is_stunable = true
 
+var speech_bubble
+
 func _init(bag).(bag):
     self.bag = bag
 
@@ -122,3 +124,11 @@ func spawn_tombstone():
     if self.has_tombstone:
         var tombstone = self.tombstone_template.instance()
         self.bag.game_state.current_cell.add_persistent_object(tombstone, self.get_pos())
+
+func speak(text, time, stun=false):
+    if self.speech_bubble != null:
+        self.speech_bubble.set_text(text)
+        self.speech_bubble.show()
+        self.bag.timers.set_timeout(time, self.speech_bubble, "hide")
+        if stun:
+            self.stun(time)
