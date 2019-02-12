@@ -2,6 +2,9 @@ extends "res://scripts/enemies/abstract_boss.gd"
 
 const IRRITATED_TIMER = 2
 
+const IDLE_CHATTER_DELAY = 3
+const IDLE_CHATTER_TIME = 1
+
 var irritated = false
 var calm = true
 var rampage_hp_threshold = 10
@@ -21,6 +24,17 @@ var current_point = 0
 
 var target_icon
 
+var idle_chatter = [
+    "wow",
+    "such bored",
+    "much guarding"
+]
+var is_idle_chatting = true
+var angry_chatter = [
+    "such rude",
+    "much angry"
+]
+
 func _init(bag).(bag):
     self.avatar = preload("res://scenes/enemies/doge_prime.xscn").instance()
     self.target_icon = preload("res://scenes/enemies/doge_prime_target.tscn").instance()
@@ -32,6 +46,7 @@ func _init(bag).(bag):
 
     self.body_angry = self.avatar.get_node('body2')
     self.body_moving = self.avatar.get_node('body3')
+    self.speech_bubble = self.avatar.get_node('speech')
 
     self.velocity = 250
     self.attack_range = 50
@@ -130,11 +145,13 @@ func irritate():
         return
 
     self.irritated = true
+    self.is_idle_chatting = false
     self.pick_next_point()
     self.body_part_body.hide()
     self.body_angry.show()
     self.body_moving.hide()
     self.bag.timers.set_timeout(self.IRRITATED_TIMER, self, 'enrage')
+    self.angry_chatter()
 
 func phase2():
     return
@@ -166,7 +183,21 @@ func attach():
     .attach()
     self.bag.action_controller.attach_object(self.target_icon)
     self.target_icon.hide()
+    self.bag.timers.set_timeout(1, self, "idle_chatter")
 
 func detach():
     .detach()
     self.bag.action_controller.detach_object(self.target_icon)
+
+
+func idle_chatter():
+    if not self.is_idle_chatting:
+        return
+
+    var random_text = self.idle_chatter[randi() % self.idle_chatter.size()]
+    self.speak(random_text, self.IDLE_CHATTER_TIME)
+    self.bag.timers.set_timeout(self.IDLE_CHATTER_DELAY, self, "idle_chatter")
+
+func angry_chatter():
+    var random_text = self.angry_chatter[randi() % self.angry_chatter.size()]
+    self.speak(random_text, self.IDLE_CHATTER_TIME)

@@ -96,7 +96,6 @@ func push_back(enemy):
 
 func show_hit_particles(hit_vector):
     var angle = hit_vector.angle() * 180 / 3.14
-    print(angle)
     self.hit_particles.set_param(self.hit_particles.PARAM_DIRECTION, angle)
     self.hit_particles.set_emitting(true)
 
@@ -129,6 +128,9 @@ func speak(text, time, stun=false):
     if self.speech_bubble != null:
         self.speech_bubble.set_text(text)
         self.speech_bubble.show()
-        self.bag.timers.set_timeout(time, self.speech_bubble, "hide")
+        self.bag.timers.set_timeout(time, self, "hide_speak")
         if stun:
             self.stun(time)
+
+func hide_speak():
+    self.speech_bubble.hide()

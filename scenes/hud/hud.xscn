@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="9" version="2.1" version_name="Godot Engine v2.1.5.stable.official">
 	<ext_resource path="res://scenes/hud/assets/progress.png" type="Texture" index="4"></ext_resource>
-	<ext_resource path="res://scenes/hud/minimap.tscn" type="PackedScene" index="7"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/hats.png" type="Texture" index="2"></ext_resource>
 	<ext_resource path="res://scenes/player/assets/head.png" type="Texture" index="1"></ext_resource>
 	<ext_resource path="res://scenes/hud/assets/dead_rat.png" type="Texture" index="6"></ext_resource>
 	<ext_resource path="res://scenes/hud/assets/background_panel.png" type="Texture" index="0"></ext_resource>
 	<ext_resource path="res://scenes/hud/assets/panels.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://scenes/hud/minimap.tscn" type="PackedScene" index="7"></ext_resource>
 	<ext_resource path="res://scenes/hud/assets/courier_prime_nano.fnt" type="BitmapFont" index="5"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
