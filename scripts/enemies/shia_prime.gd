@@ -14,6 +14,7 @@ func _init(bag).(bag):
     self.body_part_footer = self.avatar.get_node('body')
     self.animations = self.avatar.get_node('body_animations')
     self.hit_particles = self.avatar.get_node('hitparticles')
+    self.speech_bubble = self.avatar.get_node('speech')
 
     self.velocity = 50
     self.attack_range = 50
@@ -31,13 +32,20 @@ func _init(bag).(bag):
         [15, 3],
     ]
 
+func attach():
+    .attach()
+    self.bag.timers.set_timeout(0.3, self, "phase1")
+
+func phase1():
+    self.speak("Just do it!", 2, true)
+
 func phase2():
-    self.stun(2)
+    self.speak("Stop giving up!", 2, true)
     self.bag.sample_player.play('game_over')
     self.spawn_enemies(2)
 
 func phase3():
-    self.stun(2)
+    self.speak("You can do it!", 2, true)
     self.bag.sample_player.play('you_can')
     self.spawn_enemies(4)
 
