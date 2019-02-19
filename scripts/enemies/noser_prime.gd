@@ -4,6 +4,8 @@ var split = true
 var split_template = 'noser_prime_medium'
 var splits_amount = 2
 
+var taunt = "Boy"
+
 func _init(bag).(bag):
     self.avatar = preload("res://scenes/enemies/noser_prime.xscn").instance()
     self.body_part_head = self.avatar.get_node('body')
@@ -11,6 +13,7 @@ func _init(bag).(bag):
     self.body_part_footer = self.avatar.get_node('body')
     self.animations = self.avatar.get_node('body_animations')
     self.hit_particles = self.avatar.get_node('hitparticles')
+    self.speech_bubble = self.avatar.get_node('speech')
 
     self.velocity = 50
     self.attack_range = 40
@@ -102,3 +105,4 @@ func modify_position(delta):
         motion = n.slide(motion)
         self.avatar.move(motion)
         self.randomize_movement()
+        self.speak(self.taunt, 1)

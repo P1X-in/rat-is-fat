@@ -7,6 +7,7 @@ func _init(bag).(bag):
     self.body_part_footer = self.avatar.get_node('body')
     self.animations = self.avatar.get_node('body_animations')
     self.hit_particles = self.avatar.get_node('hitparticles')
+    self.speech_bubble = self.avatar.get_node('speech')
 
     self.velocity = 100
     self.attack_range = 35
@@ -15,3 +16,4 @@ func _init(bag).(bag):
     self.hp = 15
     self.drop_chance = 0
     self.split_template = 'noser_prime_small'
+    self.taunt = "Dude"
