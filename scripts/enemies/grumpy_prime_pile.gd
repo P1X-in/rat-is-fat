@@ -51,7 +51,6 @@ func shake():
         var grumpy_prime = self.bag.enemies.spawn_global(self.boss_template, self.avatar.get_global_pos())
         grumpy_prime.is_attack_on_cooldown = true
         self.bag.timers.set_timeout(self.attack_cooldown, grumpy_prime, "attack_cooled_down")
-        grumpy_prime.external_stun(1)
 
         self.die()
         return

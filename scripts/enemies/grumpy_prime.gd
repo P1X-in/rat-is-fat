@@ -29,6 +29,7 @@ func _init(bag).(bag):
     self.angry_body = self.avatar.get_node('angry')
     self.shield = self.avatar.get_node('shield')
     self.hit_particles = self.avatar.get_node('hitparticles')
+    self.speech_bubble = self.avatar.get_node('speech')
 
     self.velocity = 25
     self.attack_range = 50
@@ -54,6 +55,7 @@ func spawn(position):
     self.randomize_movement()
     self.raise_shield()
     self.spawn_thrash()
+    self.speak("NO", 2, true)
 
 func phase2():
     self.body_part_body.hide()
@@ -62,6 +64,7 @@ func phase2():
     self.VULNERABLE_TIME = 2
     self.RAINBOW_DELAY = 2.5
     self.velocity = 50
+    self.speak("I had fun once", 2, true)
 
 func process_ai():
     var distance
