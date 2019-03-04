@@ -5,6 +5,7 @@ var game_board = preload("res://scenes/game_board.xscn").instance()
 var tilemap
 var z_index
 
+var intro_screen
 var button1
 var button2
 var end_game_labels
@@ -20,9 +21,10 @@ func _init_bag(bag):
     self.tilemap = self.game_board.get_node('level/TileMap/')
     self.z_index = self.game_board.get_node('z_index')
 
-    self.button1 = self.bag.root.get_node('logo/center/p1')
-    self.button2 = self.bag.root.get_node('logo/center/p2')
-    self.end_game_labels = self.bag.root.get_node('logo/center/game_over')
+    self.intro_screen = self.bag.root.get_node('logo')
+    self.button1 = self.intro_screen.get_node('center/p1')
+    self.button2 = self.intro_screen.get_node('center/p2')
+    self.end_game_labels = self.intro_screen.get_node('center/game_over')
     self.end_game_win = self.end_game_labels.get_node('win')
     self.end_game_lose = self.end_game_labels.get_node('lose')
 
@@ -35,13 +37,10 @@ func start_game():
     self.bag.map.switch_to_cell(self.bag.map.start_cell)
     self.bag.hud.show()
 
-    self.button1.hide()
-    self.button2.hide()
-    self.end_game_labels.hide()
-    self.end_game_win.hide()
-    self.end_game_lose.hide()
+    self.intro_screen.hide()
+    self.bag.scoreboard.hide()
 
-func end_game(win=false):
+func end_game(win=false, timeout=false):
     self.bag.game_state.current_cell.detach_persistent_objects()
     self.bag.game_state.game_in_progress = false
     self.bag.players.remove_remaining_players()
@@ -49,13 +48,8 @@ func end_game(win=false):
     self.bag.hud.hide()
     self.bag.reset()
 
-    self.button1.show()
-    self.button2.show()
-    self.end_game_labels.show()
-    if win:
-        self.end_game_win.show()
-    else:
-        self.end_game_lose.show()
+    self.intro_screen.hide()
+    self.bag.scoreboard.show(win, timeout)
 
 func next_level(next):
     var level_settings
@@ -66,7 +60,7 @@ func next_level(next):
         self.bag.map.switch_to_cell(self.bag.map.start_cell)
         self.bag.players.move_to_entry_position('initial')
     elif next == 'end':
-        self.end_game(true)
+        self.end_game(true, false)
 
 func attach_object(object):
     self.z_index.add_child(object)
@@ -82,6 +76,6 @@ func game_idle_tick():
         self.idle_counter = self.idle_counter + 1
 
     if self.idle_counter > self.IDLE_TIMEOUT:
-        self.end_game()
+        self.end_game(false, true)
 
     self.bag.timers.set_timeout(1, self, "game_idle_tick")
