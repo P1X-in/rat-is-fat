@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://scenes/hud/assets/rat_is_fat_logo.png" type="Texture" id=1]
 [ext_resource path="res://fonts/04B_03__.TTF" type="DynamicFontData" id=2]
-[ext_resource path="res://scenes/hud/button.png" type="Texture" id=3]
-[ext_resource path="res://scenes/hud/buttons_animation.tres" type="Animation" id=4]
+[ext_resource path="res://scenes/hud/scoreboard_entry.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -39,141 +38,13 @@ margin/bottom = 180.0
 
 [node name="rat_is_fat" type="Sprite" parent="center"]
 
+transform/pos = Vector2( -234, -100 )
 transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 
-[node name="_start" type="Label" parent="center"]
-
-visibility/visible = false
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -89.0
-margin/top = 106.0
-margin/right = 105.0
-margin/bottom = 122.0
-custom_fonts/font = SubResource( 1 )
-text = "SELECT PLAYER TO START"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="p1" type="Control" parent="center"]
-
-editor/display_folded = true
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -209.0
-margin/top = 112.0
-margin/right = -209.0
-margin/bottom = 112.0
-
-[node name="button" type="Sprite" parent="center/p1"]
-
-transform/pos = Vector2( -16, 0 )
-transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
-hframes = 3
-region_rect = Rect2( 0, 0, 32, 32 )
-
-[node name="arrow" type="Sprite" parent="center/p1"]
-
-transform/pos = Vector2( -16, -27.0554 )
-transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
-region = true
-region_rect = Rect2( 64, 0, 32, 32 )
-
-[node name="anim" type="AnimationPlayer" parent="center/p1"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/idle = ExtResource( 4 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = "idle"
-
-[node name="Label" type="Label" parent="center/p1"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -52.0
-margin/top = -101.0
-margin/right = 18.0
-margin/bottom = -85.0
-custom_fonts/font = SubResource( 1 )
-text = "PLAYER 1"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="p2" type="Control" parent="center"]
-
-editor/display_folded = true
-visibility/visible = false
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 241.0
-margin/top = 112.0
-margin/right = 241.0
-margin/bottom = 112.0
-
-[node name="Label1" type="Label" parent="center/p2"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = -52.0
-margin/top = -101.0
-margin/right = 18.0
-margin/bottom = -85.0
-custom_fonts/font = SubResource( 1 )
-text = "PLAYER 2"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="button" type="Sprite" parent="center/p2"]
-
-transform/pos = Vector2( -16, 0 )
-transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
-hframes = 3
-region_rect = Rect2( 0, 0, 32, 32 )
-
-[node name="arrow" type="Sprite" parent="center/p2"]
-
-transform/pos = Vector2( -16, -26.1896 )
-transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 3 )
-region = true
-region_rect = Rect2( 64, 0, 32, 32 )
-
-[node name="anim" type="AnimationPlayer" parent="center/p2"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/idle = ExtResource( 4 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = "idle"
-
 [node name="game_over" type="Control" parent="center"]
 
+editor/display_folded = true
 visibility/visible = false
 rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = false
@@ -187,7 +58,6 @@ margin/bottom = 122.0
 
 [node name="win" type="Control" parent="center/game_over"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -203,12 +73,30 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -80.0
-margin/top = 2.0
-margin/right = 80.0
-margin/bottom = 37.0
+margin/left = -120.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 35.0
 custom_fonts/font = SubResource( 1 )
-text = "YOU WIN"
+text = "YOU WON!"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="_win1" type="Label" parent="center/game_over/win"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -85.0
+margin/top = 20.0
+margin/right = 139.0
+margin/bottom = 55.0
+custom_fonts/font = SubResource( 1 )
+text = "...BUT YOUR SCORE WAS LOW!"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -217,7 +105,6 @@ max_lines_visible = -1
 
 [node name="lose" type="Control" parent="center/game_over"]
 
-editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -234,10 +121,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -80.0
-margin/top = 2.0
-margin/right = 80.0
-margin/bottom = 37.0
+margin/left = -115.0
+margin/top = 0.0
+margin/right = 45.0
+margin/bottom = 35.0
 custom_fonts/font = SubResource( 1 )
 text = "GAME OVER"
 align = 1
@@ -245,5 +132,58 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="_try_again" type="Label" parent="center/game_over/lose"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -85.0
+margin/top = 20.0
+margin/right = 125.0
+margin/bottom = 55.0
+custom_fonts/font = SubResource( 1 )
+text = "...BUT YOU CAN TRY AGAIN!"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="scores" type="Control" parent="center"]
+
+editor/display_folded = true
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -250.0
+margin/top = 0.0
+margin/right = 250.0
+margin/bottom = 40.0
+
+[node name="score1" parent="center/scores" instance=ExtResource( 3 )]
+
+[node name="score2" parent="center/scores" instance=ExtResource( 3 )]
+
+margin/top = 0.0
+margin/bottom = 35.0
+
+[node name="score3" parent="center/scores" instance=ExtResource( 3 )]
+
+margin/top = 35.0
+margin/bottom = 70.0
+
+[node name="score4" parent="center/scores" instance=ExtResource( 3 )]
+
+margin/top = 70.0
+margin/bottom = 105.0
+
+[node name="score5" parent="center/scores" instance=ExtResource( 3 )]
+
+margin/top = 105.0
+margin/bottom = 140.0
 
 

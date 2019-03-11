@@ -10,4 +10,8 @@ func handle(event):
     if event.is_echo():
         return
     if event.is_pressed() && self.bag.game_state.game_in_progress:
-        self.bag.action_controller.next_level('next')
+        if self.bag.game_state.level < 3:
+            self.bag.action_controller.next_level('next')
+        else:
+            self.bag.action_controller.next_level('end')
+

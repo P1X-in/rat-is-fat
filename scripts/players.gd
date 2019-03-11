@@ -50,3 +50,11 @@ func get_first_free_entry_position_num(player_id):
 func empower(amount):
     for player in self.players:
         player.get_pure_power(amount)
+
+func get_summary_score():
+    var score = 0
+    for player in self.players:
+        if player.is_playing:
+            score += player.score
+
+    return score

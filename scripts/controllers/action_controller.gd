@@ -43,13 +43,14 @@ func start_game():
 func end_game(win=false, timeout=false):
     self.bag.game_state.current_cell.detach_persistent_objects()
     self.bag.game_state.game_in_progress = false
+
+    self.intro_screen.hide()
+    self.bag.scoreboard.show(win, timeout)
+
     self.bag.players.remove_remaining_players()
     self.bag.root.remove_child(self.game_board)
     self.bag.hud.hide()
     self.bag.reset()
-
-    self.intro_screen.hide()
-    self.bag.scoreboard.show(win, timeout)
 
 func next_level(next):
     var level_settings

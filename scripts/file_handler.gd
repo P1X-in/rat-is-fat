@@ -15,7 +15,7 @@ func write(path, data):
 
 func __create_file_if_not_exists(path):
     if !file.file_exists(path):
-        self.write(path, {'is_ok' : 1})
+        self.write(path, [])
         return false
 
     return true
