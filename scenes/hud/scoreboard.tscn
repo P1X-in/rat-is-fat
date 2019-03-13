@@ -153,7 +153,6 @@ max_lines_visible = -1
 
 [node name="scores" type="Control" parent="center"]
 
-editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -164,24 +163,24 @@ margin/top = 0.0
 margin/right = 250.0
 margin/bottom = 40.0
 
-[node name="score1" parent="center/scores" instance=ExtResource( 3 )]
+[node name="score0" parent="center/scores" instance=ExtResource( 3 )]
 
-[node name="score2" parent="center/scores" instance=ExtResource( 3 )]
+[node name="score1" parent="center/scores" instance=ExtResource( 3 )]
 
 margin/top = 0.0
 margin/bottom = 35.0
 
-[node name="score3" parent="center/scores" instance=ExtResource( 3 )]
+[node name="score2" parent="center/scores" instance=ExtResource( 3 )]
 
 margin/top = 35.0
 margin/bottom = 70.0
 
-[node name="score4" parent="center/scores" instance=ExtResource( 3 )]
+[node name="score3" parent="center/scores" instance=ExtResource( 3 )]
 
 margin/top = 70.0
 margin/bottom = 105.0
 
-[node name="score5" parent="center/scores" instance=ExtResource( 3 )]
+[node name="score4" parent="center/scores" instance=ExtResource( 3 )]
 
 margin/top = 105.0
 margin/bottom = 140.0

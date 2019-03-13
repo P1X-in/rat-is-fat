@@ -11,6 +11,8 @@ var scores_node
 
 var scores = []
 
+var score_nodes = []
+
 func _init_bag(bag):
     self.bag = bag
     self.scoreboard_node = self.bag.root.get_node("scoreboard")
@@ -18,6 +20,10 @@ func _init_bag(bag):
     self.win_label = self.game_over_labels.get_node("win")
     self.lose_label = self.game_over_labels.get_node("lose")
     self.scores_node = self.scoreboard_node.get_node("center/scores")
+
+    for i in range(self.TOP_SIZE):
+        self.score_nodes.append(self.scores_node.get_node("score" + str(i)))
+
     self._initialize()
 
 func _initialize():
@@ -58,10 +64,11 @@ func show_game_over():
     self.show_scores_list()
 
 func show_tag_query():
-    self.scores_node.show()
+    self.scores_node.hide()
 
 func show_scores_list():
     self.scores_node.show()
+    self._fill_scoreboard()
 
 func is_eligible_for_board(score):
     if self.scores.size() < self.TOP_SIZE:
@@ -97,3 +104,15 @@ func save_scores_to_file():
 
 func _custom_scoreboard_sort(a, b):
     return a['score'] > b['score']
+
+func _fill_scoreboard():
+    var scores_size = self.scores.size()
+    var score
+
+    for i in range(self.TOP_SIZE):
+        if i >= scores_size:
+            self.score_nodes[i].hide()
+        else:
+            score = self.scores[i]
+            self.score_nodes[i].show()
+            self.score_nodes[i].fill(score['tag'], score['players'][0], score['players'][1])
