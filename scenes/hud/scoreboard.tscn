@@ -58,6 +58,7 @@ margin/bottom = 122.0
 
 [node name="win" type="Control" parent="center/game_over"]
 
+visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -85,7 +86,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="_win1" type="Label" parent="center/game_over/win"]
+[node name="_low_score" type="Label" parent="center/game_over/win"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -153,6 +154,7 @@ max_lines_visible = -1
 
 [node name="scores" type="Control" parent="center"]
 
+editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -184,5 +186,32 @@ margin/bottom = 105.0
 
 margin/top = 105.0
 margin/bottom = 140.0
+
+[node name="tag_query" type="Control" parent="center"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -320.0
+margin/top = 0.0
+margin/right = 320.0
+margin/bottom = 40.0
+
+[node name="score1" parent="center/tag_query" instance=ExtResource( 3 )]
+
+margin/left = 70.0
+margin/right = 570.0
+
+[node name="keyboard" type="Control" parent="center/tag_query"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
 
 

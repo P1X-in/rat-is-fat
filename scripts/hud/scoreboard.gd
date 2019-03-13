@@ -6,8 +6,11 @@ var bag
 var scoreboard_node
 var game_over_labels
 var win_label
+var win_label_low_score
 var lose_label
 var scores_node
+
+var tag_query_node
 
 var scores = []
 
@@ -18,11 +21,14 @@ func _init_bag(bag):
     self.scoreboard_node = self.bag.root.get_node("scoreboard")
     self.game_over_labels = self.scoreboard_node.get_node("center/game_over")
     self.win_label = self.game_over_labels.get_node("win")
+    self.win_label_low_score = self.win_label.get_node("_low_score")
     self.lose_label = self.game_over_labels.get_node("lose")
     self.scores_node = self.scoreboard_node.get_node("center/scores")
 
     for i in range(self.TOP_SIZE):
         self.score_nodes.append(self.scores_node.get_node("score" + str(i)))
+
+    self.tag_query_node = self.scoreboard_node.get_node("center/tag_query")
 
     self._initialize()
 
@@ -47,14 +53,17 @@ func hide():
     self.scoreboard_node.hide()
     self.game_over_labels.hide()
     self.scores_node.hide()
+    self.tag_query_node.hide()
 
 func show_success_with_score():
     self.win_label.show()
+    self.win_label_low_score.hide()
     self.lose_label.hide()
     self.show_tag_query()
 
 func show_success_without_score():
     self.win_label.show()
+    self.win_label_low_score.show()
     self.lose_label.hide()
     self.show_scores_list()
 
@@ -65,9 +74,11 @@ func show_game_over():
 
 func show_tag_query():
     self.scores_node.hide()
+    self.tag_query_node.show()
 
 func show_scores_list():
     self.scores_node.show()
+    self.tag_query_node.hide()
     self._fill_scoreboard()
 
 func is_eligible_for_board(score):
