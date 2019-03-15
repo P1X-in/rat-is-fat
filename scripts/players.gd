@@ -58,3 +58,10 @@ func get_summary_score():
             score += player.score
 
     return score
+
+func get_player_score(player_id):
+    var player = self.players[player_id]
+    if player.is_playing:
+        return player.score
+
+    return null

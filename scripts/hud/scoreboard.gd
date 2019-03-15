@@ -11,6 +11,7 @@ var lose_label
 var scores_node
 
 var tag_query_node
+var tag_query_score_node
 
 var scores = []
 
@@ -29,6 +30,7 @@ func _init_bag(bag):
         self.score_nodes.append(self.scores_node.get_node("score" + str(i)))
 
     self.tag_query_node = self.scoreboard_node.get_node("center/tag_query")
+    self.tag_query_score_node = self.tag_query_node.get_node("score")
 
     self._initialize()
 
@@ -75,6 +77,7 @@ func show_game_over():
 func show_tag_query():
     self.scores_node.hide()
     self.tag_query_node.show()
+    self._fill_tag_query_score()
 
 func show_scores_list():
     self.scores_node.show()
@@ -127,3 +130,9 @@ func _fill_scoreboard():
             score = self.scores[i]
             self.score_nodes[i].show()
             self.score_nodes[i].fill(score['tag'], score['players'][0], score['players'][1])
+
+func _fill_tag_query_score():
+    var player_0_score = self.bag.players.get_player_score(0)
+    var player_1_score = self.bag.players.get_player_score(1)
+
+    self.tag_query_score_node.fill("_____", player_0_score, player_1_score)
