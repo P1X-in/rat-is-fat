@@ -2,6 +2,7 @@
 var bag
 
 var game_in_progress = false
+var tag_query_in_progress = false
 var current_room
 var current_cell
 var doors_open = true

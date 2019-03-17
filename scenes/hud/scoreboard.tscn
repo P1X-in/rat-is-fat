@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://scenes/hud/assets/rat_is_fat_logo.png" type="Texture" id=1]
 [ext_resource path="res://fonts/04B_03__.TTF" type="DynamicFontData" id=2]
 [ext_resource path="res://scenes/hud/scoreboard_entry.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/hud/assets/keyboard_button_pressed.png" type="Texture" id=4]
+[ext_resource path="res://scripts/hud/keyboard_button.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -209,27 +211,33 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 40.0
+margin/left = 160.0
+margin/top = -30.0
+margin/right = 480.0
+margin/bottom = 170.0
 
 [node name="A" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../L")
+focus_neighbour/top = NodePath("../Q")
+focus_neighbour/right = NodePath("../S")
+focus_neighbour/bottom = NodePath("../1")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 10.0
-margin/top = 82.0
+margin/top = 114.0
 margin/right = 42.0
-margin/bottom = 114.0
+margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/A"]
 
@@ -252,19 +260,25 @@ max_lines_visible = -1
 [node name="B" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../V")
+focus_neighbour/top = NodePath("../H")
+focus_neighbour/right = NodePath("../N")
+focus_neighbour/bottom = NodePath("../6")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 170.0
+margin/top = 146.0
+margin/right = 202.0
+margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/B"]
 
@@ -287,19 +301,25 @@ max_lines_visible = -1
 [node name="C" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../X")
+focus_neighbour/top = NodePath("../F")
+focus_neighbour/right = NodePath("../V")
+focus_neighbour/bottom = NodePath("../4")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 106.0
+margin/top = 146.0
+margin/right = 138.0
+margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/C"]
 
@@ -322,19 +342,25 @@ max_lines_visible = -1
 [node name="D" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../S")
+focus_neighbour/top = NodePath("../E")
+focus_neighbour/right = NodePath("../F")
+focus_neighbour/bottom = NodePath("../X")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 74.0
+margin/top = 114.0
+margin/right = 106.0
+margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/D"]
 
@@ -357,19 +383,25 @@ max_lines_visible = -1
 [node name="E" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../W")
+focus_neighbour/top = NodePath("../3")
+focus_neighbour/right = NodePath("../R")
+focus_neighbour/bottom = NodePath("../D")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
+margin/left = 74.0
 margin/top = 82.0
-margin/right = 42.0
+margin/right = 106.0
 margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/E"]
 
@@ -392,19 +424,25 @@ max_lines_visible = -1
 [node name="F" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../D")
+focus_neighbour/top = NodePath("../R")
+focus_neighbour/right = NodePath("../G")
+focus_neighbour/bottom = NodePath("../C")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 106.0
+margin/top = 114.0
+margin/right = 138.0
+margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/F"]
 
@@ -427,19 +465,25 @@ max_lines_visible = -1
 [node name="G" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../F")
+focus_neighbour/top = NodePath("../T")
+focus_neighbour/right = NodePath("../H")
+focus_neighbour/bottom = NodePath("../V")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 138.0
+margin/top = 114.0
+margin/right = 170.0
+margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/G"]
 
@@ -462,19 +506,25 @@ max_lines_visible = -1
 [node name="H" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../G")
+focus_neighbour/top = NodePath("../Y")
+focus_neighbour/right = NodePath("../J")
+focus_neighbour/bottom = NodePath("../B")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 170.0
+margin/top = 114.0
+margin/right = 202.0
+margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/H"]
 
@@ -497,19 +547,25 @@ max_lines_visible = -1
 [node name="I" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../U")
+focus_neighbour/top = NodePath("../8")
+focus_neighbour/right = NodePath("../O")
+focus_neighbour/bottom = NodePath("../K")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
+margin/left = 234.0
 margin/top = 82.0
-margin/right = 42.0
+margin/right = 266.0
 margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/I"]
 
@@ -532,19 +588,25 @@ max_lines_visible = -1
 [node name="J" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../H")
+focus_neighbour/top = NodePath("../U")
+focus_neighbour/right = NodePath("../K")
+focus_neighbour/bottom = NodePath("../N")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 202.0
+margin/top = 114.0
+margin/right = 234.0
+margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/J"]
 
@@ -567,19 +629,25 @@ max_lines_visible = -1
 [node name="K" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../J")
+focus_neighbour/top = NodePath("../I")
+focus_neighbour/right = NodePath("../L")
+focus_neighbour/bottom = NodePath("../M")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 234.0
+margin/top = 114.0
+margin/right = 266.0
+margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/K"]
 
@@ -602,19 +670,25 @@ max_lines_visible = -1
 [node name="L" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../K")
+focus_neighbour/top = NodePath("../O")
+focus_neighbour/right = NodePath("../A")
+focus_neighbour/bottom = NodePath("../9")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 266.0
+margin/top = 114.0
+margin/right = 298.0
+margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/L"]
 
@@ -637,19 +711,25 @@ max_lines_visible = -1
 [node name="M" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../N")
+focus_neighbour/top = NodePath("../K")
+focus_neighbour/right = NodePath("../Z")
+focus_neighbour/bottom = NodePath("../8")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 234.0
+margin/top = 146.0
+margin/right = 266.0
+margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/M"]
 
@@ -672,19 +752,25 @@ max_lines_visible = -1
 [node name="N" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../B")
+focus_neighbour/top = NodePath("../J")
+focus_neighbour/right = NodePath("../M")
+focus_neighbour/bottom = NodePath("../7")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 202.0
+margin/top = 146.0
+margin/right = 234.0
+margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/N"]
 
@@ -707,19 +793,25 @@ max_lines_visible = -1
 [node name="O" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../I")
+focus_neighbour/top = NodePath("../9")
+focus_neighbour/right = NodePath("../P")
+focus_neighbour/bottom = NodePath("../L")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
+margin/left = 266.0
 margin/top = 82.0
-margin/right = 42.0
+margin/right = 298.0
 margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/O"]
 
@@ -742,19 +834,25 @@ max_lines_visible = -1
 [node name="P" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../O")
+focus_neighbour/top = NodePath("../0")
+focus_neighbour/right = NodePath("../Q")
+focus_neighbour/bottom = NodePath("../0")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
+margin/left = 298.0
 margin/top = 82.0
-margin/right = 42.0
+margin/right = 330.0
 margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/P"]
 
@@ -777,6 +875,10 @@ max_lines_visible = -1
 [node name="Q" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../P")
+focus_neighbour/top = NodePath("../1")
+focus_neighbour/right = NodePath("../W")
+focus_neighbour/bottom = NodePath("../A")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -788,8 +890,10 @@ margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/Q"]
 
@@ -812,19 +916,25 @@ max_lines_visible = -1
 [node name="R" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../E")
+focus_neighbour/top = NodePath("../4")
+focus_neighbour/right = NodePath("../T")
+focus_neighbour/bottom = NodePath("../F")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
+margin/left = 106.0
 margin/top = 82.0
-margin/right = 42.0
+margin/right = 138.0
 margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/R"]
 
@@ -847,19 +957,25 @@ max_lines_visible = -1
 [node name="S" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../A")
+focus_neighbour/top = NodePath("../W")
+focus_neighbour/right = NodePath("../D")
+focus_neighbour/bottom = NodePath("../Z")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 42.0
+margin/top = 114.0
+margin/right = 74.0
+margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/S"]
 
@@ -882,19 +998,25 @@ max_lines_visible = -1
 [node name="T" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../R")
+focus_neighbour/top = NodePath("../5")
+focus_neighbour/right = NodePath("../Y")
+focus_neighbour/bottom = NodePath("../G")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
+margin/left = 138.0
 margin/top = 82.0
-margin/right = 42.0
+margin/right = 170.0
 margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/T"]
 
@@ -917,19 +1039,25 @@ max_lines_visible = -1
 [node name="U" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../Y")
+focus_neighbour/top = NodePath("../7")
+focus_neighbour/right = NodePath("../I")
+focus_neighbour/bottom = NodePath("../J")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
+margin/left = 202.0
 margin/top = 82.0
-margin/right = 42.0
+margin/right = 234.0
 margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/U"]
 
@@ -952,19 +1080,25 @@ max_lines_visible = -1
 [node name="V" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../C")
+focus_neighbour/top = NodePath("../G")
+focus_neighbour/right = NodePath("../B")
+focus_neighbour/bottom = NodePath("../5")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 138.0
+margin/top = 146.0
+margin/right = 170.0
+margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/V"]
 
@@ -987,19 +1121,25 @@ max_lines_visible = -1
 [node name="W" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../Q")
+focus_neighbour/top = NodePath("../2")
+focus_neighbour/right = NodePath("../E")
+focus_neighbour/bottom = NodePath("../S")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
+margin/left = 42.0
 margin/top = 82.0
-margin/right = 42.0
+margin/right = 74.0
 margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/W"]
 
@@ -1022,19 +1162,25 @@ max_lines_visible = -1
 [node name="X" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../Z")
+focus_neighbour/top = NodePath("../D")
+focus_neighbour/right = NodePath("../C")
+focus_neighbour/bottom = NodePath("../3")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 74.0
+margin/top = 146.0
+margin/right = 106.0
+margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/X"]
 
@@ -1057,19 +1203,25 @@ max_lines_visible = -1
 [node name="Y" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../T")
+focus_neighbour/top = NodePath("../6")
+focus_neighbour/right = NodePath("../U")
+focus_neighbour/bottom = NodePath("../H")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
+margin/left = 170.0
 margin/top = 82.0
-margin/right = 42.0
+margin/right = 202.0
 margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/Y"]
 
@@ -1092,19 +1244,25 @@ max_lines_visible = -1
 [node name="Z" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../M")
+focus_neighbour/top = NodePath("../S")
+focus_neighbour/right = NodePath("../X")
+focus_neighbour/bottom = NodePath("../2")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 82.0
-margin/right = 42.0
-margin/bottom = 114.0
+margin/left = 42.0
+margin/top = 146.0
+margin/right = 74.0
+margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/Z"]
 
@@ -1127,6 +1285,10 @@ max_lines_visible = -1
 [node name="0" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../9")
+focus_neighbour/top = NodePath("../P")
+focus_neighbour/right = NodePath("../1")
+focus_neighbour/bottom = NodePath("../P")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1138,8 +1300,10 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/0"]
 
@@ -1162,6 +1326,10 @@ max_lines_visible = -1
 [node name="1" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../0")
+focus_neighbour/top = NodePath("../A")
+focus_neighbour/right = NodePath("../2")
+focus_neighbour/bottom = NodePath("../Q")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1173,8 +1341,10 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/1"]
 
@@ -1197,6 +1367,10 @@ max_lines_visible = -1
 [node name="2" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../1")
+focus_neighbour/top = NodePath("../Z")
+focus_neighbour/right = NodePath("../3")
+focus_neighbour/bottom = NodePath("../W")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1208,8 +1382,10 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/2"]
 
@@ -1232,6 +1408,10 @@ max_lines_visible = -1
 [node name="3" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../2")
+focus_neighbour/top = NodePath("../X")
+focus_neighbour/right = NodePath("../4")
+focus_neighbour/bottom = NodePath("../E")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1243,8 +1423,10 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/3"]
 
@@ -1267,6 +1449,10 @@ max_lines_visible = -1
 [node name="4" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../3")
+focus_neighbour/top = NodePath("../C")
+focus_neighbour/right = NodePath("../5")
+focus_neighbour/bottom = NodePath("../R")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1278,8 +1464,10 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/4"]
 
@@ -1302,6 +1490,10 @@ max_lines_visible = -1
 [node name="5" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../4")
+focus_neighbour/top = NodePath("../V")
+focus_neighbour/right = NodePath("../6")
+focus_neighbour/bottom = NodePath("../T")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1313,8 +1505,10 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/5"]
 
@@ -1337,6 +1531,10 @@ max_lines_visible = -1
 [node name="6" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../5")
+focus_neighbour/top = NodePath("../B")
+focus_neighbour/right = NodePath("../7")
+focus_neighbour/bottom = NodePath("../Y")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1348,8 +1546,10 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/6"]
 
@@ -1372,6 +1572,10 @@ max_lines_visible = -1
 [node name="7" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../6")
+focus_neighbour/top = NodePath("../N")
+focus_neighbour/right = NodePath("../8")
+focus_neighbour/bottom = NodePath("../U")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1383,8 +1587,10 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/7"]
 
@@ -1397,7 +1603,7 @@ margin/top = 0.0
 margin/right = 32.0
 margin/bottom = 32.0
 custom_fonts/font = SubResource( 1 )
-text = "8"
+text = "7"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -1407,6 +1613,10 @@ max_lines_visible = -1
 [node name="8" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../7")
+focus_neighbour/top = NodePath("../M")
+focus_neighbour/right = NodePath("../9")
+focus_neighbour/bottom = NodePath("../I")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1418,8 +1628,10 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/8"]
 
@@ -1442,6 +1654,10 @@ max_lines_visible = -1
 [node name="9" type="TextureButton" parent="center/tag_query/keyboard"]
 
 editor/display_folded = true
+focus_neighbour/left = NodePath("../8")
+focus_neighbour/top = NodePath("../L")
+focus_neighbour/right = NodePath("../0")
+focus_neighbour/bottom = NodePath("../O")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -1453,8 +1669,10 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
+textures/focused = ExtResource( 4 )
 params/resize_mode = 0
 params/stretch_mode = 0
+script/script = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/9"]
 
