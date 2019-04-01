@@ -22,6 +22,7 @@ func _init(bag).(bag):
     self.max_hp = 20
     self.hp = 20
     self.score = 200
+    self.has_tombstone = false
 
     self.stun_duration = 0.4
     self.mass = 3

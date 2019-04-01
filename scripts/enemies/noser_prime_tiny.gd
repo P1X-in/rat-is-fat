@@ -17,3 +17,4 @@ func _init(bag).(bag):
     self.drop_chance = 0
     self.split = false
     self.taunt = "Dad"
+    self.has_tombstone = true

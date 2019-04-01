@@ -17,3 +17,4 @@ func _init(bag).(bag):
     self.drop_chance = 0
     self.split_template = 'noser_prime_small'
     self.taunt = "Dude"
+    self.has_tombstone = false
