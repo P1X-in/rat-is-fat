@@ -118,6 +118,33 @@ func add_score(tag, player_0_score, player_1_score):
 
     self.save_scores_to_file()
 
+func replace_score_if_better(tag, player_0_score, player_1_score):
+    var summary_score = player_0_score
+
+    if player_1_score != null:
+        summary_score += player_1_score
+
+    var score_index = self._find_score_by_tag(tag)
+
+    if score_index == null:
+        return
+
+    if summary_score > self.scores[score_index]['score']:
+        self.scores[score_index] = {
+            'score' : summary_score,
+            'players' : [player_0_score, player_1_score],
+            'tag' : tag
+        }
+
+        self.scores.sort_custom(self, "_custom_scoreboard_sort")
+        self.save_scores_to_file()
+
+func add_or_replace_score(tag, player_0_score, player_1_score):
+    if self._score_exists(tag):
+        self.replace_score_if_better(tag, player_0_score, player_1_score)
+    else:
+        self.add_score(tag, player_0_score, player_1_score)
+
 func load_scores_from_file():
     self.scores = self.bag.file_handler.read(self.SCOREBOARD_FILE_PATH)
 
@@ -136,7 +163,7 @@ func add_tag_query_character(character):
             self._fill_tag_query_score()
 
             if i == 4:
-                self.add_score(self.temp_tag_query, self.temp_player_0_score, self.temp_player_1_score)
+                self.add_or_replace_score(self.temp_tag_query, self.temp_player_0_score, self.temp_player_1_score)
                 self.bag.game_state.tag_query_in_progress = false
                 self.show_scores_list()
 
@@ -166,3 +193,19 @@ func _take_snapshot():
 
 func _fill_tag_query_score():
     self.tag_query_score_node.fill(self.temp_tag_query, self.temp_player_0_score, self.temp_player_1_score)
+
+func _score_exists(tag):
+    var score = self._find_score_by_tag(tag)
+
+    if score == null:
+        return false
+    else:
+        return true
+
+func _find_score_by_tag(tag):
+    var scores_size = self.scores.size()
+    for i in range(self.TOP_SIZE):
+        if i < scores_size and self.scores[i]['tag'] == tag:
+            return i
+
+    return null
