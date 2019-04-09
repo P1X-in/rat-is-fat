@@ -67,7 +67,8 @@ func attach_object(object):
     self.z_index.add_child(object)
 
 func detach_object(object):
-    self.z_index.remove_child(object)
+    if self.z_index.is_a_parent_of(object):
+        self.z_index.remove_child(object)
 
 
 func game_idle_tick():

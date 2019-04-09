@@ -70,8 +70,8 @@ func flip_body_parts(flip_flag):
     if self.hat:
         self.hat.set_flip_h(flip_flag)
 
-    var body_shadow = self.body_part_body.get_node('shadow')
-    if body_shadow:
+    if self.body_part_body.has_node('shadow'):
+        var body_shadow = self.body_part_body.get_node('shadow')
         body_shadow.set_flip_h(flip_flag)
 
 func reset_movement():

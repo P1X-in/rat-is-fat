@@ -115,9 +115,11 @@ func remove_stun():
 
 func roll_loot():
     var global_position = self.get_pos()
+    var item
     global_position.y += 10
     if randf() <= self.drop_chance:
         if randf() <= self.power_up_chance:
-            self.bag.items.spawn_global('medicals', global_position)
+            item = self.bag.items.spawn_global('medicals', global_position)
         else:
-            self.bag.items.spawn_global('cheese', global_position)
+            item = self.bag.items.spawn_global('cheese', global_position)
+        self.bag.game_state.current_cell.add_item(item)
