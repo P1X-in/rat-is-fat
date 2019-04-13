@@ -2,8 +2,8 @@
 <resource_file type="PackedScene" subresource_count="9" version="2.1" version_name="Godot Engine v2.1.5.stable.official">
 	<ext_resource path="res://scenes/hud/speech.tscn" type="PackedScene" index="3"></ext_resource>
 	<ext_resource path="res://scenes/player/hit.xanm" type="Animation" index="2"></ext_resource>
-	<ext_resource path="res://scenes/enemies/assets/noser1.png" type="Texture" index="0"></ext_resource>
 	<ext_resource path="res://scenes/enemies/assets/shadow.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://scenes/enemies/assets/noser1.png" type="Texture" index="0"></ext_resource>
 	<resource type="CircleShape2D" path="local://4">
 		<real name="custom_solver_bias"> 0 </real>
 		<real name="radius"> 10 </real>
