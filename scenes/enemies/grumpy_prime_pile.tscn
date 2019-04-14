@@ -36,12 +36,6 @@ collision/margin = 0.08
 
 [node name="body" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="body"]
-
-transform/pos = Vector2( -14, -1 )
-texture = ExtResource( 1 )
-hframes = 6
-
 [node name="Sprite1" type="Sprite" parent="body"]
 
 transform/pos = Vector2( 0, -16 )
@@ -49,19 +43,18 @@ texture = ExtResource( 1 )
 hframes = 6
 frame = 1
 
+[node name="Sprite" type="Sprite" parent="body"]
+
+transform/pos = Vector2( -14, -1 )
+texture = ExtResource( 1 )
+hframes = 6
+
 [node name="Sprite2" type="Sprite" parent="body"]
 
 transform/pos = Vector2( 13, 0 )
 texture = ExtResource( 1 )
 hframes = 6
 frame = 2
-
-[node name="Sprite3" type="Sprite" parent="body"]
-
-transform/pos = Vector2( -25, 14 )
-texture = ExtResource( 1 )
-hframes = 6
-frame = 3
 
 [node name="Sprite4" type="Sprite" parent="body"]
 
@@ -76,6 +69,13 @@ transform/pos = Vector2( 0, 14 )
 texture = ExtResource( 1 )
 hframes = 6
 frame = 5
+
+[node name="Sprite3" type="Sprite" parent="body"]
+
+transform/pos = Vector2( -25, 14 )
+texture = ExtResource( 1 )
+hframes = 6
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
