@@ -26,3 +26,8 @@ func enter_phase(num):
 
 func phase1():
     return
+
+func spawn_tombstone():
+    var tombstone = .spawn_tombstone()
+    if tombstone != null:
+        tombstone.set_scale(Vector2(2.0, 2.0))

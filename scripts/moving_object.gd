@@ -127,6 +127,7 @@ func spawn_tombstone():
     if self.has_tombstone:
         var tombstone = self.tombstone_template.instance()
         self.bag.game_state.current_cell.add_persistent_object(tombstone, self.get_pos())
+        return tombstone
 
 func speak(text, time, stun=false):
     if self.speech_bubble != null:

@@ -348,3 +348,8 @@ func reset():
 func attack_cooled_down():
     self.is_attack_on_cooldown = false
     self.velocity = self.normal_velocity
+
+func spawn_tombstone():
+    var tombstone = .spawn_tombstone()
+    if tombstone != null:
+        tombstone.set_scale(Vector2(2.0, 2.0))
