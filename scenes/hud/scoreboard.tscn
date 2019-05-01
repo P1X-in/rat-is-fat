@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://scenes/hud/assets/scores.png" type="Texture" id=1]
 [ext_resource path="res://scenes/hud/assets/rat_is_fat_logo.png" type="Texture" id=2]
 [ext_resource path="res://fonts/04B_03__.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://scenes/hud/scoreboard_entry.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/hud/assets/keyboard_button_pressed.png" type="Texture" id=5]
-[ext_resource path="res://scripts/hud/keyboard_button.gd" type="Script" id=6]
+[ext_resource path="res://scenes/hud/assets/keyboard_button.png" type="Texture" id=5]
+[ext_resource path="res://scenes/hud/assets/keyboard_button_pressed.png" type="Texture" id=6]
+[ext_resource path="res://scripts/hud/keyboard_button.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -51,7 +52,6 @@ texture = ExtResource( 2 )
 
 [node name="game_over" type="Control" parent="center"]
 
-editor/display_folded = true
 visibility/visible = false
 rect/scale = Vector2( 2, 2 )
 focus/ignore_mouse = false
@@ -65,6 +65,7 @@ margin/bottom = 122.0
 
 [node name="win" type="Control" parent="center/game_over"]
 
+editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -81,9 +82,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -120.0
+margin/left = -128.0
 margin/top = 0.0
-margin/right = 40.0
+margin/right = 32.0
 margin/bottom = 35.0
 custom_fonts/font = SubResource( 1 )
 text = "YOU WON!"
@@ -113,6 +114,7 @@ max_lines_visible = -1
 
 [node name="lose" type="Control" parent="center/game_over"]
 
+editor/display_folded = true
 visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -129,9 +131,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -115.0
+margin/left = -122.0
 margin/top = 0.0
-margin/right = 45.0
+margin/right = 38.0
 margin/bottom = 35.0
 custom_fonts/font = SubResource( 1 )
 text = "GAME OVER"
@@ -212,7 +214,6 @@ margin/right = 570.0
 
 [node name="keyboard" type="Control" parent="center/tag_query"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -240,10 +241,11 @@ margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/A"]
 
@@ -281,10 +283,11 @@ margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/B"]
 
@@ -322,10 +325,11 @@ margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/C"]
 
@@ -363,10 +367,11 @@ margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/D"]
 
@@ -404,10 +409,11 @@ margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/E"]
 
@@ -445,10 +451,11 @@ margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/F"]
 
@@ -486,10 +493,11 @@ margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/G"]
 
@@ -527,10 +535,11 @@ margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/H"]
 
@@ -568,10 +577,11 @@ margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/I"]
 
@@ -609,10 +619,11 @@ margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/J"]
 
@@ -650,10 +661,11 @@ margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/K"]
 
@@ -691,10 +703,11 @@ margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/L"]
 
@@ -732,10 +745,11 @@ margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/M"]
 
@@ -773,10 +787,11 @@ margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/N"]
 
@@ -814,10 +829,11 @@ margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/O"]
 
@@ -855,10 +871,11 @@ margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/P"]
 
@@ -896,10 +913,11 @@ margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/Q"]
 
@@ -937,10 +955,11 @@ margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/R"]
 
@@ -978,10 +997,11 @@ margin/bottom = 146.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/S"]
 
@@ -1019,10 +1039,11 @@ margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/T"]
 
@@ -1060,10 +1081,11 @@ margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/U"]
 
@@ -1101,10 +1123,11 @@ margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/V"]
 
@@ -1142,10 +1165,11 @@ margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/W"]
 
@@ -1183,10 +1207,11 @@ margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/X"]
 
@@ -1224,10 +1249,11 @@ margin/bottom = 114.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/Y"]
 
@@ -1265,10 +1291,11 @@ margin/bottom = 178.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/Z"]
 
@@ -1306,10 +1333,11 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/0"]
 
@@ -1347,10 +1375,11 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/1"]
 
@@ -1388,10 +1417,11 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/2"]
 
@@ -1429,10 +1459,11 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/3"]
 
@@ -1470,10 +1501,11 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/4"]
 
@@ -1511,10 +1543,11 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/5"]
 
@@ -1552,10 +1585,11 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/6"]
 
@@ -1593,10 +1627,11 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/7"]
 
@@ -1634,10 +1669,11 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/8"]
 
@@ -1675,10 +1711,11 @@ margin/bottom = 82.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/focused = ExtResource( 5 )
+textures/normal = ExtResource( 5 )
+textures/focused = ExtResource( 6 )
 params/resize_mode = 0
 params/stretch_mode = 0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="center/tag_query/keyboard/9"]
 
