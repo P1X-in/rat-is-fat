@@ -65,6 +65,7 @@ func phase2():
     self.RAINBOW_DELAY = 2.5
     self.velocity = 50
     self.speak("I had fun once", 2, true)
+    self.bag.timers.set_timeout(2.1, self, "speak", ["It was awful", 2, true])
 
 func process_ai():
     var distance
