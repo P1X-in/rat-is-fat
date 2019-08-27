@@ -3,18 +3,18 @@
 [ext_resource path="res://scenes/enemies/lizard.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player/hit.xanm" type="Animation" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=6]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=7]
 
 length = 1.0
 loop = false
 step = 0.1
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=8]
 
 length = 1.0
 loop = false
@@ -28,7 +28,7 @@ step = 0.1
 
 [sub_resource type="Animation" id=5]
 
-length = 1.2
+length = 1.4
 loop = true
 step = 0.2
 tracks/0/type = "value"
@@ -36,17 +36,17 @@ tracks/0/path = NodePath("body:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 0.8, 1, 1.2 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 0.8, 1, 1.2, 1.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0, 1, 2, 3, 2, 4, 5, 6 ]
+"values": [ 0, 1, 2, 3, 2, 4, 5, 6, 7 ]
 }
 
 [node name="lizard" type="KinematicBody2D"]
 
 transform/pos = Vector2( 2.27272, -3.32167 )
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -2, 1 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -60,12 +60,11 @@ __meta__ = {
 
 texture = ExtResource( 1 )
 hframes = 8
-frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 transform/pos = Vector2( -2, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = -1
 
@@ -74,9 +73,9 @@ _update_shape_index = -1
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/attack = SubResource( 2 )
+anims/attack = SubResource( 7 )
 anims/hit = ExtResource( 2 )
-anims/idle = SubResource( 3 )
+anims/idle = SubResource( 8 )
 anims/new = SubResource( 4 )
 anims/run = SubResource( 5 )
 playback/active = true
