@@ -61,8 +61,8 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="59">
-				<string> "white_rat" </string>
+			<string_array  len="58">
+				<string> "spider" </string>
 				<string> "transform/pos" </string>
 				<string> "input/pickable" </string>
 				<string> "shapes/0/shape" </string>
@@ -76,7 +76,6 @@
 				<string> "body" </string>
 				<string> "texture" </string>
 				<string> "hframes" </string>
-				<string> "frame" </string>
 				<string> "Sprite" </string>
 				<string> "CollisionShape2D" </string>
 				<string> "shape" </string>
@@ -128,9 +127,9 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="139"> 				-1, -1, 10, 0, -1, 9, 1, 0, 2, 1, 3, 2, 4, 3, 5, 1, 6, 4, 7, 4, 8, 5, 9, 6, 0, 0, 0, 15, 11, -1, 3, 12, 7, 13, 8, 14, 9, 0, 0, 0, 16, 16, -1, 4, 1, 10, 17, 2, 18, 1, 19, 11, 0, 0, 0, 32, 20, -1, 11, 21, 4, 22, 12, 23, 13, 24, 14, 25, 15, 26, 16, 27, 17, 28, 18, 29, 19, 30, 20, 31, 21, 0, 0, 0, 58, 33, -1, 25, 1, 22, 34, 23, 35, 24, 36, 25, 37, 19, 38, 1, 39, 4, 40, 12, 41, 26, 42, 27, 43, 28, 44, 12, 45, 12, 46, 12, 47, 12, 48, 12, 49, 12, 50, 12, 51, 12, 52, 19, 53, 25, 54, 12, 55, 19, 56, 12, 57, 29, 0 </int_array>
+			<int_array  len="137"> 				-1, -1, 10, 0, -1, 9, 1, 0, 2, 1, 3, 2, 4, 3, 5, 1, 6, 4, 7, 4, 8, 5, 9, 6, 0, 0, 0, 14, 11, -1, 2, 12, 7, 13, 8, 0, 0, 0, 15, 15, -1, 4, 1, 9, 16, 2, 17, 1, 18, 10, 0, 0, 0, 31, 19, -1, 11, 20, 4, 21, 11, 22, 12, 23, 13, 24, 14, 25, 15, 26, 16, 27, 17, 28, 18, 29, 19, 30, 20, 0, 0, 0, 57, 32, -1, 25, 1, 21, 33, 22, 34, 23, 35, 24, 36, 18, 37, 1, 38, 4, 39, 11, 40, 25, 41, 26, 42, 27, 43, 11, 44, 11, 45, 11, 46, 11, 47, 11, 48, 11, 49, 11, 50, 11, 51, 18, 52, 24, 53, 11, 54, 18, 55, 11, 56, 28, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="30" shared="false">
+			<array  len="29" shared="false">
 				<vector2> 2.27272, -3.32167 </vector2>
 				<bool> False </bool>
 				<resource  resource_type="Shape2D" path="local://1">  </resource>
@@ -143,7 +142,6 @@
 				</dictionary>
 				<resource  external="0">  </resource>
 				<int> 5 </int>
-				<int> 2 </int>
 				<vector2> -2, 1 </vector2>
 				<int> -1 </int>
 				<real> 0 </real>
