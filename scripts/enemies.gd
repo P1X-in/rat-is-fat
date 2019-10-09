@@ -12,6 +12,9 @@ var enemy_templates = {
     'snake' : preload("res://scripts/enemies/snake.gd"),
     'frog' : preload("res://scripts/enemies/frog.gd"),
     'cockroach' : preload("res://scripts/enemies/cockroach.gd"),
+    'dog' : preload("res://scripts/enemies/dog.gd"),
+    'wasp' : preload("res://scripts/enemies/wasp.gd"),
+    'ant' : preload("res://scripts/enemies/ant.gd"),
 
     #boss
     'shia_prime' : preload("res://scripts/enemies/shia_prime.gd"),
@@ -28,7 +31,7 @@ var enemy_templates = {
 
 var enemy_difficulties = [
     [],
-    ['retarded_rat', 'fat_rat', 'jumping_rat', 'spider', 'lizard', 'snake', 'frog', 'cockroach'],
+    ['retarded_rat', 'fat_rat', 'jumping_rat', 'spider', 'lizard', 'snake', 'frog', 'cockroach', 'ant', 'wasp', 'dog'],
     ['shia'],
 ]
 
