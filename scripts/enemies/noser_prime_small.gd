@@ -13,7 +13,7 @@ func _init(bag).(bag):
     self.attack_range = 30
     self.attack_strength = 1
     self.max_hp = 10
-    self.hp = 10
+    self.hp = 14
     self.drop_chance = 0
     self.split_template = 'noser_prime_tiny'
     self.taunt = "Pal"

@@ -12,3 +12,5 @@ func _init(bag).(bag):
     self.attack_range = 50
     self.velocity = 100
     self.score = 10
+    self.max_hp = 16
+    self.hp = 16

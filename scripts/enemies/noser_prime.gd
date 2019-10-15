@@ -20,7 +20,7 @@ func _init(bag).(bag):
     self.attack_strength = 2
     self.attack_cooldown = 3
     self.max_hp = 20
-    self.hp = 20
+    self.hp = 25
     self.score = 200
     self.has_tombstone = false
 

@@ -9,7 +9,9 @@ func _init(bag).(bag):
     self.animations = self.avatar.get_node('body_animations')
     self.hit_particles = self.avatar.get_node('hitparticles')
 
-    self.aggro_range = 250
+    self.aggro_range = 450
     self.attack_range = 40
     self.velocity = 70
-    self.score = 20
+    self.score = 30
+    self.max_hp = 2
+    self.hp = 2

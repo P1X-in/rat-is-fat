@@ -21,15 +21,15 @@ func _init(bag).(bag):
     self.attack_strength = 3
     self.attack_cooldown = 3
     self.max_hp = 50
-    self.hp = 50
+    self.hp = 60
     self.score = 200
 
     self.stun_duration = 0.4
     self.mass = 3
 
     self.phase_hp_thresholds = [
-        [30, 2],
-        [15, 3],
+        [40, 2],
+        [20, 3],
     ]
 
 func attach():

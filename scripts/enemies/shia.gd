@@ -9,3 +9,5 @@ func _init(bag).(bag):
     self.hit_particles = self.avatar.get_node('hitparticles')
     self.score = 120
     self.drop_chance = 0
+    self.max_hp = 3
+    self.hp = 3

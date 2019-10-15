@@ -13,7 +13,7 @@ func _init(bag).(bag):
     self.attack_range = 25
     self.attack_strength = 1
     self.max_hp = 5
-    self.hp = 5
+    self.hp = 8
     self.drop_chance = 0
     self.split = false
     self.taunt = "Dad"
