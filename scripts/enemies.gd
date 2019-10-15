@@ -31,8 +31,11 @@ var enemy_templates = {
 
 var enemy_difficulties = [
     [],
-    ['retarded_rat', 'fat_rat', 'jumping_rat', 'spider', 'lizard', 'snake', 'frog', 'cockroach', 'ant', 'wasp', 'dog'],
-    ['shia'],
+    ['lizard', 'snake', 'frog'],
+    ['retarded_rat', 'fat_rat', 'jumping_rat'],
+    ['spider', 'cockroach'],
+    ['ant', 'wasp'],
+    ['shia', 'dog'],
 ]
 
 var enemies_list = {}
