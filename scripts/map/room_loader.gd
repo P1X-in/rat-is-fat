@@ -43,6 +43,19 @@ var room_templates = {
     'easy4' : preload("res://scripts/map/rooms/easy4_room.gd"),
     'easy5' : preload("res://scripts/map/rooms/easy5_room.gd"),
     'easy6' : preload("res://scripts/map/rooms/easy6_room.gd"),
+    'medium1' : preload("res://scripts/map/rooms/medium1_room.gd"),
+    'medium2' : preload("res://scripts/map/rooms/medium2_room.gd"),
+    'medium4' : preload("res://scripts/map/rooms/medium4_room.gd"),
+    'medium5' : preload("res://scripts/map/rooms/medium5_room.gd"),
+    'medium6' : preload("res://scripts/map/rooms/medium6_room.gd"),
+    'hard2' : preload("res://scripts/map/rooms/hard2_room.gd"),
+    'hard3' : preload("res://scripts/map/rooms/hard3_room.gd"),
+    'hard4' : preload("res://scripts/map/rooms/hard4_room.gd"),
+    'hard6' : preload("res://scripts/map/rooms/hard6_room.gd"),
+    'endgame2' : preload("res://scripts/map/rooms/endgame2_room.gd"),
+    'endgame3' : preload("res://scripts/map/rooms/endgame3_room.gd"),
+    'endgame4' : preload("res://scripts/map/rooms/endgame4_room.gd"),
+    'endgame6' : preload("res://scripts/map/rooms/endgame6_room.gd"),
     'boss1' : preload("res://scripts/map/rooms/boss1_room.gd"),
     'boss2' : preload("res://scripts/map/rooms/boss2_room.gd"),
     'boss3' : preload("res://scripts/map/rooms/boss3_room.gd"),
@@ -54,9 +67,9 @@ var room_templates = {
 var difficulty_templates = [
     ['start'],
     ['easy1', 'easy2', 'easy4', 'easy5', 'easy6'],
-    ['easy1', 'easy2', 'easy4', 'easy5', 'easy6'],
-    ['easy2', 'easy3', 'easy4', 'easy6'],
-    ['easy2', 'easy3', 'easy4', 'easy6'],
+    ['medium1', 'medium2', 'medium4', 'medium5', 'medium6'],
+    ['hard2', 'hard3', 'hard4', 'hard6'],
+    ['endgame2', 'endgame3', 'endgame4', 'endgame6'],
 ]
 
 var difficulty_pickups = [
